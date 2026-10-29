@@ -5,11 +5,14 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "sk-speech"
 version = "0.1.0"
-description = "Speech analysis and transformation toolkit: F0, intensity, formants, vowels and voice control"
+description = "Research toolkit for speech analysis, transformation, synthesis, filtering and voice modeling"
 readme = "README.md"
 requires-python = ">=3.10"
 authors = [{name = "iproxy3d"}]
-keywords = ["speech", "audio", "pitch", "formants", "praat", "voice"]
+keywords = [
+  "speech", "audio", "acoustics", "pitch", "formants", "vowels",
+  "prosody", "noise-reduction", "signal-processing", "praat", "voice",
+]
 classifiers = [
   "Development Status :: 3 - Alpha",
   "Intended Audience :: Developers",
