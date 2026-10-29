@@ -24,3 +24,4 @@ env/
 *.png
 *.jsonl
 !src/sk_speech/data/**/*.wav
+

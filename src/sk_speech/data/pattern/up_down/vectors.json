@@ -1,0 +1,947 @@
+{
+    "params": {
+        "norm": {
+            "f0": {
+                "freq": 171.6792073337391,
+                "freq_min": 137.3433658669913,
+                "freq_max": 429.19801833434775,
+                "bandwidth": 94.60566309462797,
+                "bandwidth_min": 85.14509678516518,
+                "bandwidth_max": 90,
+                "energy": 61.130495963647185,
+                "energy_min": 42.791347174553025,
+                "energy_max": 91.69574394547078,
+                "intensity": 65.91977788087969,
+                "intensity_min": 32.959888940439846,
+                "intensity_max": 98.87966682131955,
+                "amplitude": -33.221236881062254,
+                "amplitude_min": -16.610618440531127,
+                "amplitude_max": -66.44247376212451,
+                "slope": -17.004960151444177,
+                "slope_min": 0,
+                "slope_max": -25.507440227166263,
+                "period": {
+                    "time": 0.43999999999999995,
+                    "offset": 0.014999999999999958,
+                    "amplitude": 19.853811636356113
+                },
+                "freq_cmin": 0.19999999999999993,
+                "freq_cmax": 1.5
+            },
+            "f1": {
+                "freq": 528.5852663668718,
+                "freq_min": 422.86821309349745,
+                "freq_max": 600,
+                "bandwidth": 214.84387166749744,
+                "bandwidth_min": 171.87509733399796,
+                "bandwidth_max": 279.2970331677467,
+                "energy": 8.145784956752863,
+                "energy_min": 5.702049469727004,
+                "energy_max": 12.218677435129294,
+                "intensity": 43.78295135498047,
+                "intensity_min": 21.891475677490234,
+                "intensity_max": 65.6744270324707,
+                "amplitude": -33.689332008361816,
+                "amplitude_min": 16.844666004180908,
+                "amplitude_max": 67.37866401672363,
+                "slope": -137.8766306239643,
+                "slope_min": -68.93831531198215,
+                "slope_max": -206.81494593594647,
+                "period": {
+                    "time": 0.19999999999999996,
+                    "offset": 0.03249999999999997,
+                    "amplitude": 114.14649912938431
+                },
+                "freq_cmin": 0.19999999999999998,
+                "freq_cmax": 0.13510541851456345
+            },
+            "f2": {
+                "freq": 1631.741958196265,
+                "freq_min": 1305.393566557012,
+                "freq_max": 600,
+                "bandwidth": 443.46516601118776,
+                "bandwidth_min": 354.77213280895023,
+                "bandwidth_max": 576.504715814544,
+                "energy": 2.31042912088621,
+                "energy_min": 1.6173003846203469,
+                "energy_max": 3.4656436813293148,
+                "intensity": 57.315093994140625,
+                "intensity_min": 28.657546997070312,
+                "intensity_max": 85.97264099121094,
+                "amplitude": -48.912925720214844,
+                "amplitude_min": 24.456462860107422,
+                "amplitude_max": 97.82585144042969,
+                "slope": -387.56966502874855,
+                "slope_min": -100,
+                "slope_max": -581.3544975431228,
+                "period": {
+                    "time": 0.21999999999999975,
+                    "offset": 0.03285714285714283,
+                    "amplitude": 335.9675482967965
+                },
+                "freq_cmin": 0.19999999999999996,
+                "freq_cmax": -0.6322948018918121
+            },
+            "f3": {
+                "freq": 2741.475720793893,
+                "freq_min": 2193.1805766351144,
+                "freq_max": 600,
+                "bandwidth": 436.6499802459561,
+                "bandwidth_min": 349.3199841967649,
+                "bandwidth_max": 567.6449743197429,
+                "energy": 0.9342842183874281,
+                "energy_min": 0.6539989528711997,
+                "energy_max": 1.4014263275811423,
+                "intensity": 65.15097045898438,
+                "intensity_min": 32.57548522949219,
+                "intensity_max": 97.72645568847656,
+                "amplitude": -55.86555004119873,
+                "amplitude_min": 27.932775020599365,
+                "amplitude_max": 100,
+                "slope": -171.9050357297092,
+                "slope_min": -85.9525178648546,
+                "slope_max": -257.8575535945638,
+                "period": {
+                    "time": 0.2200000000000002,
+                    "offset": 0.018571428571428534,
+                    "amplitude": 225.52361742939075
+                },
+                "freq_cmin": 0.19999999999999993,
+                "freq_cmax": -0.7811397724776317
+            },
+            "f4": {
+                "freq": 4032.050128329538,
+                "freq_min": 3225.6401026636304,
+                "freq_max": 600,
+                "bandwidth": 494.0894265195721,
+                "bandwidth_min": 395.2715412156577,
+                "bandwidth_max": 642.3162544754438,
+                "energy": 0.6876713867510327,
+                "energy_min": 0.48136997072572285,
+                "energy_max": 1.031507080126549,
+                "intensity": 68.52542114257812,
+                "intensity_min": 34.26271057128906,
+                "intensity_max": 100,
+                "amplitude": -60.80850124359131,
+                "amplitude_min": 30.404250621795654,
+                "amplitude_max": 100,
+                "slope": 166.53979236498643,
+                "slope_min": 83.26989618249321,
+                "slope_max": 100,
+                "period": {
+                    "time": 0.2,
+                    "offset": 0.02,
+                    "amplitude": 256.60383315120663
+                },
+                "freq_cmin": 0.2,
+                "freq_cmax": -0.8511923262599472
+            },
+            "f5": {
+                "freq": 4782.256153231034,
+                "freq_min": 3825.804922584827,
+                "freq_max": 600,
+                "bandwidth": 791.1390561469991,
+                "bandwidth_min": 632.9112449175993,
+                "bandwidth_max": 1028.4807729910988,
+                "energy": 0.9220178413210598,
+                "energy_min": 0.6454124889247418,
+                "energy_max": 1.3830267619815897,
+                "intensity": 68.0418472290039,
+                "intensity_min": 34.02092361450195,
+                "intensity_max": 100,
+                "amplitude": -59.89471435546875,
+                "amplitude_min": 29.947357177734375,
+                "amplitude_max": 100,
+                "slope": -154.52102054949532,
+                "slope_min": -77.26051027474766,
+                "slope_max": -231.78153082424296,
+                "period": {
+                    "time": 0.16000000000000003,
+                    "offset": 0.015,
+                    "amplitude": 177.94917835593304
+                },
+                "freq_cmin": 0.19999999999999996,
+                "freq_cmax": -0.8745362061807119
+            },
+            "duration": 1.93,
+            "vowels": [
+                [
+                    35040,
+                    "e"
+                ],
+                [
+                    46080,
+                    "e"
+                ],
+                [
+                    55680,
+                    "a"
+                ],
+                [
+                    63840,
+                    "o"
+                ],
+                [
+                    80640,
+                    "e"
+                ],
+                [
+                    91200,
+                    "o"
+                ],
+                [
+                    100320,
+                    "o"
+                ],
+                [
+                    109920,
+                    "u"
+                ],
+                [
+                    120480,
+                    "i"
+                ]
+            ],
+            "speed": 0.0,
+            "cmax": 0,
+            "cmin": 0,
+            "gender": "woman",
+            "tract_length": {
+                "avg": 15.73040878145576,
+                "f1": 16.222548272937303,
+                "f2": 15.765360368888553,
+                "f3": 15.639387091702567,
+                "f4": 14.886967693744452,
+                "f5": 16.137780480005926
+            },
+            "volume": 0.0,
+            "emotion": 0.0
+        },
+        "volume_up": {
+            "emotion_up": {
+                "f0": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f1": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f2": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f3": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f4": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f5": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "duration": 0,
+                "vowels": 0,
+                "speed": 0,
+                "cmax": 0,
+                "cmin": 0,
+                "gender": "",
+                "volume": -1.0,
+                "emotion": -5.000000000000002
+            },
+            "emotion_down": {
+                "f0": {
+                    "freq": 137.3433658669913,
+                    "bandwidth": 85.14509678516518,
+                    "energy": 91.69574394547078,
+                    "intensity": 98.87966682131955,
+                    "amplitude": 66.44247376212451,
+                    "slope": 0,
+                    "period": {
+                        "time": 0.44000000000000244,
+                        "offset": 0.1352524111426068,
+                        "amplitude": 2065.4038024346182
+                    },
+                    "count": 1
+                },
+                "f1": {
+                    "freq": 471.485812908752,
+                    "bandwidth": 279.2970331677467,
+                    "energy": 12.218677435129294,
+                    "intensity": 21.891475677490234,
+                    "amplitude": 67.37866401672363,
+                    "slope": 0,
+                    "period": {
+                        "time": 0.3125767253249968,
+                        "offset": -0.035413133212360004,
+                        "amplitude": 4307.286487799081
+                    },
+                    "count": 1
+                },
+                "f2": {
+                    "freq": 800.0,
+                    "bandwidth": 354.77213280895023,
+                    "energy": 1.6173003846203469,
+                    "intensity": 28.657546997070312,
+                    "amplitude": 97.82585144042969,
+                    "slope": 0,
+                    "period": {
+                        "time": -0.0051534506499846255,
+                        "offset": -0.03289144882426113,
+                        "amplitude": -7962.088690689486
+                    },
+                    "count": 1
+                },
+                "f3": {
+                    "freq": 2694.126750698968,
+                    "bandwidth": 567.6449743197429,
+                    "energy": 1.4014263275811423,
+                    "intensity": 32.57548522949219,
+                    "amplitude": 100.0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0.2199999999999977,
+                        "offset": 0.039121148273610074,
+                        "amplitude": 9235.988007448677
+                    },
+                    "count": 1
+                },
+                "f4": {
+                    "freq": 3836.8194572117363,
+                    "bandwidth": 580.8205095989554,
+                    "energy": 1.031507080126549,
+                    "intensity": 34.26271057128906,
+                    "amplitude": 100.0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0.20000000000000095,
+                        "offset": 0.011958805333928348,
+                        "amplitude": 2495.0339201620386
+                    },
+                    "count": 1
+                },
+                "f5": {
+                    "freq": 4014.2961762288924,
+                    "bandwidth": 632.9112449175993,
+                    "energy": 1.3830267619815897,
+                    "intensity": 34.02092361450195,
+                    "amplitude": 100.0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0.27257672532499283,
+                        "offset": 0.01837730175974967,
+                        "amplitude": 3269.5616600233093
+                    },
+                    "count": 1
+                },
+                "duration": 0,
+                "vowels": 0,
+                "speed": 0,
+                "cmax": 0,
+                "cmin": 0,
+                "gender": "",
+                "volume": 0.9671265881200961,
+                "emotion": -1.0
+            }
+        },
+        "volume_down": {
+            "emotion_up": {
+                "f0": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f1": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f2": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f3": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f4": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f5": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "duration": 0,
+                "vowels": 0,
+                "speed": 0,
+                "cmax": 0,
+                "cmin": 0,
+                "gender": "",
+                "volume": -1.0,
+                "emotion": -5.000000000000002
+            },
+            "emotion_down": {
+                "f0": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f1": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f2": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f3": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f4": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "f5": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "count": 0
+                },
+                "duration": 0,
+                "vowels": 0,
+                "speed": 0,
+                "cmax": 0,
+                "cmin": 0,
+                "gender": "",
+                "volume": -1.0,
+                "emotion": -5.000000000000002
+            }
+        }
+    },
+    "vectors": {
+        "volume_up": {
+            "emotion_up": {
+                "f0": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "freq_max": 0,
+                    "freq_min": 0
+                },
+                "f1": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "f2": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "f3": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "f4": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "f5": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "speed": 0,
+                "volume": -1.0,
+                "emotion": -1.0
+            },
+            "emotion_down": {
+                "f0": {
+                    "freq": -34.33584146674781,
+                    "bandwidth": -9.78213858007179,
+                    "energy": 31.6041853851174,
+                    "intensity": 34.08022211912031,
+                    "amplitude": 103.05136046038545,
+                    "slope": 0,
+                    "period": {
+                        "time": 2.4980018054066022e-15,
+                        "offset": 0.12025241114260685,
+                        "amplitude": 2115.079882949355
+                    },
+                    "freq_max": 0,
+                    "freq_min": 0
+                },
+                "f1": {
+                    "freq": -57.0994534581198,
+                    "bandwidth": 66.64397638527706,
+                    "energy": 4.21133337497559,
+                    "intensity": -22.635584572277097,
+                    "amplitude": 104.50337863375441,
+                    "slope": 0,
+                    "period": {
+                        "time": 0.11257672532499685,
+                        "offset": -0.06791313321235998,
+                        "amplitude": 4335.668195019161
+                    }
+                },
+                "f2": {
+                    "freq": -831.7419581962649,
+                    "bandwidth": -91.70778085487169,
+                    "energy": -0.7166887404193583,
+                    "intensity": -29.631640106984285,
+                    "amplitude": 151.72654641402823,
+                    "slope": 0,
+                    "period": {
+                        "time": -0.22515345064998438,
+                        "offset": -0.06574859168140396,
+                        "amplitude": -8580.113855742578
+                    }
+                },
+                "f3": {
+                    "freq": -47.34897009492488,
+                    "bandwidth": 135.44761945632715,
+                    "energy": 0.48302064583060067,
+                    "intensity": -33.68275221634897,
+                    "amplitude": 161.16354565762762,
+                    "slope": 0,
+                    "period": {
+                        "time": -2.4980018054066022e-15,
+                        "offset": 0.02054971970218154,
+                        "amplitude": 9316.737333769157
+                    }
+                },
+                "f4": {
+                    "freq": -195.23067111780165,
+                    "bandwidth": 89.67914246672862,
+                    "energy": 0.3555229455989471,
+                    "intensity": -35.427327706799,
+                    "amplitude": 166.27451175359724,
+                    "slope": 0,
+                    "period": {
+                        "time": 9.43689570931383e-16,
+                        "offset": -0.008041194666071652,
+                        "amplitude": 2314.5161290228816
+                    }
+                },
+                "f5": {
+                    "freq": -767.9599770021414,
+                    "bandwidth": -163.60610200673267,
+                    "energy": 0.47667898527807057,
+                    "intensity": -35.17732221655899,
+                    "amplitude": 165.32966451296994,
+                    "slope": 0,
+                    "period": {
+                        "time": 0.1125767253249928,
+                        "offset": 0.003377301759749672,
+                        "amplitude": 3196.69888062623
+                    }
+                },
+                "speed": 0,
+                "volume": 1.0,
+                "emotion": -1.0
+            }
+        },
+        "volume_down": {
+            "emotion_up": {
+                "f0": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "freq_max": 0,
+                    "freq_min": 0
+                },
+                "f1": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "f2": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "f3": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "f4": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "f5": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "speed": 0,
+                "volume": -1.0,
+                "emotion": -1.0
+            },
+            "emotion_down": {
+                "f0": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    },
+                    "freq_max": 0,
+                    "freq_min": 0
+                },
+                "f1": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "f2": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "f3": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "f4": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "f5": {
+                    "freq": 0,
+                    "bandwidth": 0,
+                    "energy": 0,
+                    "intensity": 0,
+                    "amplitude": 0,
+                    "slope": 0,
+                    "period": {
+                        "time": 0,
+                        "offset": 0,
+                        "amplitude": 0
+                    }
+                },
+                "speed": 0,
+                "volume": -1.0,
+                "emotion": -1.0
+            }
+        }
+    }
+}
