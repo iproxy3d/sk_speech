@@ -40,7 +40,7 @@ def _patch_common(monkeypatch, *, f0=(120.0, 130.0, 140.0), intensity=(85.0, 86.
     )
     monkeypatch.setattr(
         sk_detection.fmt,
-        "extract_formants_from_segment_fast",
+        "extract_formants_from_segment",
         lambda y, sr: [500.0, 1500.0],
     )
     monkeypatch.setattr(

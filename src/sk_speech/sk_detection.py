@@ -50,7 +50,7 @@ def is_soft_speech(y, sr, intensity_min_db=20, intensity_max_db=45, f0_min=50, f
         return False
 
     # Проверка формант
-    formants = fmt.extract_formants_from_segment_fast(y, sr)
+    formants = fmt.extract_formants_from_segment(y, sr)
     if formants:
         significant_formants = [f for f in formants[:2] if formant_thresholds[0] < f < formant_thresholds[1]]
         if len(significant_formants) < 2:
@@ -108,7 +108,7 @@ def is_loud_speech(y, sr, intensity_threshold_db=55, spectral_flatness_threshold
         return False
 
     # Проверка формант
-    formants = fmt.extract_formants_from_segment_fast(y, sr)
+    formants = fmt.extract_formants_from_segment(y, sr)
     if formants:
         significant_formants = [f for f in formants[:2] if formant_thresholds[0] < f < formant_thresholds[1]]
         if len(significant_formants) < 2:
@@ -158,7 +158,7 @@ def is_whisper(y, sr, f0_min=50, f0_avg = 100, spectral_flatness_threshold=0.4, 
         return True
 
     # Проверка формант
-    formants = fmt.extract_formants_from_segment_fast(y, sr)
+    formants = fmt.extract_formants_from_segment(y, sr)
     if formants:
         significant_formants = [f for f in formants[:2] if f >= formant_threshold]  # Смотрим только на первые два форманта
         if len(significant_formants) == 0:
