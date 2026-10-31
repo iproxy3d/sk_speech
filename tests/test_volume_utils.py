@@ -22,3 +22,34 @@ def test_power_combination_is_available():
     )
     np.testing.assert_allclose(value, -16.989700043360187, atol=1e-8)
 
+
+def test_removed_vowel_frequency_path_is_a_safe_noop():
+    from sk_speech.sk_volume import get_change_speech
+
+    audio = np.array([0.1, -0.1, 0.2], dtype=float)
+    muls = {
+        "options": {
+            "pitch": False,
+            "formants": False,
+            "vowels": True,
+            "change": {
+                "vowel_amplitude": False,
+                # Старые конфигурации могут всё ещё содержать этот ключ.
+                "vowel_freq": True,
+            },
+        }
+    }
+    params = {
+        "info": {
+            "pitch": None,
+            "formants": None,
+            "vowel_formants": None,
+        }
+    }
+    new_params = {"volume": 1.0}
+
+    changed, sample_rate = get_change_speech(audio, 16_000, muls, new_params, params)
+
+    np.testing.assert_array_equal(changed, audio)
+    assert sample_rate == 16_000
+

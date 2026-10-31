@@ -66,7 +66,7 @@ r_t = alveolar_radius / alveolar_t_max
 options = {"freq": True, "amplitude": True, "period": True,
            "change": {"pitch_freq": True, "pitch_amplitude": False,
                       "formant_freq": False, "formant_amplitude": True,
-                      "vowel_freq": False, "vowel_amplitude": False, },
+                      "vowel_amplitude": False, },
            "pitch": True, "formants": True, "vowels": False, "formant_max": 5}
 
 emotion_word_break = {

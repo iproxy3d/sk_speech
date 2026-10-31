@@ -20,7 +20,7 @@ import matplotlib.pyplot as plt
 options = {"freq": True, "amplitude": True, "period": True, "slope": False,
            "change": {"pitch_freq": True, "pitch_amplitude": False,
                       "formant_freq": False, "formant_amplitude": True,
-                      "vowel_freq": False, "vowel_amplitude": False, },
+                      "vowel_amplitude": False, },
            "pitch": True, "formants": True, "vowels": False, "formant_max": 5}
 
 start = time.perf_counter()

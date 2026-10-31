@@ -682,7 +682,7 @@ def get_speech_params(y, sr, template_speech=False, options=None):
             "change": {
                 "pitch_freq": True, "pitch_amplitude": False,
                 "formant_freq": False, "formant_amplitude": True,
-                "vowel_freq": False, "vowel_amplitude": False,
+                "vowel_amplitude": False,
             },
             "duration": True, "speed": True, "gender": True, "tract": True,
             "check_speech": True,
@@ -1493,10 +1493,6 @@ def get_change_speech(y, sr, muls, new_params, params):
             if muls["options"]["change"].get("vowel_amplitude", False):
                 y = vw.amplitude_vowels_mul(y, sr, muls["vowels"], frame_duration, formants=vowel_formants)
 
-            # сдвиг формант гласных
-            if muls["options"]["change"].get("vowel_freq", False):
-                y = vw.shifts_vowels_mul(y, sr, muls["vowels"], frame_duration)
-
     return y, sr
 
 
@@ -1690,7 +1686,7 @@ def init_speech(file_speech_norm,
                    "duration": True, "speed": True, "gender": True, "tract": True, "check_speech": True,
                    "change": {"pitch_freq": True, "pitch_amplitude": False,
                               "formant_freq": False, "formant_amplitude": True,
-                              "vowel_freq": False, "vowel_amplitude": False, },
+                              "vowel_amplitude": False, },
                    }
 
     y, sr = librosa.load(file_speech_norm, sr=None)

@@ -22,7 +22,7 @@ def is_soft_speech(y, sr, intensity_min_db=20, intensity_max_db=45, f0_min=50, f
     y = ns.noise_reduction_spectral_subtraction(y, sr, normalize=True)
 
     # Рассчитываем частоту тона в заданном диапазоне F0
-    f0, time = pt.extract_f0_voiced(y, sr)
+    f0, _, _, _, _, _, _ = pt.extract_f0_voiced(y, sr)
 
     # Если F0 отсутствует или все значения NaN, это не тихая речь
     if f0 is None or np.all(np.isnan(f0)):
@@ -92,7 +92,7 @@ def is_loud_speech(y, sr, intensity_threshold_db=55, spectral_flatness_threshold
 
     # Рассчитываем частоту тона в заданном диапазоне F0
     # f0, voiced_flag, _ = librosa.pyin(y, fmin=f0_min, fmax=f0_max)
-    f0, time = pt.extract_f0_voiced(y, sr)
+    f0, _, _, _, _, _, _ = pt.extract_f0_voiced(y, sr)
 
     # Если F0 отсутствует или все значения NaN, это не громкая речь
     if f0 is None or np.all(np.isnan(f0)):
@@ -132,7 +132,7 @@ def is_whisper(y, sr, f0_min=50, f0_avg = 100, spectral_flatness_threshold=0.4, 
     y = ns.noise_reduction_spectral_subtraction_fast(y, sr)
 
     # Рассчитываем частоту тона в заданном диапазоне F0
-    f0, time = pt.extract_f0_voiced(y, sr)
+    f0, _, _, _, _, _, _ = pt.extract_f0_voiced(y, sr)
 
     # Если F0 отсутствует или все значения NaN, это может указывать на шёпот
     if f0 is None or np.all(np.isnan(f0)):
@@ -173,16 +173,23 @@ def is_scream(y, sr, intensity_threshold_db=80, min_f0=100, max_f0=600, pitch_th
     :param y: Нормализованный аудиосигнал.
     :param sr: Частота дискретизации.
     :param intensity_threshold_db: Порог интенсивности в децибелах для определения крика.
-    :param f0_min: Минимальная частота тона (Hz) для крика.
-    :param f0_max: Максимальная частота тона (Hz) для крика.
-    :param spectral_flatness_threshold: Порог спектральной плоскости, выше которого может быть крик.
+    :param min_f0: Минимальная средняя частота основного тона (Hz) для крика.
+    :param max_f0: Максимальная средняя частота основного тона (Hz) для крика.
+    :param pitch_threshold: Порог максимального значения F0 (Hz), характерного для крика.
     :return: True если сигнал является криком, иначе False.
     """
     y = ns.noise_reduction_spectral_subtraction(y, sr)
 
     # Рассчитываем частоту тона
-    f0, time = pt.extract_f0_voiced(y, sr)
-    if len(f0) == 0:
+    f0, _, intensity_db, _, _, _, _ = pt.extract_f0_voiced(y, sr)
+    if f0 is None or len(f0) == 0:
+        return False
+
+    if intensity_db is None or len(intensity_db) == 0:
+        return False
+
+    avg_intensity = np.nanmean(intensity_db)
+    if not np.isfinite(avg_intensity) or avg_intensity < intensity_threshold_db:
         return False
 
     valid_f0 = pt.remove_short_sequences(f0, min_length=5)
@@ -191,7 +198,7 @@ def is_scream(y, sr, intensity_threshold_db=80, min_f0=100, max_f0=600, pitch_th
 
     max_pitch = np.max(valid_f0)
     pitch = np.mean(valid_f0)
-    if max_pitch >= pitch_threshold and pitch > 100:
+    if max_pitch >= pitch_threshold and min_f0 <= pitch <= max_f0:
         return True
 
     return False
