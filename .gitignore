@@ -21,7 +21,6 @@ env/
 *.mp3
 *.flac
 *.csv
-*.png
 *.jsonl
 !src/sk_speech/data/**/*.wav
 
