@@ -9,6 +9,11 @@ Praat/Parselmouth, Librosa и SciPy с собственными алгоритм
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Tests](https://github.com/iproxy3d/sk_speech/actions/workflows/tests.yml/badge.svg)](https://github.com/iproxy3d/sk_speech/actions/workflows/tests.yml)
 
+![Обзор возможностей sk_speech](<images/sk_speech_ Голос, эмоции и звуки природы.png>)
+
+*Обзор направлений пакета: анализ и преобразование речи, исследование
+акустической динамики и экспериментальные модели голосообразования.*
+
 Пакет предназначен для широкого спектра задач исследования и программного
 преобразования речи: от получения
 покадровых акустических рядов до комплексного профиля говорящего, анализа
@@ -259,7 +264,9 @@ sf.write("transformed.wav", y, sr)
 
 Документация начинается с [навигационной страницы](docs/README.md). Отдельно
 доступны [помодульный справочник API](docs/API.md), [руководство «С чего
-начать»](docs/getting-started.md) и [каталог готовых примеров](examples/README.md).
+начать»](docs/getting-started.md), [руководство по экспериментальному
+моделированию дыхания и голосообразования](docs/physiological-modeling.md) и
+[каталог готовых примеров](examples/README.md).
 
 ## Структура репозитория
 
