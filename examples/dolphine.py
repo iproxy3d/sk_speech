@@ -67,7 +67,7 @@ def process_audio_files(input_file, output_folder, speed_factor, pitch_shift_hz,
         # Загружаем сегмент
         y, sr = librosa.load(segment_file, sr=None)
 
-        avg_f0 = pt.extract_f0(y_speed_changed, sr)
+        avg_f0 = pt.extract_f0(y, sr)
         pitch_shift_semitones = fl.hz_to_semitones(avg_f0 + pitch_shift_hz, avg_f0)
         y_pitch_shifted, sr = pt.change_pitch_pydub(y, sr, pitch_shift_semitones)
 
