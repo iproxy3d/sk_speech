@@ -630,7 +630,7 @@ def calculate_pitch_intensity2(y, sr, f0_min=80, f0_max=300, frame_length=2048, 
 
     return voiced_intensity_db
 
-def calculate_pitch_intensity_avg(y, sr, pitch):
+def calculate_pitch_intensity_avg(y, sr, pitch=None):
     # Рассчитываем интенсивность с учетом озвученных фрагментов
     intensity_db = calculate_pitch_intensity(y, sr, only_speech=True, pitch=pitch)
     if intensity_db.size == 0:
