@@ -79,7 +79,7 @@ def fractal_detailing_recursive(F, A, BW, duration, sample_rate, level, scale, n
 
     return detailed_signal
 
-def fractal_detailing3(base_signal, A, F, BW, duration, sample_rate, level, noise_factor=0.001):
+def fractal_detailing(base_signal, A, F, BW, duration, sample_rate, level, noise_factor=0.001):
     """
     Рекурсивная функция для создания фрактальной детализации сигнала.
     На каждом уровне сигнал делится на части, каждая из которых детализируется.
