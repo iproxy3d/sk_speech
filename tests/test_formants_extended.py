@@ -208,7 +208,7 @@ def test_formant_energy_variants_with_controlled_filters(monkeypatch):
         lambda **kwargs: np.array([[4.0, 9.0]]),
     )
     energy_by_time = sk_formants.calculate_formant_energy_arr(signal, 16_000, 1, analysis)
-    assert energy_by_time == pytest.approx([(400.0, 0.0), (1800.0, 0.032)])
+    np.testing.assert_allclose(energy_by_time, [(400.0, 0.0), (1800.0, 0.032)])
     assert sk_formants.calculate_formant_energy3(signal, 16_000, 1, analysis) == pytest.approx(1100.0)
     assert sk_formants.calculate_formant_energy_arr(signal, 16_000, 2, analysis) == []
     assert sk_formants.calculate_formant_energy3(signal, 16_000, 2, analysis) == 0

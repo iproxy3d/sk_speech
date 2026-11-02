@@ -1631,10 +1631,10 @@ def update_vowels(total_param, param):
             total_param["energy"][vowel_type][f_name] += param["energy"][f_name][index]
             total_param["freq"][vowel_type][f_name] += param["freq"][f_name][index]
 
-            for index_t, (count, vowel_type_t) in enumerate(total_param["vowel_boundaries"]):
-                if vowel_type_t == vowel_type:
-                    total_param["vowel_boundaries"][index_t] = (count+1, vowel_type)
-                    break
+        for index_t, (count, vowel_type_t) in enumerate(total_param["vowel_boundaries"]):
+            if vowel_type_t == vowel_type:
+                total_param["vowel_boundaries"][index_t] = (count+1, vowel_type)
+                break
 
 
 def average_params(params):
@@ -2156,6 +2156,7 @@ def generate_signal(frequencies, bandwidths, intensities, times, delta_time, ene
     #     audio_signal /= np.max(np.abs(audio_signal))
 
     return audio_signal
+
 
 def mix_audio_signals(audio_signals):
     """
