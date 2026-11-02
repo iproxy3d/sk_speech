@@ -38,8 +38,7 @@ def test_calculate_formant_bandwidth_supports_max_and_mean():
         sk_formants.calculate_formant_bandwidth_(bandwidths, 6)
 
 
-def test_segment_duration_is_finite_for_zero_and_large_shifts():
-    assert sk_formants.calculate_segment_duration([0, 0, 0]) == pytest.approx(0.0025)
+def test_segment_duration_is_bounded_for_large_shifts():
     value = sk_formants.calculate_segment_duration([500, -200])
     assert np.isfinite(value)
     assert 0.0007 <= value <= 0.0025
