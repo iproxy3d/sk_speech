@@ -6,13 +6,62 @@
 инфографике иллюстративны; точные результаты определяются входной записью и
 параметрами анализа.*
 
-## Установка
+## Требования
+
+- Python 3.10 или новее;
+- поддерживаются Windows и Linux;
+- для анализа достаточно WAV-файла и базовой установки пакета.
+
+## Установка из PyPI
+
+Рекомендуется использовать отдельное виртуальное окружение.
 
 ```bash
-python -m pip install "git+https://github.com/iproxy3d/sk_speech.git"
+python -m venv .venv
 ```
 
-Для запуска примеров и тестов:
+Активируйте его:
+
+```powershell
+# Windows PowerShell
+.\.venv\Scripts\Activate.ps1
+```
+
+```bash
+# Linux/macOS
+source .venv/bin/activate
+```
+
+Установите опубликованный пакет:
+
+```bash
+python -m pip install --upgrade pip
+python -m pip install sk-speech
+```
+
+Имя дистрибутива в PyPI содержит дефис — `sk-speech`, а имя импорта в
+Python содержит подчёркивание — `sk_speech`.
+
+Проверьте установку:
+
+```bash
+python -c "import sk_speech; print(sk_speech.__version__)"
+```
+
+Для дополнительных сценариев доступны extras:
+
+```bash
+# Зависимости расширенных примеров
+python -m pip install "sk-speech[examples]"
+
+# Нейросетевая оценка F0 методом PENN
+python -m pip install "sk-speech[penn]"
+
+# Сдвиг высоты тона через pyrubberband
+python -m pip install "sk-speech[rubberband]"
+```
+
+Для изменения исходного кода, запуска тестов и примеров из репозитория:
 
 ```bash
 git clone https://github.com/iproxy3d/sk_speech.git
@@ -35,7 +84,7 @@ print(sr)
 
 `sr=None` сохраняет исходную частоту дискретизации. Это важно для частотных расчётов.
 
-## Первый анализ
+## Первый анализ: F0 и интенсивность
 
 ```python
 from sk_speech import PitchConfig, PitchExtractor

@@ -1,8 +1,17 @@
 # Примеры
 
-Установите пакет в editable-режиме:
+Для использования функций пакета в собственном коде установите опубликованный
+выпуск с зависимостями для расширенных примеров:
 
 ```bash
+python -m pip install "sk-speech[examples]"
+```
+
+Сами сценарии хранятся в репозитории. Чтобы запускать и изменять их локально:
+
+```bash
+git clone https://github.com/iproxy3d/sk_speech.git
+cd sk_speech
 python -m pip install -e ".[examples]"
 ```
 

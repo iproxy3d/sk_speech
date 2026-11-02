@@ -3,6 +3,30 @@
 Документация разделена на практические руководства и справочник API. Если вы
 ещё не работали с пакетом, начните с первого руководства.
 
+## Быстрый старт
+
+Установите опубликованный пакет из PyPI:
+
+```bash
+python -m pip install sk-speech
+```
+
+Получите временные ряды F0, интенсивности и озвученности:
+
+```python
+from sk_speech import PitchExtractor
+
+track = PitchExtractor().from_file("speech.wav")
+track.to_csv("pitch_features.csv")
+
+print(track.f0_hz)
+print(track.intensity_db)
+```
+
+Для Python используется имя импорта `sk_speech`, хотя имя дистрибутива в
+PyPI — `sk-speech`. Полная последовательность действий приведена в
+руководстве [«С чего начать»](getting-started.md).
+
 ## Практические руководства
 
 - [С чего начать](getting-started.md) — установка, загрузка записи, первый анализ и сохранение результата;
