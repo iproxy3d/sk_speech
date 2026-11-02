@@ -338,7 +338,7 @@ def test_change_speech_volume_runs_full_processing_pipeline(monkeypatch):
     )
     monkeypatch.setattr(
         sk_volume.fmt,
-        "change_formant_energy4",
+        "change_formant_energy3",
         lambda y, sr, factors: calls.append("formant_energy") or np.asarray(y),
     )
     monkeypatch.setattr(

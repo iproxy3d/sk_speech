@@ -416,7 +416,7 @@ def change_speech_volume(y, sr, volume, is_noise = False, is_shift = False):
     # y = fmt.boost_formants_peak(y, sr, boost_dB, max_amplitude_dB)
     # y = fmt.change_formant_energy2(y, sr, formant_energy_factors)
     # formant_energy_factors = [2, 3, 2, 1.5, 1.2]
-    y = fmt.change_formant_energy4(y, sr, formant_energy_factors)
+    y = fmt.change_formant_energy3(y, sr, formant_energy_factors)
 
     # formant_energy_vowel = {
     #     'a': [2, 3, 2, 1.5],
