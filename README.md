@@ -6,8 +6,10 @@ Praat/Parselmouth, Librosa и SciPy с собственными алгоритм
 формант F1–F5, интенсивности, гласных, шума, просодии и физиологических
 параметров голосообразования.
 
-[![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
+[![PyPI](https://img.shields.io/pypi/v/sk-speech.svg)](https://pypi.org/project/sk-speech/)
+[![Python](https://img.shields.io/pypi/pyversions/sk-speech.svg)](https://pypi.org/project/sk-speech/)
 [![Tests](https://github.com/iproxy3d/sk_speech/actions/workflows/tests.yml/badge.svg)](https://github.com/iproxy3d/sk_speech/actions/workflows/tests.yml)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE)
 
 ![Обзор возможностей sk_speech](https://raw.githubusercontent.com/iproxy3d/sk_speech/main/images/sk_speech_%20%D0%93%D0%BE%D0%BB%D0%BE%D1%81%2C%20%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B7%D0%B2%D1%83%D0%BA%D0%B8%20%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D1%8B.png)
 
@@ -18,6 +20,46 @@ Praat/Parselmouth, Librosa и SciPy с собственными алгоритм
 преобразования речи: от получения
 покадровых акустических рядов до комплексного профиля говорящего, анализа
 гласных, синтеза сигналов и моделирования голосового тракта.
+
+## Установка и первый результат
+
+Требуется Python 3.10 или новее. Рекомендуется устанавливать пакет в отдельное
+виртуальное окружение:
+
+```bash
+python -m venv .venv
+# Windows PowerShell: .\.venv\Scripts\Activate.ps1
+# Linux/macOS: source .venv/bin/activate
+python -m pip install --upgrade pip
+python -m pip install sk-speech
+```
+
+Проверка установки:
+
+```bash
+python -c "import sk_speech; print(sk_speech.__version__)"
+```
+
+Минимальный пример извлекает синхронизированные временные ряды основного тона
+F0, интенсивности и признака озвученности:
+
+```python
+from sk_speech import PitchExtractor
+
+track = PitchExtractor().from_file("speech.wav")
+
+print(track.time_s)
+print(track.f0_hz)
+print(track.intensity_db)
+print(track.voiced)
+
+track.to_csv("pitch_features.csv")
+```
+
+Подробный маршрут от установки до первого анализа приведён в руководстве
+[«С чего начать»](docs/getting-started.md). Для выбора конкретной задачи
+используйте [навигацию по документации](docs/README.md) и
+[каталог примеров](examples/README.md).
 
 ## Области применения
 
@@ -90,21 +132,21 @@ Praat/Parselmouth, Librosa и SciPy с собственными алгоритм
 - границы гласных и сравнение сигналов до и после преобразования;
 - обработка каталогов WAV-файлов и подготовка сериализуемых профилей.
 
-## Установка
+## Варианты установки
 
-Из PyPI:
+Обычная установка стабильного выпуска выполняется из PyPI:
 
 ```bash
 python -m pip install sk-speech
 ```
 
-Актуальная версия ветки `main` из GitHub:
+Версия ветки `main` может содержать ещё не опубликованные изменения:
 
 ```bash
 python -m pip install "git+https://github.com/iproxy3d/sk_speech.git"
 ```
 
-Для разработки и запуска примеров:
+Для разработки пакета и запуска всех примеров:
 
 ```bash
 git clone https://github.com/iproxy3d/sk_speech.git
