@@ -9,7 +9,7 @@ Praat/Parselmouth, Librosa и SciPy с собственными алгоритм
 [![Python](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![Tests](https://github.com/iproxy3d/sk_speech/actions/workflows/tests.yml/badge.svg)](https://github.com/iproxy3d/sk_speech/actions/workflows/tests.yml)
 
-![Обзор возможностей sk_speech](<images/sk_speech_ Голос, эмоции и звуки природы.png>)
+![Обзор возможностей sk_speech](https://raw.githubusercontent.com/iproxy3d/sk_speech/main/images/sk_speech_%20%D0%93%D0%BE%D0%BB%D0%BE%D1%81%2C%20%D1%8D%D0%BC%D0%BE%D1%86%D0%B8%D0%B8%20%D0%B8%20%D0%B7%D0%B2%D1%83%D0%BA%D0%B8%20%D0%BF%D1%80%D0%B8%D1%80%D0%BE%D0%B4%D1%8B.png)
 
 *Обзор направлений пакета: анализ и преобразование речи, исследование
 акустической динамики и экспериментальные модели голосообразования.*
@@ -92,7 +92,13 @@ Praat/Parselmouth, Librosa и SciPy с собственными алгоритм
 
 ## Установка
 
-Из GitHub:
+Из PyPI:
+
+```bash
+python -m pip install sk-speech
+```
+
+Актуальная версия ветки `main` из GitHub:
 
 ```bash
 python -m pip install "git+https://github.com/iproxy3d/sk_speech.git"
@@ -301,3 +307,7 @@ python -m pytest
 ```
 
 GitHub Actions запускает тесты на Python 3.10, 3.11 и 3.12.
+
+## Лицензия
+
+Пакет распространяется на условиях [лицензии MIT](LICENSE).
