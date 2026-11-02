@@ -17,7 +17,9 @@ def compute_spectral_flatness(y, frame_length=2048, hop_length=512):
 
 # Вычисляет спектральную плотность мощности (PSD) аудиосигнала.
 def compute_power_spectral_density(y, sr, n_fft=2048, hop_length=512):
-    y = y / np.max(np.abs(y))  # Нормализация аудиосигнала
+    peak = np.max(np.abs(y))
+    if peak > 0:
+        y = y / peak  # Нормализация аудиосигнала без деления тишины на ноль
     stft = librosa.stft(y, n_fft=n_fft, hop_length=hop_length)
     psd = np.mean(np.abs(stft)**2 / n_fft, axis=1)  # Среднее значение PSD по временным кадрам
     freqs = librosa.fft_frequencies(sr=sr, n_fft=n_fft)

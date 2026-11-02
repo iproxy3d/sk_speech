@@ -24,7 +24,13 @@ jobs:
       - name: Compile sources
         run: python -m compileall -q src examples tests
       - name: Run tests
-        run: python -m pytest
+        run: python -m pytest --cov=sk_speech --cov-report=term-missing --cov-report=xml
+      - name: Upload coverage report
+        if: matrix.python-version == '3.12'
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-python-3.12
+          path: coverage.xml
 
   package:
     runs-on: ubuntu-latest

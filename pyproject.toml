@@ -50,8 +50,8 @@ examples = [
 ]
 penn = ["penn>=1.0.0"]
 rubberband = ["pyrubberband>=0.4.0"]
-test = ["pytest>=7.4"]
-dev = ["build>=1.2", "pytest>=7.4", "twine>=5.0"]
+test = ["pytest>=7.4", "pytest-cov>=5.0"]
+dev = ["build>=1.2", "pytest>=7.4", "pytest-cov>=5.0", "twine>=5.0"]
 
 [project.urls]
 Homepage = "https://github.com/iproxy3d/sk_speech"
@@ -71,4 +71,12 @@ sk_speech = ["py.typed", "data/**/*.json", "data/**/*.wav"]
 [tool.pytest.ini_options]
 testpaths = ["tests"]
 addopts = "-q"
+
+[tool.coverage.run]
+branch = true
+source = ["sk_speech"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
 
