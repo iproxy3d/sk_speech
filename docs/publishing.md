@@ -40,7 +40,8 @@ python -c "import sk_speech; print(sk_speech.__version__)"
 
 ## Выпуск версии
 
-1. Обновите `version` в `pyproject.toml`.
+1. Обновите `version` в `pyproject.toml` и `__version__` в
+   `src/sk_speech/__init__.py`, сохранив одинаковое значение.
 2. Убедитесь, что workflow `tests` завершился успешно для ветки `main`.
 3. Создайте тег вида `v0.1.0` и GitHub Release для этого тега.
 4. Публикационный workflow соберёт wheel и sdist, проверит их и передаст в PyPI.
