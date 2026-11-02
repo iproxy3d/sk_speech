@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=69", "wheel"]
+requires = ["setuptools>=77.0.3", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,6 +7,8 @@ name = "sk-speech"
 version = "0.1.0"
 description = "Research toolkit for speech analysis, transformation, synthesis, filtering and voice modeling"
 readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
 authors = [{name = "iproxy3d"}]
 keywords = [
@@ -21,7 +23,9 @@ classifiers = [
   "Programming Language :: Python :: 3.10",
   "Programming Language :: Python :: 3.11",
   "Programming Language :: Python :: 3.12",
+  "Typing :: Typed",
   "Topic :: Multimedia :: Sound/Audio :: Analysis",
+  "Topic :: Multimedia :: Sound/Audio :: Speech",
   "Topic :: Scientific/Engineering :: Artificial Intelligence",
 ]
 dependencies = [
@@ -45,11 +49,11 @@ examples = [
   "sounddevice>=0.4.6",
 ]
 test = ["pytest>=7.4"]
-dev = ["build>=1.0", "pytest>=7.4"]
+dev = ["build>=1.2", "pytest>=7.4", "twine>=5.0"]
 
 [project.urls]
 Homepage = "https://github.com/iproxy3d/sk_speech"
-Documentation = "https://github.com/iproxy3d/sk_speech/blob/main/docs/API.md"
+Documentation = "https://github.com/iproxy3d/sk_speech/blob/main/docs/README.md"
 Issues = "https://github.com/iproxy3d/sk_speech/issues"
 Source = "https://github.com/iproxy3d/sk_speech"
 
