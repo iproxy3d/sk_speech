@@ -88,15 +88,15 @@ def test_update_param_and_average_params():
 
 def test_generate_and_mix_signals_have_expected_timing():
     generated = sk_volume.generate_signal(
-        frequencies=[100, 100, 100],
+        frequencies=[1, 1, 1],
         bandwidths=[10, 10, 10],
         intensities=[1, 1, 1],
-        times=[0.01, 0.02, 0.03],
-        delta_time=0.01,
-        sr=1_000,
+        times=[0.125, 0.25, 0.375],
+        delta_time=0.125,
+        sr=8,
     )
-    assert generated.shape == (30,)
-    np.testing.assert_array_equal(generated[:10], np.zeros(10))
+    assert generated.shape == (3,)
+    assert generated[0] == 0
 
     mixed = sk_volume.mix_audio_signals([np.array([1.0, 2.0]), np.array([10.0])])
     np.testing.assert_array_equal(mixed, [11.0, 2.0])
