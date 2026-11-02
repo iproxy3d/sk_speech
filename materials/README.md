@@ -74,12 +74,12 @@
 
 Сравнение:
 
-- [▶ Исходная речь](vowels/original_speech.mp4);
-- [▶ Ускоренная речь](vowels/fast_speech.mp4);
-- [▶ Замедленная речь](vowels/slow_speech.mp4);
-- [▶ Растяжение слова «молоко»](vowels/slow_молоко.mp4);
-- [▶ Растяжение слова «слон»](vowels/slow_слон.mp4);
-- [▶ Эксперимент с протяжённым звучанием и вибрато](vowels/vocal_speech.mp4).
+- [▶ Исходная речь](https://github.com/user-attachments/assets/64b6a1a8-1c95-4881-94b7-e984bc02d0fd);
+- [▶ Ускоренная речь](https://github.com/user-attachments/assets/240473de-ef26-4239-b61e-930c30f2bcfe);
+- [▶ Замедленная речь](https://github.com/user-attachments/assets/f08d59b0-7ecf-46a5-83db-cadccce05815);
+- [▶ Растяжение слова «молоко»](https://github.com/user-attachments/assets/2bcfc0ce-38f3-4cd0-8f6a-df4e3ea8b733);
+- [▶ Растяжение слова «слон»](https://github.com/user-attachments/assets/a22f2d0c-c827-44ed-8ab9-3f4d1bd8b17c);
+- [▶ Эксперимент с протяжённым звучанием и вибрато](https://github.com/user-attachments/assets/e5ea89cd-9051-4959-b12a-85d300291312).
 
 Последнее видео является ранним исследовательским прототипом. Оно показывает
 возможность комбинировать растяжение устойчивых участков с модуляцией F0, но
