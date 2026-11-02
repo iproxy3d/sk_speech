@@ -33,7 +33,7 @@ def plot_pitch_trajectory(time, pitch_trajectory):
 
 def plot_trajectory_formants_and_pitch(y, sr, window_size=1024):
     # Получение траектории тона
-    pitch_trajectory, time = pt.extract_f0_voiced(y, sr)
+    pitch_trajectory, time, _, _, _, _, _ = pt.extract_f0_voiced(y, sr)
 
     # Инициализация графика
     plt.figure(figsize=(14, 8))

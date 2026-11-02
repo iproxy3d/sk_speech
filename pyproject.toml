@@ -48,6 +48,8 @@ examples = [
   "pyworld>=0.3.4",
   "sounddevice>=0.4.6",
 ]
+penn = ["penn>=1.0.0"]
+rubberband = ["pyrubberband>=0.4.0"]
 test = ["pytest>=7.4"]
 dev = ["build>=1.2", "pytest>=7.4", "twine>=5.0"]
 

@@ -158,17 +158,21 @@ calculate_pitch_frequency(y)
 #### `extract_f0_penn`
 
 ```python
-extract_f0_penn(y, sr)
+extract_f0_penn(y, sr, gpu=None, batch_size=2048)
 ```
 
-Оценивает F0 алгоритмом `librosa.pyin` и возвращает частоты, признак озвученности и вероятность озвученности.
+Оценивает F0 нейросетевой моделью PENN/FCNF0++. Зависимость загружается
+только при вызове функции и устанавливается отдельно командой
+`python -m pip install "sk-speech[penn]"`.
 
 **Параметры:**
 
 - `y` — одномерный аудиосигнал `numpy.ndarray`.
 - `sr` — частота дискретизации, Гц.
+- `gpu` — индекс GPU для PENN; `None` выполняет расчёт на CPU.
+- `batch_size` — количество кадров в одном пакете PENN.
 
-**Возвращает:** результат выражения `pitch`.
+**Возвращает:** `torch.Tensor` — покадровые оценки F0, возвращённые PENN.
 
 #### `remove_short_sequences`
 
@@ -700,16 +704,20 @@ change_pitch_pydub(y, sr, pitch_shift_semitones)
 #### `change_pitch_rubberband`
 
 ```python
-change_pitch_rubberband(y, sr, pitch_shift_hz)
+change_pitch_rubberband(y, sr, pitch_shift_semitones)
 ```
 
-Сдвигает F0 функцией библиотеки Rubber Band и возвращает преобразованный массив.
+Сдвигает F0 на заданное число полутонов через `pyrubberband`. Расширение
+устанавливается командой `python -m pip install "sk-speech[rubberband]"`.
+Кроме Python-пакета в системе должна быть установлена консольная программа
+Rubber Band и доступна через `PATH`.
 
 **Параметры:**
 
 - `y` — одномерный аудиосигнал `numpy.ndarray`.
 - `sr` — частота дискретизации, Гц.
-- `pitch_shift_hz` — данные или параметры основного тона F0.
+- `pitch_shift_semitones` — величина сдвига F0 в полутонах; положительное
+  значение повышает тон, отрицательное понижает.
 
 **Возвращает:** `numpy.ndarray` — новый аудиосигнал после описанного преобразования.
 

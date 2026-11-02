@@ -1,4 +1,5 @@
 import numpy as np
+from importlib import import_module
 import librosa
 from scipy.fft import fft, fftfreq
 from scipy.signal import medfilt
@@ -12,11 +13,21 @@ from sklearn.cluster import KMeans
 import parselmouth as pm
 from parselmouth.praat import call
 from pydub import AudioSegment
-# import rubberband as rb
 import soundfile as sf
-# import penn
 from . import sk_filters as fl
 from . import sk_noise as ns
+
+
+def _load_optional_dependency(module_name, extra_name):
+    """Load an optional backend and explain how to install it when absent."""
+    try:
+        return import_module(module_name)
+    except ImportError as exc:
+        raise ImportError(
+            f"Для этой функции требуется необязательное расширение "
+            f"sk-speech[{extra_name}]. Установите его командой "
+            f"pip install 'sk-speech[{extra_name}]'."
+        ) from exc
 
 
 def get_pitch_with_retries(sound, time_step=0.01, pitch_from=75, pitch_to=500):
@@ -198,20 +209,23 @@ def calculate_pitch_frequency(y):
     return avg_pitch_frequency
 
 
-def extract_f0_penn(y, sr):
+def extract_f0_penn(y, sr, gpu=None, batch_size=2048):
+    """Estimate F0 with the optional PENN neural pitch estimator."""
+    penn = _load_optional_dependency("penn", "penn")
+    torch = _load_optional_dependency("torch", "penn")
+
+    audio = torch.as_tensor(y, dtype=torch.float32)
+    if audio.ndim == 1:
+        audio = audio.unsqueeze(0)
+    elif audio.ndim != 2:
+        raise ValueError("PENN ожидает одномерный сигнал или двумерный пакет сигналов.")
+
     # Here we'll use a 10 millisecond hopsize
     hopsize = .01
 
     # Provide a sensible frequency range given your domain and model
     fmin = 30.
     fmax = 1000.
-
-    # Choose a gpu index to use for inference. Set to None to use cpu.
-    gpu = 0
-
-    # If you are using a gpu, pick a batch size that doesn't cause memory errors
-    # on your gpu
-    batch_size = 2048
 
     # Select a checkpoint to use for inference. Selecting None will
     # download and use FCNF0++ pretrained on MDB-stem-synth and PTDB
@@ -225,7 +239,7 @@ def extract_f0_penn(y, sr):
 
     # Infer pitch and periodicity
     pitch, periodicity = penn.from_audio(
-        y,
+        audio,
         sr,
         hopsize=hopsize,
         fmin=fmin,
@@ -252,7 +266,7 @@ def remove_short_sequences(f0, min_length=15):
 
     for value in f0:
         if not np.isnan(value) and value > 0 and (
-                np.isnan(old_value) or (old_value > 0 and abs(old_value - value < 50))):
+                np.isnan(old_value) or (old_value > 0 and abs(old_value - value) < 50)):
         # if not np.isnan(value) and value > 0:
             current_sequence.append(value)
             old_value = value
@@ -633,7 +647,7 @@ def calculate_pitch_intensity2(y, sr, f0_min=80, f0_max=300, frame_length=2048, 
 def calculate_pitch_intensity_avg(y, sr, pitch=None):
     # Рассчитываем интенсивность с учетом озвученных фрагментов
     intensity_db = calculate_pitch_intensity(y, sr, only_speech=True, pitch=pitch)
-    if intensity_db.size == 0:
+    if intensity_db is None or np.size(intensity_db) == 0:
         return False
 
     avg_pitch_intensity = np.mean(intensity_db) if len(intensity_db) > 0 else 0
@@ -1212,9 +1226,15 @@ def change_pitch_pydub(y, sr, pitch_shift_semitones):
     # Возвращение измененного массива y_shifted и частоты дискретизации sr
     return y_shifted, sr
 
-def change_pitch_rubberband(y, sr, pitch_shift_hz):
-    # Применение изменения pitch с помощью RubberBand
-    y_shifted = rb.pitch_shift(y, sr, pitch_shift_hz)
+def change_pitch_rubberband(y, sr, pitch_shift_semitones):
+    """Shift pitch through the optional pyrubberband backend.
+
+    ``pitch_shift_semitones`` is measured in semitones, as required by
+    :func:`pyrubberband.pitch_shift`. The external Rubber Band command-line
+    utility must also be installed and available in ``PATH``.
+    """
+    rb = _load_optional_dependency("pyrubberband", "rubberband")
+    y_shifted = rb.pitch_shift(y, sr, pitch_shift_semitones)
 
     return y_shifted
 

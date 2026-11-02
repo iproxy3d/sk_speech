@@ -21,7 +21,7 @@ def normalize_audio(y):
     try:
        y = librosa.util.normalize(y)
        return y
-    except:
+    except Exception:
        return y
 
 def apply_high_pass_filter(y, sr, cutoff=100):

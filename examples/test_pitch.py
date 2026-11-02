@@ -70,7 +70,7 @@ print(f"Slope: {slope}, Variance: {variance}, Trend: {trend}")
 # print(f"Новый основной тон (F0): {new_f0:.2f} Hz")
 #
 # # output_file = 'out_pitch_change_rubberband.wav'
-# # y_shifted = pt.change_pitch_rubberband(y, sr, pitch_shift_hz)
+# # y_shifted = pt.change_pitch_rubberband(y, sr, pitch_shift_semitones)
 # # sf.write(output_file, y_shifted, sr)
 # # new_f0 = pt.extract_f0(y_shifted, sr)
 # # print(f"Новый основной тон (F0): {new_f0:.2f} Hz")

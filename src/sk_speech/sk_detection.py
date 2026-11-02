@@ -250,7 +250,7 @@ def analyze_speech(y, sr, clarity_formants=[1, 2, 3, 4, 5], silence_threshold_db
                 bw = formant.get_bandwidth_at_time(i, t)
                 if bw > 0:
                     bandwidths.append(bw)
-            except:
+            except Exception:
                 continue
         if bandwidths:
             clarity_scores.append(np.nanmean(bandwidths))
@@ -286,7 +286,7 @@ def formant_clarity(y, sr):
                 bw = formant.get_bandwidth_at_time(i, t)
                 if bw > 0:
                     bandwidths.append(bw)
-            except:
+            except Exception:
                 continue
         if bandwidths:
             clarity_scores.append(np.nanmean(bandwidths))

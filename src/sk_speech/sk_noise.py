@@ -204,7 +204,7 @@ def noise_reduction_spectral_subtraction_fast(y, sr, noise_profile_sec=0.5, num_
     # Compute STFT of the input signal
     try:
         stft = librosa.stft(y)
-    except:
+    except Exception:
         return None
     magnitude, phase = librosa.magphase(stft)
 

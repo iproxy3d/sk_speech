@@ -1267,11 +1267,11 @@ def detect_vowel_boundaries_gradient(input_audio_file):
         # y = vm.trim_silence(y, sr)
         y, sr = pt.flatten_pitch(y, sr)
         if y is None:
-            return None, None, None, None
+            return None, None, None, None, None, None
 
         f_pitch, t_pitch, intensity_values, intensity_times, _, _, _ = pt.extract_f0_voiced(y, sr, speech=True, time_step=0.001)
         if f_pitch is None:
-            return False
+            return None, None, None, None, None, None
 
         f_pitch = np.array(f_pitch)
         t_pitch = np.array(t_pitch)
@@ -1279,16 +1279,16 @@ def detect_vowel_boundaries_gradient(input_audio_file):
         f, t, bandwidths, _ = fmt.formant_frequencies(y, sr, speech=False, time_step=0.001)
         try:
             if f is None:
-                return None, None, None, None
+                return None, None, None, None, None, None
             freq1 = np.array(f[0])
             freq2 = np.array(f[1])
             if bandwidths is None:
-                return None, None, None, None
+                return None, None, None, None, None, None
             bandwidth1 = np.array(bandwidths[0])
             bandwidth2 = np.array(bandwidths[1])
             times = np.array(t)
         except ValueError:
-            return False
+            return None, None, None, None, None, None
 
         mask = freq1 > 0
         freq1 = freq1[mask]
@@ -1696,6 +1696,8 @@ def detect_vowel_boundaries_gradient(input_audio_file):
     # window_size = 10  # 20 мс мин для тона
     window_size = 5  # 20 мс мин для тона
     freq1, bw1, times1, freq2, bw2, times2 = extract_speech(input_audio_file)
+    if any(value is None for value in (freq1, bw1, times1, freq2, bw2, times2)):
+        return []
 
     converted_file_freqs = []
     converted_file_bw = []

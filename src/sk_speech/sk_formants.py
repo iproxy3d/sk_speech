@@ -1570,6 +1570,14 @@ def boost_formants_filter(y, sr, boost_dB, max_amplitude_dB):
         boost_factor = boost_factors[formant_index-1]
         bandwidth = calculate_formant_bandwidth(y, sr, formant_index) / 2
         if formant > 0 and formant + bandwidth < sr / 2:
+            b, a = scipy.signal.butter(
+                2,
+                [max(formant - bandwidth, 1), min(formant + bandwidth, sr / 2 - 1)],
+                btype='band',
+                fs=sr,
+            )
+            filtered_signal = scipy.signal.lfilter(b, a, y)
+
             # Убираем старый сигнал форманты
             y_boosted -= filtered_signal
 

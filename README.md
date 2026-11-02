@@ -112,6 +112,21 @@ cd sk_speech
 python -m pip install -e ".[dev,examples]"
 ```
 
+Необязательные расширения устанавливаются только для использующих их задач:
+
+```bash
+# Нейросетевая оценка F0 методом PENN
+python -m pip install "sk-speech[penn]"
+
+# Сдвиг высоты тона через pyrubberband
+python -m pip install "sk-speech[rubberband]"
+```
+
+Расширение `rubberband` дополнительно требует системную консольную программу
+Rubber Band в `PATH`. Обычная установка `sk-speech` не загружает PENN, PyTorch
+или `pyrubberband`, поэтому эти зависимости не влияют на базовую установку под
+Windows и Linux.
+
 Для чтения и записи форматов, которые `soundfile` не поддерживает напрямую,
 `pydub` может дополнительно потребовать установленный `ffmpeg`. Интерактивные
 примеры требуют аудиоустройства и оконной среды.
