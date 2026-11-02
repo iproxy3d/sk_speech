@@ -257,3 +257,112 @@ def test_pattern_simplification_classification_and_dynamics():
     assert segments == [(0, 0.05), (0.05, 0.1)]
     assert dynamics[0][0] == pytest.approx((0.0, 100.0))
     assert dynamics[0][1] == pytest.approx((200.0, 200.0))
+
+
+def test_time_segment_pattern_analyzers_return_aligned_results():
+    frequencies = [
+        [500.0, 510.0, 520.0, 510.0],
+        [1_500.0, 1_510.0, 1_520.0, 1_510.0],
+        [2_500.0, 2_510.0, 2_520.0, 2_510.0],
+    ]
+    bandwidths = [
+        [100.0, 101.0, 102.0, 101.0],
+        [120.0, 121.0, 122.0, 121.0],
+        [140.0, 141.0, 142.0, 141.0],
+    ]
+    ranges = {1: (200, 800), 2: (1_000, 2_000), 3: (2_000, 3_000)}
+
+    patterns2, distances2 = sk_formants.analyze_formant_patterns2(
+        frequencies,
+        bandwidths,
+        ranges,
+        num_segments=2,
+        eps_freq=2,
+        eps_width=0.5,
+        dist=1_000,
+        eps_dist=10,
+    )
+    assert len(patterns2) == 3
+    assert all(len(freq_pattern) == 2 for freq_pattern, _ in patterns2)
+    assert distances2 == [[0, 0], [0, 0]]
+
+    times = np.array([0.0, 0.25, 0.5, 0.75])
+    patterns3, segments3 = sk_formants.analyze_formant_patterns3(
+        frequencies,
+        bandwidths,
+        times,
+        ranges,
+        delta_time=0.5,
+        eps_freq=2,
+        eps_width=0.5,
+        dist=1_000,
+        eps_dist=10,
+    )
+    assert segments3 == [(0, 0.5), (0.5, 1.0)]
+    assert len(patterns3) == 3
+    assert patterns3[0][2] == [0, 0]
+    assert patterns3[2][2] == []
+
+    patterns4, segments4 = sk_formants.analyze_formant_patterns4(
+        frequencies, bandwidths, times, ranges, delta_time=0.5
+    )
+    assert segments4 == segments3
+    assert patterns4[0][0] == pytest.approx([10.0, -10.0])
+    assert patterns4[0][1] == pytest.approx([1.0, -1.0])
+    assert patterns4[0][2] == pytest.approx([1_000.0, 1_000.0])
+
+
+def test_formant_frequency_analysis_handles_voiced_unvoiced_and_short_audio(monkeypatch):
+    class FakeIntensity:
+        def get_value(self, time):
+            return 60.0 if time < 0.02 else 40.0
+
+    class FakeFormants:
+        def ts(self):
+            return [0.01, 0.02]
+
+        def get_value_at_time(self, index, time):
+            return index * 1_000.0 if index > 1 else 500.0
+
+        def get_bandwidth_at_time(self, index, time):
+            return index * 10.0
+
+    class FakeSound:
+        duration = 1.0
+
+        def __init__(self, *args, **kwargs):
+            pass
+
+        def get_total_duration(self):
+            return self.duration
+
+        def to_intensity(self):
+            return FakeIntensity()
+
+    monkeypatch.setattr(sk_formants.pm, "Sound", FakeSound)
+    monkeypatch.setattr(sk_formants, "get_formants_with_retries", lambda *args, **kwargs: FakeFormants())
+
+    frequencies, times, bandwidths, intensities = sk_formants.formant_frequencies(
+        np.ones(100), 16_000, speech=True
+    )
+    assert times == [0.01, 0.02]
+    assert frequencies[0][0] == 500.0
+    assert np.isnan(frequencies[0][1])
+    assert bandwidths[0][0] == 10.0
+    assert intensities[0] == 60.0
+    assert np.isnan(intensities[1])
+
+    FakeSound.duration = 0.01
+    short_frequencies, _, short_bandwidths, short_intensities = sk_formants.formant_frequencies(
+        np.ones(10), 16_000
+    )
+    assert short_frequencies[0] == [500.0, 500.0]
+    assert short_bandwidths[0] == [10.0, 10.0]
+    assert np.isnan(short_intensities).all()
+
+    FakeSound.duration = 1.0
+    expanded = sk_formants.formant_frequencies_expended(
+        np.ones(100), 16_000, speech=False, max_number_of_formants=3
+    )
+    assert len(expanded[0]) == 3
+    assert expanded[0][2] == [3_000.0, 3_000.0]

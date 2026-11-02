@@ -205,3 +205,48 @@ def test_shift_formants_vowels_loads_applies_and_writes(monkeypatch):
     assert written["path"] == "out.wav"
     assert written["sr"] == 16_000
     np.testing.assert_allclose(written["data"], signal * 2)
+
+
+@pytest.mark.parametrize(
+    "function_name,extra_kwargs",
+    [
+        ("stretch_vowels_preserve_pitch", {}),
+        ("stretch_vowels_preserve_pitch2", {}),
+        ("stretch_vowels_preserve_pitch3", {}),
+        ("stretch_vowels_preserve_pitch4", {"filter_size": 1}),
+        ("stretch_vowels_preserve_pitch5", {"cutoff_freq": 4.0}),
+    ],
+)
+def test_vowel_stretch_variants_preserve_non_vowel_regions(
+    monkeypatch, function_name, extra_kwargs
+):
+    signal = np.arange(20, dtype=float)
+
+    def fake_stretch(y, rate):
+        return np.repeat(y, round(1 / rate))
+
+    monkeypatch.setattr(sk_vowels.librosa.effects, "time_stretch", fake_stretch)
+    monkeypatch.setattr(sk_vowels, "butter_lowpass_filter", lambda data, **kwargs: np.asarray(data))
+
+    function = getattr(sk_vowels, function_name)
+    result = function(
+        signal,
+        10,
+        [(10, "a")],
+        delta_seconds=0.2,
+        speed_factor=2.0,
+        **extra_kwargs,
+    )
+
+    assert len(result) == 24
+    np.testing.assert_array_equal(result[:8], signal[:8])
+    np.testing.assert_array_equal(result[-8:], signal[-8:])
+
+
+def test_butter_lowpass_filter_delegates_to_scipy(monkeypatch):
+    monkeypatch.setattr(sk_vowels, "butter", lambda *args, **kwargs: ([1.0], [1.0]))
+    monkeypatch.setattr(sk_vowels, "lfilter", lambda b, a, data: np.asarray(data) * 2)
+    np.testing.assert_array_equal(
+        sk_vowels.butter_lowpass_filter(np.array([1.0, 2.0]), 100.0, 1_000),
+        [2.0, 4.0],
+    )

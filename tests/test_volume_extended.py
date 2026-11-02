@@ -315,3 +315,64 @@ def test_speech_vector_and_reconstruction_for_pitch_only():
     assert reconstructed["f0"]["freq"] == pytest.approx(110.0)
     assert reconstructed["volume"] == 0.5
     assert reconstructed["emotion"] == 0.5
+
+
+def test_change_speech_volume_runs_full_processing_pipeline(monkeypatch):
+    signal = np.array([0.1, -0.1])
+    calls = []
+
+    monkeypatch.setattr(
+        sk_volume.ns,
+        "noise_reduction_spectral_subtraction",
+        lambda y, sr, **kwargs: calls.append("noise") or np.asarray(y),
+    )
+    monkeypatch.setattr(
+        sk_volume.vw,
+        "detect_vowel_boundaries",
+        lambda *args, **kwargs: calls.append("detect") or [(1, "a")],
+    )
+    monkeypatch.setattr(
+        sk_volume.fmt,
+        "change_formant_bandwidth",
+        lambda y, sr, factors: calls.append("bandwidth") or np.asarray(y),
+    )
+    monkeypatch.setattr(
+        sk_volume.fmt,
+        "change_formant_energy4",
+        lambda y, sr, factors: calls.append("formant_energy") or np.asarray(y),
+    )
+    monkeypatch.setattr(
+        sk_volume.fmt,
+        "change_formants_shifts3",
+        lambda y, sr, shifts: (calls.append("formant_shift") or np.asarray(y), sr),
+    )
+    monkeypatch.setattr(
+        sk_volume.vw,
+        "energy_vowels",
+        lambda y, sr, boundaries, factors, duration: calls.append("vowel_energy") or np.asarray(y),
+    )
+    monkeypatch.setattr(
+        sk_volume.vw,
+        "apply_formant_shifts_vowels",
+        lambda y, sr, boundaries, shifts, duration: calls.append("vowel_shift") or np.asarray(y),
+    )
+    monkeypatch.setattr(
+        sk_volume.pt,
+        "change_pitch_energy",
+        lambda y, sr, factor: (calls.append("pitch_energy") or np.asarray(y), sr),
+    )
+
+    result = sk_volume.change_speech_volume(
+        signal, 16_000, volume=0.5, is_noise=True, is_shift=True
+    )
+    np.testing.assert_array_equal(result, signal)
+    assert calls == [
+        "noise",
+        "detect",
+        "bandwidth",
+        "formant_energy",
+        "formant_shift",
+        "vowel_energy",
+        "vowel_shift",
+        "pitch_energy",
+    ]
