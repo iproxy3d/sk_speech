@@ -1366,7 +1366,19 @@ def change_formants_shifts4(signal, sr, shift_factors, max_shift=500, formants=N
 
 
 def calculate_segment_duration(formant_shifts, base_duration=0.0025, S=350, beta=0.1):
+    formant_shifts = np.asarray(formant_shifts, dtype=float)
+    if formant_shifts.size == 0:
+        raise ValueError("formant_shifts must contain at least one value")
+    if not np.isfinite(formant_shifts).all():
+        raise ValueError("formant_shifts must contain only finite values")
+    if base_duration <= 0:
+        raise ValueError("base_duration must be positive")
+    if S <= 0:
+        raise ValueError("S must be positive")
+
     max_shift = np.max(np.abs(formant_shifts))
+    if max_shift == 0:
+        return float(np.clip(base_duration, 0.0007, 0.0025))
 
     if max_shift <= 350:
         # Линейная компонента для границ

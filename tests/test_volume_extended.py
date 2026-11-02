@@ -88,15 +88,54 @@ def test_update_param_and_average_params():
 
 def test_generate_and_mix_signals_have_expected_timing():
     generated = sk_volume.generate_signal(
-        frequencies=[1, 1, 1],
+        frequencies=[100, 100, 100],
         bandwidths=[10, 10, 10],
         intensities=[1, 1, 1],
-        times=[0.125, 0.25, 0.375],
-        delta_time=0.125,
-        sr=8,
+        times=[0.01, 0.02, 0.03],
+        delta_time=0.01,
+        sr=1_000,
     )
-    assert generated.shape == (3,)
-    assert generated[0] == 0
+    assert generated.shape == (30,)
+    np.testing.assert_array_equal(generated[:10], np.zeros(10))
 
     mixed = sk_volume.mix_audio_signals([np.array([1.0, 2.0]), np.array([10.0])])
     np.testing.assert_array_equal(mixed, [11.0, 2.0])
+
+
+def test_generate_signal_preserves_timeline_for_nan_and_gaps():
+    generated = sk_volume.generate_signal(
+        frequencies=[100, np.nan, 100],
+        bandwidths=None,
+        intensities=[1, 1, 1],
+        times=[0.0, 0.01, 0.03],
+        delta_time=0.01,
+        sr=1_000,
+    )
+
+    assert generated.shape == (30,)
+    np.testing.assert_array_equal(generated, np.zeros(30))
+
+    invalid_bandwidth = sk_volume.generate_signal(
+        frequencies=[100, 100],
+        bandwidths=[10, 0],
+        intensities=[1, 1],
+        times=[0.0, 0.01],
+        delta_time=0.01,
+        energy_correction=1,
+        sr=1_000,
+    )
+    np.testing.assert_array_equal(invalid_bandwidth, np.zeros(10))
+
+
+def test_generate_signal_validates_time_axis_and_component_lengths():
+    assert sk_volume.generate_signal([], None, [], [], 0.01, sr=1_000).size == 0
+
+    with pytest.raises(ValueError, match="non-decreasing"):
+        sk_volume.generate_signal([100, 100], None, [1, 1], [0.02, 0.01], 0.01, sr=1_000)
+    with pytest.raises(ValueError, match="non-negative"):
+        sk_volume.generate_signal([100], None, [1], [-0.01], 0.01, sr=1_000)
+    with pytest.raises(ValueError, match="cover every time point"):
+        sk_volume.generate_signal([100], None, [1], [0.0, 0.01], 0.01, sr=1_000)
+    with pytest.raises(ValueError, match="bandwidths"):
+        sk_volume.generate_signal([100, 100], None, [1, 1], [0.0, 0.01], 0.01,
+                                  energy_correction=1, sr=1_000)

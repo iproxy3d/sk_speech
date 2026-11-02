@@ -2091,48 +2091,71 @@ def generate_signal(frequencies, bandwidths, intensities, times, delta_time, ene
     Returns:
     - audio_signal: Сгенерированный аудиосигнал.
     """
-    audio_signal = []
+    times = np.asarray(times, dtype=float)
+    frequencies = np.asarray(frequencies, dtype=float)
+    intensities = np.asarray(intensities, dtype=float)
 
-    if times[0] > 0:
-        initial_silence_duration = times[0]
-        initial_silence = np.zeros(int(sr * initial_silence_duration))
-        audio_signal = np.concatenate((audio_signal, initial_silence))
+    if sr <= 0:
+        raise ValueError("sr must be positive")
+    if delta_time <= 0:
+        raise ValueError("delta_time must be positive")
+    if times.size == 0:
+        return np.array([], dtype=float)
+    if not np.isfinite(times).all() or times[0] < 0 or np.any(np.diff(times) < 0):
+        raise ValueError("times must contain finite non-negative values in non-decreasing order")
+    if len(frequencies) < len(times) or len(intensities) < len(times):
+        raise ValueError("frequencies and intensities must cover every time point")
+    if energy_correction != 0:
+        if bandwidths is None or len(bandwidths) < len(times):
+            raise ValueError("bandwidths must cover every time point when energy correction is used")
+        bandwidths = np.asarray(bandwidths, dtype=float)
+
+    audio_segments = []
+
+    initial_samples = max(0, round(times[0] * sr))
+    if initial_samples:
+        audio_segments.append(np.zeros(initial_samples))
 
     for i in range(1, len(times)):
         # Определяем параметры текущего сегмента
         freq = frequencies[i]
         intensity = intensities[i]
         duration = times[i] - times[i - 1]
+        start_sample = round(times[i - 1] * sr)
+        end_sample = round(times[i] * sr)
+        segment_samples = max(0, end_sample - start_sample)
+
+        if segment_samples == 0:
+            continue
 
         # Генерация сигнала для текущего сегмента
-        if abs(duration - delta_time) <= 0.001 and not np.isnan(freq):
+        if abs(duration - delta_time) <= 0.001 and np.isfinite(freq) and np.isfinite(intensity):
             # Расчёт энергии и амплитуды
             if energy_correction == 0:
                 amplitude = intensity * 0.5
             else:
                 bw = bandwidths[i]
+                if not np.isfinite(bw) or bw <= 0:
+                    audio_segments.append(np.zeros(segment_samples))
+                    continue
                 energy = intensity * energy_correction
                 amplitude = np.sqrt(energy / bw)  # Амплитуда для синусоиды
 
             # Если длительность в пределах delta_time, генерируем звуковой сигнал
-            t = np.linspace(0, duration, int(sr * duration), endpoint=False)
+            t = np.arange(segment_samples) / sr
             segment = amplitude * np.sin(2 * np.pi * freq * t)
-            audio_signal = np.concatenate((audio_signal, segment))
+            audio_segments.append(segment)
         else:
-            # Если длительность превышает delta_time, добавляем тишину
-            silence_duration = duration - delta_time
-            silence = np.zeros(int(silence_duration * sr))
-            audio_signal = np.concatenate((audio_signal, silence))
+            # Пропуск или разрыв сохраняет исходную временную шкалу сигнала.
+            audio_segments.append(np.zeros(segment_samples))
 
-    # Преобразуем итоговый сигнал в массив numpy
-    audio_signal = np.array(audio_signal)
+    audio_signal = np.concatenate(audio_segments) if audio_segments else np.array([], dtype=float)
 
     # # Нормализуем для сохранения в аудиофайл
     # if np.max(np.abs(audio_signal)) > 0:
     #     audio_signal /= np.max(np.abs(audio_signal))
 
     return audio_signal
-
 
 def mix_audio_signals(audio_signals):
     """

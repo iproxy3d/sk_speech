@@ -38,10 +38,19 @@ def test_calculate_formant_bandwidth_supports_max_and_mean():
         sk_formants.calculate_formant_bandwidth_(bandwidths, 6)
 
 
-def test_segment_duration_is_bounded_for_large_shifts():
+def test_segment_duration_handles_zero_and_bounds_large_shifts():
+    assert sk_formants.calculate_segment_duration([0, 0, 0]) == pytest.approx(0.0025)
+    assert sk_formants.calculate_segment_duration([0], base_duration=0.001) == pytest.approx(0.001)
+
     value = sk_formants.calculate_segment_duration([500, -200])
     assert np.isfinite(value)
     assert 0.0007 <= value <= 0.0025
+
+
+@pytest.mark.parametrize("shifts", [[], [np.nan], [np.inf]])
+def test_segment_duration_rejects_missing_or_non_finite_shifts(shifts):
+    with pytest.raises(ValueError, match="formant_shifts"):
+        sk_formants.calculate_segment_duration(shifts)
 
 
 def test_segment_smoothing_and_pattern_classification():
