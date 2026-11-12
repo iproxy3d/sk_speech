@@ -33,8 +33,9 @@ for filename in checksums:
     print(f"Verified: {dst}")
 PY
 git -C "$ROOT" add -- "materials/research_sources/raw"
-if ! git -C "$ROOT" diff --cached --quiet; then
-    git -C "$ROOT" commit -m "docs: import immutable research source originals"
+if ! git -C "$ROOT" diff --cached --quiet -- "materials/research_sources/raw"; then
+    # Commit only the imported originals; preserve unrelated staged changes.
+    git -C "$ROOT" commit --only -m "docs: import immutable research source originals" -- "materials/research_sources/raw"
     git -C "$ROOT" push
 else
     echo "All originals are already present; nothing to commit."
