@@ -5,7 +5,7 @@
   "integrity": "sha256 of supplied originals, not of snapshots",
   "originals_directory": "raw/",
   "snapshots_directory": "snapshots/",
-  "validation_status": "existing text snapshots stored; original DOCX files await import",
+  "validation_status": "all four originals present and verified against uploaded originals (Git blob SHA-1 and byte length)",
   "files": [
     {
       "name": "два типа речи.docx",
@@ -13,8 +13,10 @@
       "sha256": "ccac7e1fe6b1bfd55bab2277a6ce688ece57b16d81308fa3d896cea19d5233c0",
       "kind": "working-hypothesis",
       "snapshot": "snapshots/два типа речи.extracted.md",
-      "notes": "Рабочая концепция двух режимов речи, эмоциональной просодии, дыхания, ритма, темпа, ЧСС и ЧДД. 12 встроенных изображений; текстовый снимок их не содержит.",
-      "original_path": "raw/два типа речи.docx"
+      "notes": "18 страниц. Авторская рабочая концепция двух режимов речи: эмоциональность, дыхательные циклы, ЧСС/ЧДД, ритм, темп и интонация. Содержит иллюстрации; текстовая копия не заменяет DOCX.",
+      "original_path": "raw/два типа речи.docx",
+      "git_blob_sha1": "eaebc621f42ac7e7faa293fc4037593480d6342c",
+      "original_verified": true
     },
     {
       "name": "История - весь список ссылок и описаний.txt",
@@ -22,8 +24,10 @@
       "sha256": "0871e84b9c72f9148665756fe5298a6280d61a1d1d69911762bb332bedc16dba",
       "kind": "chronology-and-links",
       "snapshot": "snapshots/История - весь список ссылок и описаний.txt",
-      "notes": "Хронология заметок с датами, ссылок на публикации, цитат, гипотез и рассуждений. Текстовый снимок нормализован, не заменяет бинарно-точный оригинал.",
-      "original_path": "raw/История - весь список ссылок и описаний.txt"
+      "notes": "Датированная хронология исследовательских заметок, ссылок, цитат, наблюдений и гипотез о физиологии речи и обработке звука. Оригинал с BOM и CRLF восстановлен; текстовый снимок предназначен для поиска.",
+      "original_path": "raw/История - весь список ссылок и описаний.txt",
+      "git_blob_sha1": "d3129e41a027448a3d9a99a16619f5cc78fa1aa2",
+      "original_verified": true
     },
     {
       "name": "Форма1.docx",
@@ -31,8 +35,10 @@
       "sha256": "5f2efbce23c76cb4a2670586f6b6d51168e4fbab0eb0ef9d44c803da3af612aa",
       "kind": "author-hypotheses",
       "snapshot": null,
-      "notes": "38 страниц. Гипотезы о формировании языка, энергетике артикуляции и социальной передаче звуков; оригинал DOCX пока ожидает импорт.",
-      "original_path": "raw/Форма1.docx"
+      "notes": "38 страниц. Авторские гипотезы о возникновении речи и языка: артикуляционные энергозатраты, роль акустической среды, подражание, смешение групп и развитие обозначений. Требует дальнейшей научной проверки.",
+      "original_path": "raw/Форма1.docx",
+      "git_blob_sha1": "c9462e77b278039898659df1444a574bf8f154e4",
+      "original_verified": true
     },
     {
       "name": "Шестислойная модель.docx",
@@ -40,8 +46,11 @@
       "sha256": "dc53a11c90c1f6a2d7855c010f3a4f6126d39c5e75c5ccc733cb2a3430cf23fb",
       "kind": "author-research-model",
       "snapshot": null,
-      "notes": "48 страниц, «Неокортекс и нейронные сети», редакция 3 (08.05.2025), схемы и изображения. Оригинал DOCX пока ожидает импорт.",
-      "original_path": "raw/Шестислойная модель.docx"
+      "notes": "48 страниц. «Неокортекс и нейронные сети», редакция 3 от 08.05.2025. Авторская интерпретация функций шести слоёв и инженерные аналогии с обработкой признаков, связями, кластерами и FFN/Conv1D/Mamba; содержит схемы.",
+      "original_path": "raw/Шестислойная модель.docx",
+      "git_blob_sha1": "490d69e9574fd990609b74dd5cf0bdc7976b0a8c",
+      "original_verified": true
     }
-  ]
+  ],
+  "verified_on": "2026-11-12"
 }
