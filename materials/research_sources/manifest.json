@@ -5,7 +5,7 @@
   "integrity": "sha256 of supplied originals, not of snapshots",
   "originals_directory": "raw/",
   "snapshots_directory": "snapshots/",
-  "validation_status": "original binary files not yet imported; text snapshots stored",
+  "validation_status": "existing text snapshots stored; original DOCX files await import",
   "files": [
     {
       "name": "два типа речи.docx",
@@ -26,13 +26,22 @@
       "original_path": "raw/История - весь список ссылок и описаний.txt"
     },
     {
-      "name": "Теория_возникновения_языков_и_речи.docx",
-      "size": 11608,
-      "sha256": "2237ccabb40e7139091338f3ca97e76c43b0e7ce05ff8fa037afc793f31b08b3",
-      "kind": "draft",
-      "snapshot": "snapshots/Теория_возникновения_языков_и_речи.extracted.md",
-      "notes": "Пока почти пустой черновик: заголовок и текст «ыв».",
-      "original_path": "raw/Теория_возникновения_языков_и_речи.docx"
+      "name": "Форма1.docx",
+      "size": 79409,
+      "sha256": "5f2efbce23c76cb4a2670586f6b6d51168e4fbab0eb0ef9d44c803da3af612aa",
+      "kind": "author-hypotheses",
+      "snapshot": null,
+      "notes": "38 страниц. Гипотезы о формировании языка, энергетике артикуляции и социальной передаче звуков; оригинал DOCX пока ожидает импорт.",
+      "original_path": "raw/Форма1.docx"
+    },
+    {
+      "name": "Шестислойная модель.docx",
+      "size": 13090066,
+      "sha256": "dc53a11c90c1f6a2d7855c010f3a4f6126d39c5e75c5ccc733cb2a3430cf23fb",
+      "kind": "author-research-model",
+      "snapshot": null,
+      "notes": "48 страниц, «Неокортекс и нейронные сети», редакция 3 (08.05.2025), схемы и изображения. Оригинал DOCX пока ожидает импорт.",
+      "original_path": "raw/Шестислойная модель.docx"
     }
   ]
 }
