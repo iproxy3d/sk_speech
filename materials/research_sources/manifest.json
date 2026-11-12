@@ -1,0 +1,38 @@
+{
+  "archive_version": 1,
+  "created": "2026-11-12",
+  "source_type": "user-supplied research materials",
+  "integrity": "sha256 of supplied originals, not of snapshots",
+  "originals_directory": "raw/",
+  "snapshots_directory": "snapshots/",
+  "validation_status": "original binary files not yet imported; text snapshots stored",
+  "files": [
+    {
+      "name": "два типа речи.docx",
+      "size": 8911805,
+      "sha256": "ccac7e1fe6b1bfd55bab2277a6ce688ece57b16d81308fa3d896cea19d5233c0",
+      "kind": "working-hypothesis",
+      "snapshot": "snapshots/два типа речи.extracted.md",
+      "notes": "Рабочая концепция двух режимов речи, эмоциональной просодии, дыхания, ритма, темпа, ЧСС и ЧДД. 12 встроенных изображений; текстовый снимок их не содержит.",
+      "original_path": "raw/два типа речи.docx"
+    },
+    {
+      "name": "История - весь список ссылок и описаний.txt",
+      "size": 684631,
+      "sha256": "0871e84b9c72f9148665756fe5298a6280d61a1d1d69911762bb332bedc16dba",
+      "kind": "chronology-and-links",
+      "snapshot": "snapshots/История - весь список ссылок и описаний.txt",
+      "notes": "Хронология заметок с датами, ссылок на публикации, цитат, гипотез и рассуждений. Текстовый снимок нормализован, не заменяет бинарно-точный оригинал.",
+      "original_path": "raw/История - весь список ссылок и описаний.txt"
+    },
+    {
+      "name": "Теория_возникновения_языков_и_речи.docx",
+      "size": 11608,
+      "sha256": "2237ccabb40e7139091338f3ca97e76c43b0e7ce05ff8fa037afc793f31b08b3",
+      "kind": "draft",
+      "snapshot": "snapshots/Теория_возникновения_языков_и_речи.extracted.md",
+      "notes": "Пока почти пустой черновик: заголовок и текст «ыв».",
+      "original_path": "raw/Теория_возникновения_языков_и_речи.docx"
+    }
+  ]
+}
