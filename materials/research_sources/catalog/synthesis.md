@@ -11,7 +11,7 @@
 - [Increase default f0max for TTS, and Praat is a better pitch extractor than Dio? · Issue #5259 · espnet/espnet](acoustics.md#src-0417)
 - [conlang-software-dev/whistler: A framework for synthesizing examples of whistled speech.](phonetics.md#src-0704)
 - [Towards a Mechanical Vocal Apparatus for Vowel Production](breath.md#src-0719)
-- [Обзор физико-акустических методов изменения голоса, продолжение серии о преобразовании речи](acoustics.md#src-0720)
+- [Задача изменения голоса. Часть 2. Физический/акустический подход к представлению речевого сигнала](acoustics.md#src-0720)
 - [omogr/omogre: Russian accentuator and IPA transcriber](phonetics.md#src-1765)
 - [Decoding and synthesizing tonal language speech from brain activity](phonetics.md#src-3279)
 - [Yuan-ManX/ai-audio-datasets: AI Audio Datasets (AI-ADS) 🎵, including Speech, Music, and Sound Effects, which can provide training data for Generative AI, A](acoustics.md#src-3890)
@@ -621,6 +621,7 @@ He, Yibo, Seng, Kah Phooi, Ang, Li Minn · 2023 · DOI 10.3390/info14100575
 Корпус LibriSpeech примерно из 1000 часов прочитанной английской речи с отдельными train, dev и test поднаборами.
 
 Контрольный набор для сравнения обработки нейтральной прочитанной речи. Карточка ресурса указывает CC BY 4.0.
+**Данные и доступ.** [OpenSLR SLR12](https://www.openslr.org/12/) публикует отдельные архивы для train, dev и test и описывает варианты clean и other.
 
 [Адрес в хронологии](<https://www.openslr.org/12>) · строки [3892](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L3892)
 
@@ -631,6 +632,7 @@ He, Yibo, Seng, Kah Phooi, Ang, Li Minn · 2023 · DOI 10.3390/info14100575
 База RWCP записей звуков из реальной среды и измеренных импульсных характеристик помещений.
 
 Кандидат для опытов с шумом и реверберацией. В карточке OpenSLR указано использование для исследований и разработки.
+**Данные и доступ.** [OpenSLR SLR13](https://www.openslr.org/13/) публикует архивы со звуковыми сценами и импульсными характеристиками и отдельно указывает условия использования.
 
 [Адрес в хронологии](<https://www.openslr.org/13>) · строки [3893](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L3893)
 

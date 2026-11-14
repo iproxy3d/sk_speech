@@ -40,7 +40,7 @@
 
 Приведены протоколы спирометрии и пневмотахометрии, а также схема расчёта минутной вентиляции по дыхательному объёму и частоте дыхания.
 
-**Связь с пакетом.** [Справка для физиологических моделей](../../../docs/physiological-modeling.md).
+**Связь с пакетом.** [Справка для физиологических моделей](../../../docs/physiological-modeling.md) · [`Respiratory`](https://github.com/iproxy3d/sk_speech/blob/cb2430198f2ad9646acdaad83c67449b3147ed13/src/sk_speech/regulators.py#L265).
 
 [Адрес в хронологии](<https://www.igma.ru/attachments/article/2056/4%20Praktikum%20lung.pdf>) · строки [52](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L52) · [Материал для сверки](<https://igma.ru/attachments/article/2056/4%20Praktikum%20lung.pdf>)
 

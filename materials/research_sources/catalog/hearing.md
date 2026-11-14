@@ -19,13 +19,15 @@
 
 ## src-0132
 
-**Radun и соавторы сравнили влияние импульсного шума, устойчивого шума и тихого фона во время умственной работы** · Научная работа · Исходный материал не получен
+**Acute stress effects of impulsive noise during mental work** · Научная работа · Получен текст или документация
 
-Radun и соавторы сравнили влияние импульсного шума, устойчивого шума и тихого фона во время умственной работы.
+Jenni Radun, Henna Maula, Ville Rajala, Mika Scheinin, Valtteri Hongisto · 2022 · DOI 10.1016/j.jenvp.2022.101819
 
-59 участников распределили по трём условиям. Импульсный шум по сравнению с тихим повысил раздражение и кортизол и снизил точность в 3-back. При равном уровне 65 дБ различия с устойчивым шумом проявились прежде всего в субъективной нагрузке.
+В эксперименте с 59 участниками сравнивали импульсный и устойчивый шум при 65 дБ LAeq и тихий фон при 35 дБ LAeq во время когнитивных задач.
 
-[Адрес в хронологии](<https://www.sciencedirect.com/science/article/pii/S0272494422000640>) · строки [132](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L132) · [Материал для сверки](<https://www.utupub.fi/items/d0ca2ebe-e267-4ae7-b787-447838d10aa6>)
+По сравнению с тихим фоном импульсный шум усилил субъективную нагрузку и раздражение, повысил концентрацию кортизола и снизил точность в 3-back. При сравнении шумов одного уровня различия касались главным образом субъективной нагрузки и утомления.
+
+[Адрес в хронологии](<https://www.sciencedirect.com/science/article/pii/S0272494422000640>) · строки [132](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L132) · [Материал для сверки](<https://www.utupub.fi/items/d0ca2ebe-e267-4ae7-b787-447838d10aa6>) · [Материал для сверки](<https://www.utupub.fi/server/api/core/bitstreams/2a9bd22a-df4d-483c-b5be-20b6ab09fd92/content>)
 
 ## src-0717
 
@@ -87,7 +89,7 @@ Python-инструменты для гамматонного банка и га
 
 Технический аналог для sk_gammatone.apply_erb_filterbank. Реализация sk_speech адаптирует центры по F0 и формантам.
 
-**Связь с пакетом.** [Технический аналог гамматонного банка](../../../docs/api/sk_gammatone.md).
+**Связь с пакетом.** [Технический аналог гамматонного банка](../../../docs/api/sk_gammatone.md) · [`apply_erb_filterbank()`](https://github.com/iproxy3d/sk_speech/blob/cb2430198f2ad9646acdaad83c67449b3147ed13/src/sk_speech/sk_gammatone.py#L92).
 
 **См. также.** [src-1351](hearing.md#src-1351), [src-1352](hearing.md#src-1352), [src-1415](hearing.md#src-1415), [src-1416](hearing.md#src-1416).
 
@@ -405,15 +407,15 @@ Giraud, Anne-Lise, Poeppel, David · 2012 · DOI 10.1038/nn.3063
 
 ## src-3759
 
-**Ссылка из блока о слуховом внимании и речевых иерархиях** · Научная работа · Исходный материал не получен
+**Selective cortical representation of attended speaker in multi-talker speech perception** · Научная работа · Получен текст или документация
 
-Ссылка из блока о слуховом внимании и речевых иерархиях.
+Nima Mesgarani, Edward F. Chang · 2012 · DOI 10.1038/nature11020
 
-Подробные методы и результаты требуют дополнительного разбора.
+Авторы исследовали, как внимание меняет представление двух одновременно говорящих людей в слуховой коре. По многоканальной электрокортикографии восстанавливали спектрограмму воспринимаемой речи.
 
-Страница показала уведомление о JavaScript. Источник и выводы не удалось подтвердить.
+В правильных ответах реконструкция той же звуковой смеси была ближе к спектрограмме целевого диктора. При ошибках значимого сдвига к целевому голосу не наблюдалось. Эксперимент связывает избирательное внимание со спектровременным представлением речи в непервичной слуховой коре.
 
-[Адрес в хронологии](<https://www.semanticscholar.org/paper/Selective-cortical-representation-of-attended-in-Mesgarani-Chang/9f992b8e07689b8ae3da1a761472daeb82c544c9>) · строки [3759](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L3759)
+[Адрес в хронологии](<https://www.semanticscholar.org/paper/Selective-cortical-representation-of-attended-in-Mesgarani-Chang/9f992b8e07689b8ae3da1a761472daeb82c544c9>) · строки [3759](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L3759) · [Материал для сверки](<https://pmc.ncbi.nlm.nih.gov/articles/PMC3870007/>)
 
 ## src-3794
 

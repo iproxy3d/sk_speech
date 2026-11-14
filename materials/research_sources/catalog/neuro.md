@@ -25,7 +25,7 @@
 - [Хрустальный шар с извилинами: как мозг предсказывает речь](hearing.md#src-3522)
 - [Cortical oscillations and speech processing: emerging computational principles and operations](hearing.md#src-3692)
 - [Selective cortical representation of attended speaker in multi-talker speech perception](hearing.md#src-3758)
-- [Ссылка из блока о слуховом внимании и речевых иерархиях](hearing.md#src-3759)
+- [Selective cortical representation of attended speaker in multi-talker speech perception](hearing.md#src-3759)
 - [ighodgao/mamba-speech-synthesis: Jupyter Notebook running Mamba speech synthesis example on Determined AI. Based on https://2084.substack.com/p/2084-marcra](synthesis.md#src-3804)
 - [Audio Generation with Mamba using Determined AI](synthesis.md#src-3806)
 - [Large-scale single-neuron speech sound encoding across the depth of human cortex](hearing.md#src-3951)
@@ -505,15 +505,15 @@ Klotz и Bräuer предлагают компактную хаотическу�
 
 ## src-3568
 
-**Ссылка на научную страницу в группе материалов о числовом познании** · Научная работа · Исходный материал не получен
+**Exact and approximate arithmetic in an Amazonian indigene group** · Научная работа · Получен текст или документация
 
-Ссылка на научную страницу в группе материалов о числовом познании.
+Pierre Pica, Cathy Lemer, Véronique Izard, Stanislas Dehaene · 2004 · DOI 10.1126/science.1102085
 
-Подробные методы и результаты требуют дополнительного разбора.
+Исследование связи числовой лексики и арифметики. Авторы протестировали 55 носителей мундуруку и сопоставили результаты с контрольной группой носителей французского языка.
 
-Страница потребовала JavaScript. Точную публикацию и вывод по данному адресу не удалось подтвердить.
+Участники сравнивали и приближённо складывали количества за пределами лексики точного счёта. В условиях опыта точные операции с количествами выше четырёх или пяти были затруднены. Авторы предложили различать невербальную оценку количества и точный счёт, поддерживаемый языком.
 
-[Адрес в хронологии](<https://www.semanticscholar.org/paper/Exact-and-Approximate-Arithmetic-in-an-Amazonian-Pica-Lemer/8310db57008b1b32076a89b061f0979bd2012067>) · строки [3568](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L3568)
+[Адрес в хронологии](<https://www.semanticscholar.org/paper/Exact-and-Approximate-Arithmetic-in-an-Amazonian-Pica-Lemer/8310db57008b1b32076a89b061f0979bd2012067>) · строки [3568](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L3568) · [Материал для сверки](<https://www.unicog.org/publications/PicaLemerIzardDehaene_AmazonArithmetic_Science2004.pdf>)
 
 ## src-3582
 
@@ -1012,6 +1012,7 @@ Gao, Jianxiong, Liu, Yichang, Yang, Baofeng, Feng, Jianfeng, Fu, Yanwei · 2025
 CineBrain синхронизирует ЭЭГ и фМРТ при просмотре аудиовизуальных материалов.
 
 CineSync объединяет модальности для восстановления динамического видео. По аннотации совместное использование улучшило реконструкцию на данных проекта, и вклад внесла активность слуховой коры.
+**Данные и доступ.** [Карточка релиза CineBrain](https://huggingface.co/datasets/Fudan-fMRI/CineBrain) описывает ЭЭГ, фМРТ и ЭКГ при просмотре сериала, структуру сегментов и их временное выравнивание. В ней перечислены ссылки для скачивания сырых и обработанных данных и указана Apache 2.0. [Страница проекта](https://jianxgao.github.io/CineBrain/) связывает публикацию с данными и кодом.
 
 [Адрес в хронологии](<https://arxiv.org/abs/2503.06940>) · строки [3982](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L3982)
 
@@ -1031,7 +1032,7 @@ CineSync объединяет модальности для восстановл
 
 ZAPBench — бенчмарк прогнозирования нейронной активности по записям данио.
 
-Для сравнения моделей нужны версия набора, горизонт прогноза и правила разбиения.
+**Данные и доступ.** [Описание релиза в Google Cloud Storage](https://zapbench-release.storage.googleapis.com/volumes/README.html) указывает версию каталога `20240930`, лицензию CC BY 4.0 и инструкции доступа. Доступны исходный и выровненный объёмы активности, сегментация и извлечённые временные ряды для прогноза.
 
 [Адрес в хронологии](<https://zapbench-release.storage.googleapis.com/landing.html>) · строки [4003](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L4003)
 
@@ -1049,13 +1050,15 @@ Sun, Weinan, Winnubst, Johan, Natrajan, Maanasa, Lai, Chongxi, Kajikawa, Koichir
 
 ## src-4009
 
-**Адрес из подборки по нейронной динамике и гиппокампу** · Веб-страница · Исходный материал не получен
+**Modelling the neural code in large populations of correlated neurons** · Научная работа · Получен текст или документация
 
-Адрес из подборки по нейронной динамике и гиппокампу.
+Sacha Sokoloski, Amir Aschner, Ruben Coen-Cagli · 2021 · DOI 10.7554/eLife.64615
 
-Получен экран проверки браузера. Назначение конкретной страницы не установлено.
+Авторы моделируют совместные ответы больших популяций нейронов смесями экспоненциальных семейств и оценивают параметры методом EM. Проверка проведена на записях первичной зрительной коры макак.
 
-[Адрес в хронологии](<https://elifesciences.org/articles/64615>) · строки [4009](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L4009)
+Модели воспроизводили несколько типов вариативности и корреляций, позволяли декодировать стимулы байесовским методом и вычислять информацию Фишера в замкнутой форме. Авторы опубликовали [данные и код](https://gitlab.com/sacha-sokoloski/neural-mixtures).
+
+[Адрес в хронологии](<https://elifesciences.org/articles/64615>) · строки [4009](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L4009) · [Материал для сверки](<https://pmc.ncbi.nlm.nih.gov/articles/PMC8577837/>)
 
 ## src-4013
 

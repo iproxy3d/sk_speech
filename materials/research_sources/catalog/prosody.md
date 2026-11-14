@@ -4,7 +4,7 @@
 
 ## Карточки из смежных тем
 
-- [Radun и соавторы сравнили влияние импульсного шума, устойчивого шума и тихого фона во время умственной работы](hearing.md#src-0132)
+- [Acute stress effects of impulsive noise during mental work](hearing.md#src-0132)
 - [Voice 2. Jitter](acoustics.md#src-0151)
 - [Effects of Stress, Depression, and Their Interaction on Heart Rate, Skin Conductance, Finger Temperature, and Respiratory Rate: Sympathetic-Parasympathetic](breath.md#src-0284)
 - [timmahrt/ProMo: Prososdy Morph: A python library for manipulating pitch and duration in an algorithmic way, for resynthesizing speech.](acoustics.md#src-0337)
@@ -316,7 +316,7 @@ Houle и Levi сравнили озвученные и прошептанные 
 
 В шёпоте гласные обычно длиннее и форманты выше. Величина эффекта зависит от гласной и группы. Площадь пространства гласных при этом была меньше.
 
-**Связь с пакетом.** [Мотивация проверки шёпота](../../../docs/api/sk_detection.md).
+**Связь с пакетом.** [Мотивация проверки шёпота](../../../docs/api/sk_detection.md) · [`is_whisper()`](https://github.com/iproxy3d/sk_speech/blob/cb2430198f2ad9646acdaad83c67449b3147ed13/src/sk_speech/sk_detection.py#L119).
 
 [Адрес в хронологии](<https://pubs.aip.org/asa/jasa/article-abstract/148/6/4002/1056517/Acoustic-differences-between-voiced-and-whispered?redirectedFrom=fulltext>) · строки [604](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L604) · [Материал для сверки](<https://pubmed.ncbi.nlm.nih.gov/33379880/>)
 
@@ -342,7 +342,7 @@ Hansen, Nandwana и Shokouhi исследовали крик как нерече
 
 На корпусе UT-NonSpeech сравнивали F0, спектральные пики, энергию и наклон. Обычная верификация GMM-UBM ненадёжна на изученных криках.
 
-**Связь с пакетом.** [Мотивация проверки детекции крика](../../../docs/api/sk_detection.md).
+**Связь с пакетом.** [Мотивация проверки детекции крика](../../../docs/api/sk_detection.md) · [`is_scream()`](https://github.com/iproxy3d/sk_speech/blob/cb2430198f2ad9646acdaad83c67449b3147ed13/src/sk_speech/sk_detection.py#L169).
 
 [Адрес в хронологии](<https://www.researchgate.net/publication/316534244_Analysis_of_human_scream_and_its_impact_on_text-independent_speaker_verification?_tp=eyJjb250ZXh0Ijp7ImZpcnN0UGFnZSI6Il9kaXJlY3QiLCJwYWdlIjoiX2RpcmVjdCJ9fQ>) · строки [690](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L690) · [Адрес в хронологии](<https://pubs.aip.org/asa/jasa/article/141/4/2957/1059223/Analysis-of-human-scream-and-its-impact-on-text>) · строки [765](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt#L765) · [Материал для сверки](<https://pubmed.ncbi.nlm.nih.gov/28464689/>)
 
