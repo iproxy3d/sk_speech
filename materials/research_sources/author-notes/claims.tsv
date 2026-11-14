@@ -1,0 +1,58 @@
+claim_id	note_id	topic	date	statement_type	evidence_status	source_start	source_end	related_sources	note
+breath-pause-estimate-rule	breath-pause-estimate	breathing	01.06.2024	heuristic	proposal	10	29	https://github.com/iproxy3d/sk_speech/blob/15e96a4582fc922f77aef75c9f74247e9dba7b1a/src/sk_speech/regulators.py#L747	breathing.md#breath-pause-estimate-rule
+breath-pause-estimate-example	breath-pause-estimate	breathing	01.06.2024	calculation	arithmetic_checked	29	40		breathing.md#breath-pause-estimate-example
+stress-breathing-pause-paper	stress-breathing-pause	breathing		external_summary	source_checked	76	89	../catalog/prosody.md#src-0076	breathing.md#stress-breathing-pause-paper
+stress-breathing-pause-forecast	stress-breathing-pause	breathing		hypothesis	unverified	91	94		breathing.md#stress-breathing-pause-forecast
+prosody-physiology-mapping-mapping	prosody-physiology-mapping	breathing	11.06.2024	hypothesis	unverified	172	178		breathing.md#prosody-physiology-mapping-mapping
+prosody-physiology-mapping-ratio	prosody-physiology-mapping	breathing	11.06.2024	external_summary	partially_checked	204	212	../catalog/breath.md#src-0216 ../catalog/breath.md#src-0206	breathing.md#prosody-physiology-mapping-ratio
+equivalent-alveolus-model	equivalent-alveolus	breathing	12.06.2024	heuristic	missing_material	226	236	../catalog/breath.md#src-0243 ../catalog/breath.md#src-0244 https://github.com/iproxy3d/sk_speech/blob/15e96a4582fc922f77aef75c9f74247e9dba7b1a/src/sk_speech/regulators.py#L372	breathing.md#equivalent-alveolus-model
+equivalent-alveolus-examples	equivalent-alveolus	breathing	12.06.2024	calculation	arithmetic_checked	237	242		breathing.md#equivalent-alveolus-examples
+oxygen-breath-trigger-rule	oxygen-breath-trigger	breathing	09.07.2024	heuristic	proposal	819	823		breathing.md#oxygen-breath-trigger-rule
+f0-heart-breath-periods-numbers	f0-heart-breath-periods	breathing	26.11.2024	calculation	arithmetic_checked	3113	3117		breathing.md#f0-heart-breath-periods-numbers
+f0-heart-breath-periods-modulation	f0-heart-breath-periods	breathing	26.11.2024	hypothesis	unverified	3118	3124	https://github.com/iproxy3d/sk_speech/blob/15e96a4582fc922f77aef75c9f74247e9dba7b1a/src/sk_speech/sk_pitch.py#L2100 https://github.com/iproxy3d/sk_speech/blob/15e96a4582fc922f77aef75c9f74247e9dba7b1a/src/sk_speech/sk_pitch.py#L1682	breathing.md#f0-heart-breath-periods-modulation
+f0-heart-breath-periods-pigeon	f0-heart-breath-periods	breathing	26.11.2024	observation	reported	3125	3130		breathing.md#f0-heart-breath-periods-pigeon
+pause-clustering-procedure	pause-clustering	breathing	09.01.2025	procedure	code_partial	3397	3412	https://github.com/iproxy3d/sk_speech/blob/15e96a4582fc922f77aef75c9f74247e9dba7b1a/examples/test_pause.py#L412 https://github.com/iproxy3d/sk_speech/blob/15e96a4582fc922f77aef75c9f74247e9dba7b1a/examples/test_pause.py#L490	breathing.md#pause-clustering-procedure
+pause-clustering-comparison	pause-clustering	breathing	09.01.2025	observation	reported	3415	3423		breathing.md#pause-clustering-comparison
+expiration-and-phrase-choice-wording	expiration-and-phrase-choice	breathing	09.01.2025	hypothesis	unverified	3387	3393		breathing.md#expiration-and-phrase-choice-wording
+expiration-and-phrase-choice-counts	expiration-and-phrase-choice	breathing	09.01.2025	observation	reported	3459	3467		breathing.md#expiration-and-phrase-choice-counts
+expiration-and-phrase-choice-temperature	expiration-and-phrase-choice	breathing	09.01.2025	analogy	unverified	3424	3457		breathing.md#expiration-and-phrase-choice-temperature
+expiration-and-phrase-choice-memory	expiration-and-phrase-choice	breathing	09.01.2025	external_summary	source_checked	3461	3468	https://pubmed.ncbi.nlm.nih.gov/11515286/ https://doi.org/10.1037/h0043158	breathing.md#expiration-and-phrase-choice-memory
+pause-hierarchy-graph-tree	pause-hierarchy-graph	breathing		hypothesis	unverified	3779	3780		breathing.md#pause-hierarchy-graph-tree
+pause-hierarchy-graph-evidence	pause-hierarchy-graph	breathing		external_summary	source_checked	3782	3782	../catalog/hearing.md#src-2275	breathing.md#pause-hierarchy-graph-evidence
+voice-profile-volume-trial	voice-profile-volume	voice	11.08.2024	observation	reported	1240	1244	../catalog/acoustics.md#src-1241 https://github.com/iproxy3d/sk_speech/blob/15e96a4582fc922f77aef75c9f74247e9dba7b1a/src/sk_speech/sk_volume.py#L1772	voice.md#voice-profile-volume-trial
+voice-profile-volume-calibration	voice-profile-volume	voice	11.08.2024	research_question	open	1246	1246	https://github.com/iproxy3d/sk_speech/blob/15e96a4582fc922f77aef75c9f74247e9dba7b1a/src/sk_speech/sk_volume.py#L1772 ../../../materials/README.md#%D0%B3%D1%80%D0%BE%D0%BC%D0%BA%D0%BE%D1%81%D1%82%D1%8C-%D0%B8-%D0%BF%D1%80%D0%B5%D0%BE%D0%B1%D1%80%D0%B0%D0%B7%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE-%D1%8D%D1%82%D0%B0%D0%BB%D0%BE%D0%BD%D1%83	voice.md#voice-profile-volume-calibration
+formants-volume-linear-linear	formants-volume-linear	voice	17–18.07.2024	heuristic	missing_material	853	862		voice.md#formants-volume-linear-linear
+formants-volume-linear-energy	formants-volume-linear	voice	17–18.07.2024	heuristic	unverified	863	877		voice.md#formants-volume-linear-energy
+formants-volume-linear-pipeline	formants-volume-linear	voice	17–18.07.2024	procedure	proposal	878	884		voice.md#formants-volume-linear-pipeline
+formant-pattern-observations-tables	formant-pattern-observations	voice	06.08.2024	observation	missing_material	1075	1083		voice.md#formant-pattern-observations-tables
+formant-pattern-observations-f3	formant-pattern-observations	voice	06.08.2024	hypothesis	unverified	1076	1087		voice.md#formant-pattern-observations-f3
+neutral-f0-amplitude-f0	neutral-f0-amplitude	voice	15.08.2024	heuristic	proposal	1273	1273	https://github.com/iproxy3d/sk_speech/blob/15e96a4582fc922f77aef75c9f74247e9dba7b1a/src/sk_speech/pitch/extractor.py#L78	voice.md#neutral-f0-amplitude-f0
+neutral-f0-amplitude-amplitude	neutral-f0-amplitude	voice	15.08.2024	heuristic	proposal	1274	1274	https://github.com/iproxy3d/sk_speech/blob/15e96a4582fc922f77aef75c9f74247e9dba7b1a/src/sk_speech/sk_volume.py#L621	voice.md#neutral-f0-amplitude-amplitude
+affective-pitch-contour-pitch	affective-pitch-contour	voice	06–10.08.2024	hypothesis	unverified	1140	1152		voice.md#affective-pitch-contour-pitch
+affective-pitch-contour-stimuli	affective-pitch-contour	voice	06–10.08.2024	external_summary	source_checked	1173	1184	../catalog/prosody.md#src-1173 https://www.homepages.ucl.ac.uk/~uclyyix/yispapers/Xu_Chuenwattanapranithi_ICPhS2007.pdf	voice.md#affective-pitch-contour-stimuli
+affective-pitch-contour-features	affective-pitch-contour	voice	06–10.08.2024	research_question	open	1186	1191		voice.md#affective-pitch-contour-features
+affective-pitch-contour-bandwidth	affective-pitch-contour	voice	06–10.08.2024	hypothesis	unverified	1215	1239		voice.md#affective-pitch-contour-bandwidth
+two-speech-modes-synthesis-modes	two-speech-modes-synthesis	voice		hypothesis	unverified	3220	3242		voice.md#two-speech-modes-synthesis-modes
+two-speech-modes-synthesis-switch	two-speech-modes-synthesis	voice		heuristic	proposal	3243	3252		voice.md#two-speech-modes-synthesis-switch
+phoneme-formant-transitions-example	phoneme-formant-transitions	voice	26.11.2024	heuristic	unverified	3140	3216		voice.md#phoneme-formant-transitions-example
+cross-species-acoustic-gradients-features	cross-species-acoustic-gradients	gradients		procedure	reported	4095	4095		gradients.md#cross-species-acoustic-gradients-features
+cross-species-acoustic-gradients-shape	cross-species-acoustic-gradients	gradients		observation	reported	4096	4098		gradients.md#cross-species-acoustic-gradients-shape
+cross-species-acoustic-gradients-entropy	cross-species-acoustic-gradients	gradients		hypothesis	unverified	4099	4100		gradients.md#cross-species-acoustic-gradients-entropy
+dbscan-frequency-gradients-plots	dbscan-frequency-gradients	gradients	05.11.2024	procedure	reported	2955	2976		gradients.md#dbscan-frequency-gradients-plots
+gammatone-cluster-comparison-peaks	gammatone-cluster-comparison	gradients	15.11.2024	observation	reported	2991	3014		gradients.md#gammatone-cluster-comparison-peaks
+gammatone-cluster-comparison-configurations	gammatone-cluster-comparison	gradients	15.11.2024	observation	missing_material	3018	3056		gradients.md#gammatone-cluster-comparison-configurations
+gammatone-cluster-comparison-interpretation	gammatone-cluster-comparison	gradients	15.11.2024	hypothesis	unverified	2991	3028	../catalog/hearing.md#src-1351 https://github.com/iproxy3d/sk_speech/blob/15e96a4582fc922f77aef75c9f74247e9dba7b1a/src/sk_speech/sk_gammatone.py#L92	gradients.md#gammatone-cluster-comparison-interpretation
+animal-sound-distributions-comparison	animal-sound-distributions	gradients	26.12.2024 для гипотезы о границах, дата сравнения не указана	observation	reported	3336	3339		gradients.md#animal-sound-distributions-comparison
+animal-sound-distributions-boundary	animal-sound-distributions	gradients	26.12.2024 для гипотезы о границах, дата сравнения не указана	hypothesis	unverified	3344	3344		gradients.md#animal-sound-distributions-boundary
+dolphin-pitch-tracking-trial	dolphin-pitch-tracking	gradients	19.10.2024	observation	missing_material	2810	2817		gradients.md#dolphin-pitch-tracking-trial
+dolphin-pitch-tracking-analogy	dolphin-pitch-tracking	gradients	19.10.2024	analogy	unverified	2812	2815		gradients.md#dolphin-pitch-tracking-analogy
+cortical-feature-hierarchy-hierarchy	cortical-feature-hierarchy	models	04.09.2024	hypothesis	unverified	1769	1781		models.md#cortical-feature-hierarchy-hierarchy
+cortical-feature-hierarchy-hemispheres	cortical-feature-hierarchy	models	04.09.2024	analogy	unverified	1783	1821		models.md#cortical-feature-hierarchy-hemispheres
+prosody-normalization-fractal-test	prosody-normalization-fractal	models	31.10.2024	hypothesis	unverified	2872	2894		models.md#prosody-normalization-fractal-test
+prosody-normalization-fractal-cost	prosody-normalization-fractal	models	31.10.2024	research_question	open	2896	2908		models.md#prosody-normalization-fractal-cost
+sound-patterns-disgust-question	sound-patterns-disgust	models	13.10.2024	research_question	open	2612	2616		models.md#sound-patterns-disgust-question
+sound-patterns-disgust-reply	sound-patterns-disgust	models	13.10.2024	dialogue_summary	unverified	2578	2604		models.md#sound-patterns-disgust-reply
+attention-routing-analogy-branches	attention-routing-analogy	models	09.01.2025 для сообщения о внимании	hypothesis	unverified	3473	3476		models.md#attention-routing-analogy-branches
+attention-routing-analogy-routing	attention-routing-analogy	models	09.01.2025 для сообщения о внимании	analogy	unverified	3477	3481		models.md#attention-routing-analogy-routing
+phoneme-entropy-acquisition-proposal	phoneme-entropy-acquisition	models	04.07.2025	hypothesis	unverified	4052	4062		models.md#phoneme-entropy-acquisition-proposal
+phoneme-entropy-acquisition-corpora	phoneme-entropy-acquisition	models	04.07.2025	external_summary	source_checked	4063	4068	../catalog/phonetics.md#src-4066 ../catalog/phonetics.md#src-4068	models.md#phoneme-entropy-acquisition-corpora
