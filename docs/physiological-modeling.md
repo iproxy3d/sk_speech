@@ -54,3 +54,7 @@
 Для полного перечня классов, параметров и возвращаемых значений используйте
 [API физиологических регуляторов](api/regulators.md) и
 [API голосовой щели](api/sk_vocal_cords.md).
+
+## Смежные исследовательские маршруты
+
+[Маршруты исследований R01–R05](../materials/research_sources/task-routes.md) связывают модели дыхания с [калибровкой F0](calibration-and-timeseries.md), [извлечением акустических признаков](audio-analysis.md), [изменением длительности](audio-transformation.md), [гамматонной фильтрацией](api/sk_gammatone.md), [авторскими наблюдениями пауз](../materials/research_sources/author-notes/breathing.md#pause-clustering) и [источниками о физиологии дыхания](../materials/research_sources/catalog/breath.md). Доля тихих кадров и факт вдоха — не синонимы.
