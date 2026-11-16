@@ -18,7 +18,9 @@
       "git_blob_sha1": "eaebc621f42ac7e7faa293fc4037593480d6342c",
       "original_verified": true,
       "html": "author-documents/two-types-of-speech/index.html",
-      "review": "author-documents/two-types-of-speech/review.md"
+      "review": "author-documents/two-types-of-speech/review.md",
+      "markdown": "author-documents/two-types-of-speech/README.md",
+      "primary_format": "markdown"
     },
     {
       "name": "История - весь список ссылок и описаний.txt",
@@ -42,7 +44,9 @@
       "git_blob_sha1": "c9462e77b278039898659df1444a574bf8f154e4",
       "original_verified": true,
       "html": "author-documents/forma1/index.html",
-      "review": "author-documents/forma1/review.md"
+      "review": "author-documents/forma1/review.md",
+      "markdown": "author-documents/forma1/README.md",
+      "primary_format": "markdown"
     },
     {
       "name": "Шестислойная модель.docx",
@@ -56,9 +60,13 @@
       "original_verified": true,
       "html": "author-documents/six-layer-model/index.html",
       "review": "author-documents/six-layer-model/review.md",
-      "formula_index": "author-documents/six-layer-model/formulas-search-4.14.md"
+      "formula_index": "author-documents/six-layer-model/formulas-search-4.14.md",
+      "markdown": "author-documents/six-layer-model/README.md",
+      "primary_format": "markdown"
     }
   ],
   "verified_on": "2026-11-12",
-  "indexed_on": "2026-11-16"
+  "indexed_on": "2026-11-16",
+  "publication_format": "markdown",
+  "html_status": "retained as legacy archival fallback; not primary"
 }
