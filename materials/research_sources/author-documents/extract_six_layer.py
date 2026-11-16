@@ -103,7 +103,7 @@ def table_markup(table, block_id, number, archive, relations, figures):
             inner = []
             for node in tc:
                 if node.tag == W+"p":
-                    inner.append(paragraph_markup(node, block_id+"-cell", archive, relations, figures).replace(' id="'+block_id+'-cell"', ""))
+                    inner.append(paragraph_markup(node, block_id, archive, relations, figures).replace(' id="'+block_id+'"', ""))
                 elif node.tag == W+"tbl":
                     inner.append("<p>"+quoted(text_of(node))+"</p>")
             span = tc.find("./"+W+"tcPr/"+W+"gridSpan")
