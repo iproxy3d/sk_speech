@@ -83,8 +83,8 @@ def figure_markup(index, block_id, name):
                 '<img src="media/'+name+'" alt="'+quoted(alt)+'" loading="lazy"></a>'
                 '<figcaption>\u0420\u0435\u0434\u0430\u043a\u0442\u043e\u0440\u0441\u043a\u043e\u0435 \u043e\u043f\u0438\u0441\u0430\u043d\u0438\u0435 (\u043d\u0435 \u043f\u043e\u0434\u043f\u0438\u0441\u044c \u0438\u0437 DOCX): '
                 +quoted(description)+' <a href="media/'+name+'">\u041f\u043e\u043b\u043d\u044b\u0439 \u0440\u0430\u0437\u043c\u0435\u0440 PNG</a>.</figcaption></figure>')
-    return ('<figure id="figure-'+str(index)+'"><img src="media/'+name+'"
-             alt="\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435 '+str(index)+' \u0438\u0437 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430" loading="lazy"><figcaption>\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435 '+str(index)+', \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0431\u043b\u043e\u043a '+block_id+'. \u041e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u0430\u044f \u043f\u043e\u0434\u043f\u0438\u0441\u044c \u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u0442\u0441\u044f \u0432 4.9.</figcaption></figure>')
+    return ('<figure id="figure-'+str(index)+'"><img src="media/'+name+'"'
+             ' alt="\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435 '+str(index)+' \u0438\u0437 \u0434\u043e\u043a\u0443\u043c\u0435\u043d\u0442\u0430" loading="lazy"><figcaption>\u0418\u0437\u043e\u0431\u0440\u0430\u0436\u0435\u043d\u0438\u0435 '+str(index)+', \u0438\u0441\u0445\u043e\u0434\u043d\u044b\u0439 \u0431\u043b\u043e\u043a '+block_id+'. \u041e\u0440\u0438\u0433\u0438\u043d\u0430\u043b\u044c\u043d\u0430\u044f \u043f\u043e\u0434\u043f\u0438\u0441\u044c \u043f\u0440\u043e\u0432\u0435\u0440\u044f\u0435\u0442\u0441\u044f \u0432 4.9.</figcaption></figure>')
 
 def paragraph_markup(paragraph, block_id, archive, relations, figures):
     inline = []
