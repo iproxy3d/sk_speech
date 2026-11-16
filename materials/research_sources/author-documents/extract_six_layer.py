@@ -113,6 +113,25 @@ def table_markup(table, block_id, number, archive, relations, figures):
         rows.append("<tr>"+"".join(cells)+"</tr>")
     return '<div id="'+block_id+'" class="table-wrapper"><table id="table-'+str(number)+'"><tbody>'+"\n".join(rows)+"</tbody></table></div>"
 
+
+def table_search_text(table):
+    # Preserve DOCX cell and row boundaries in searchable snapshots.
+    rows = []
+    for tr in table.findall(W+"tr"):
+        cells = []
+        for tc in tr.findall(W+"tc"):
+            paragraphs = []
+            for node in tc:
+                if node.tag == W+"p":
+                    part = " ".join(text_of(node).split())
+                    if part:
+                        paragraphs.append(part)
+                elif node.tag == W+"tbl":
+                    paragraphs.append(table_search_text(node))
+            cells.append(" ".join(paragraphs))
+        rows.append(" | ".join(cells))
+    return "\n".join(rows)
+
 def main():
     digest = hashlib.sha256(SOURCE.read_bytes()).hexdigest()
     if digest != SHA256:
@@ -141,7 +160,7 @@ def main():
                 else:
                     fragment = '<span id="'+bid+'"></span>'
                 fragments.append(fragment)
-                text = text_of(block).replace("\n", " ").strip()
+                text = (table_search_text(block) if block.tag == W+"tbl" else text_of(block).replace("\n", " ")).strip()
                 refs = ["figure-"+str(item[0]) for item in figures[current_figures:]]
                 if block.tag == W+"tbl":
                     refs.append("table-"+str(len(table_positions)))
@@ -160,7 +179,7 @@ def main():
     (OUT/"index.html").write_text(top+"\n".join(fragments)+"</main></body></html>\n", encoding="utf-8")
     snapshot = ["# \u0428\u0435\u0441\u0442\u0438\u0441\u043b\u043e\u0439\u043d\u0430\u044f \u043c\u043e\u0434\u0435\u043b\u044c \u2014 \u043c\u0430\u0448\u0438\u043d\u043d\u044b\u0439 \u043f\u043e\u0438\u0441\u043a\u043e\u0432\u044b\u0439 \u0441\u043d\u0438\u043c\u043e\u043a",
                 "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a: raw/\u0428\u0435\u0441\u0442\u0438\u0441\u043b\u043e\u0439\u043d\u0430\u044f \u043c\u043e\u0434\u0435\u043b\u044c.docx, SHA-256: "+SHA256,
-                "\u0410\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u0438\u0437\u0432\u043b\u0435\u0447\u0435\u043d\u0438\u0435: \u0432\u0438\u0437\u0443\u0430\u043b\u044c\u043d\u0430\u044f \u0441\u0432\u0435\u0440\u043a\u0430 \u0438 \u0444\u043e\u0440\u043c\u0443\u043b\u044b \u2014 4.8/4.9.", ""]
+                "\u0410\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u0438\u0437\u0432\u043b\u0435\u0447\u0435\u043d\u0438\u0435: \u0441\u0432\u0435\u0440\u043a\u0430 \u0432 \u0440\u0430\u043c\u043a\u0430\u0445 4.8 \u0441 HTML; \u0432\u0438\u0437\u0443\u0430\u043b\u044c\u043d\u0430\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u2014 4.9.", ""]
     for bid, group, txt, refs in records:
         snapshot.extend(["## "+bid+" ("+group+")", txt or "(\u043d\u0435\u0442 \u0442\u0435\u043a\u0441\u0442\u043e\u0432\u044b\u0445 \u0443\u0437\u043b\u043e\u0432)", "\u041e\u0431\u044a\u0435\u043a\u0442\u044b: "+(", ".join(refs) if refs else "\u2014"), ""])
     SNAP.write_text("\n".join(snapshot), encoding="utf-8")
