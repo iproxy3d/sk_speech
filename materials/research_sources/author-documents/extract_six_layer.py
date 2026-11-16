@@ -169,7 +169,7 @@ def paragraph_markup(paragraph, block_id, archive, relations, figures):
 
 def table_markup(table, block_id, number, archive, relations, figures):
     rows = []
-    for tr in table.findall(W+"tr"):
+    for row_index, tr in enumerate(table.findall(W+"tr")):
         cells = []
         for tc in tr.findall(W+"tc"):
             inner = []
@@ -180,8 +180,13 @@ def table_markup(table, block_id, number, archive, relations, figures):
                     inner.append("<p>"+quoted(text_of(node))+"</p>")
             span = tc.find("./"+W+"tcPr/"+W+"gridSpan")
             colspan = (' colspan="'+quoted(span.get(W+"val", "1"))+'"') if span is not None else ""
-            cells.append("<td"+colspan+">"+"\n".join(inner)+"</td>")
+            cell_tag = "th" if number in (2, 3) and row_index == 0 else "td"
+            scoped = ' scope="col"' if cell_tag == "th" else ""
+            cells.append("<"+cell_tag+scoped+colspan+">"+"\n".join(inner)+"</"+cell_tag+">")
         rows.append("<tr>"+"".join(cells)+"</tr>")
+    if number in (2, 3):
+        label = ("\u0421\u043b\u043e\u0438 \u0438 \u0444\u0443\u043d\u043a\u0446\u0438\u0438 \u0432 \u043c\u043e\u0434\u0435\u043b\u0438 \u0430\u0441\u0438\u043c\u043c\u0435\u0442\u0440\u0438\u0438" if number == 2 else "\u041c\u0435\u0445\u0430\u043d\u0438\u0437\u043c, \u0431\u0438\u043e\u043b\u043e\u0433\u0438\u0447\u0435\u0441\u043a\u0430\u044f \u0430\u043d\u0430\u043b\u043e\u0433\u0438\u044f \u0438 \u043d\u0430\u0437\u043d\u0430\u0447\u0435\u043d\u0438\u0435 \u0432 \u043c\u043e\u0434\u0435\u043b\u0438")
+        return '<div id="'+block_id+'" class="table-wrapper"><table id="table-'+str(number)+'" aria-label="'+label+'"><thead>'+rows[0]+'</thead><tbody>'+"\n".join(rows[1:])+"</tbody></table></div>"
     return '<div id="'+block_id+'" class="table-wrapper"><table id="table-'+str(number)+'"><tbody>'+"\n".join(rows)+"</tbody></table></div>"
 
 

@@ -12,3 +12,11 @@ pre,.table-wrapper{overflow-x:auto} p:empty{margin:0}
 .docx-list{padding-left:1.6rem;margin:.55rem 0 1.1rem}
 .docx-list li{margin:.28rem 0}
 .docx-list .docx-list{margin:.3rem 0 .6rem}
+
+/* Original figures and table accessibility, verified stage 4.9. */
+figure img{display:block;max-width:100%;height:auto}
+figure>a{display:inline-block;max-width:100%}
+.table-wrapper{width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.table-wrapper table{min-width:32rem}
+.table-wrapper th{text-align:left;background:#eef3f8;font-weight:650}
+@media(max-width:600px){.table-wrapper table{min-width:28rem}figcaption{font-size:.86rem}}
