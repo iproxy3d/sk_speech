@@ -77,3 +77,8 @@ normalized.to_csv("normalized_features.csv")
 один микрофон, расстояние, усиление и конфигурацию извлечения.
 
 См. [API калибровки](api/pitch_calibration.md) и [API извлекателя](api/pitch_extractor.md).
+
+
+## Исследовательские маршруты и смежные темы
+
+[Маршруты от задачи к API, авторским наблюдениям и первоисточникам](../materials/research_sources/task-routes.md) охватывают [извлечение F0 и формант](audio-analysis.md), [дыхание и паузы](physiological-modeling.md), [WSOLA и изменение длительности](audio-transformation.md), [гамматон](api/sk_gammatone.md). Связь с карточкой публикации означает техническую аналогию или исследовательский контекст, но не доказанное происхождение реализации.

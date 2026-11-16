@@ -16,7 +16,9 @@
       "notes": "18 страниц. Авторская рабочая концепция двух режимов речи: эмоциональность, дыхательные циклы, ЧСС/ЧДД, ритм, темп и интонация. Содержит иллюстрации; текстовая копия не заменяет DOCX.",
       "original_path": "raw/два типа речи.docx",
       "git_blob_sha1": "eaebc621f42ac7e7faa293fc4037593480d6342c",
-      "original_verified": true
+      "original_verified": true,
+      "html": "author-documents/two-types-of-speech/index.html",
+      "review": "author-documents/two-types-of-speech/review.md"
     },
     {
       "name": "История - весь список ссылок и описаний.txt",
@@ -38,19 +40,25 @@
       "notes": "38 страниц. Авторские гипотезы о возникновении речи и языка: артикуляционные энергозатраты, роль акустической среды, подражание, смешение групп и развитие обозначений. Требует дальнейшей научной проверки.",
       "original_path": "raw/Форма1.docx",
       "git_blob_sha1": "c9462e77b278039898659df1444a574bf8f154e4",
-      "original_verified": true
+      "original_verified": true,
+      "html": "author-documents/forma1/index.html",
+      "review": "author-documents/forma1/review.md"
     },
     {
       "name": "Шестислойная модель.docx",
       "size": 13090066,
       "sha256": "dc53a11c90c1f6a2d7855c010f3a4f6126d39c5e75c5ccc733cb2a3430cf23fb",
       "kind": "author-research-model",
-      "snapshot": null,
+      "snapshot": "snapshots/Шестислойная модель.extracted.md",
       "notes": "48 страниц. «Неокортекс и нейронные сети», редакция 3 от 08.05.2025. Авторская интерпретация функций шести слоёв и инженерные аналогии с обработкой признаков, связями, кластерами и FFN/Conv1D/Mamba; содержит схемы.",
       "original_path": "raw/Шестислойная модель.docx",
       "git_blob_sha1": "490d69e9574fd990609b74dd5cf0bdc7976b0a8c",
-      "original_verified": true
+      "original_verified": true,
+      "html": "author-documents/six-layer-model/index.html",
+      "review": "author-documents/six-layer-model/review.md",
+      "formula_index": "author-documents/six-layer-model/formulas-search-4.14.md"
     }
   ],
-  "verified_on": "2026-11-12"
+  "verified_on": "2026-11-12",
+  "indexed_on": "2026-11-16"
 }

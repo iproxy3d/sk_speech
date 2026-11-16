@@ -4,3 +4,6 @@ recursive-include examples *.py *.md
 recursive-include docs *.md
 recursive-include tests *.py
 recursive-include src/sk_speech/data *.json *.wav
+
+# Research archives, DOCX/HTML source reviews, and raw recordings are not package assets.
+prune materials/research_sources
