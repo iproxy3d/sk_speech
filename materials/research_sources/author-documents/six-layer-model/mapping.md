@@ -423,66 +423,70 @@
 | B380 | S17 | [#B380](index.html#B380) | — | DOCX ↔ снимок: текст совпадает; оформление списков проверено в 4.8 |
 | B381 | S17 | [#B381](index.html#B381) | — | DOCX ↔ снимок: текст совпадает; оформление списков проверено в 4.8 |
 
+## Сверка иллюстраций 4.9 — пакет V01
+
+[Протокол с визуальным описанием и источниками](review.md#v01--изображения-1-8-b001b035). Исходный DOCX (SHA-256 `dc53a11c90c1f6a2d7855c010f3a4f6126d39c5e75c5ccc733cb2a3430cf23fb`) проверен непосредственно: изображения 1–8 побайтово совпадают с файлами `media/image1.png`–`image8.png` по Git blob SHA-1, совпадают порядок, исходные B-блоки, `rId` и визуальное содержание. Описания в HTML имеют явную пометку **«Редакторское описание (не подпись из DOCX)»** и ссылки на полный PNG для увеличения. Отдельные Word-подписи к этим рисункам не обнаружены; названия некоторых схем находятся непосредственно в самих изображениях. Происхождение/лицензия каждого заимствованного рисунка не установлены — не подменять предположениями. **Следующий пакет 4.9: V02 (изображения 9–16).** V08–V10 (таблицы) в этом запуске не проверялись.
+
 ## Изображения (56 PNG)
 
-| № | DOCX-блок | Relationship | Файл внутри DOCX | HTML-якорь и целевой локальный путь |
-| ---: | --- | --- | --- | --- |
-| 1 | B001 | `rId8` | `word/media/image1.png` | [#figure-1](index.html#figure-1), `media/image1.png` |
-| 2 | B004 | `rId9` | `word/media/image2.png` | [#figure-2](index.html#figure-2), `media/image2.png` |
-| 3 | B010 | `rId10` | `word/media/image3.png` | [#figure-3](index.html#figure-3), `media/image3.png` |
-| 4 | B016 | `rId11` | `word/media/image4.png` | [#figure-4](index.html#figure-4), `media/image4.png` |
-| 5 | B019 | `rId12` | `word/media/image5.png` | [#figure-5](index.html#figure-5), `media/image5.png` |
-| 6 | B027 | `rId13` | `word/media/image6.png` | [#figure-6](index.html#figure-6), `media/image6.png` |
-| 7 | B032 | `rId14` | `word/media/image7.png` | [#figure-7](index.html#figure-7), `media/image7.png` |
-| 8 | B035 | `rId15` | `word/media/image8.png` | [#figure-8](index.html#figure-8), `media/image8.png` |
-| 9 | B037 | `rId16` | `word/media/image9.png` | [#figure-9](index.html#figure-9), `media/image9.png` |
-| 10 | B040 | `rId17` | `word/media/image10.png` | [#figure-10](index.html#figure-10), `media/image10.png` |
-| 11 | B050 | `rId18` | `word/media/image11.png` | [#figure-11](index.html#figure-11), `media/image11.png` |
-| 12 | B058 | `rId19` | `word/media/image12.png` | [#figure-12](index.html#figure-12), `media/image12.png` |
-| 13 | B062 | `rId20` | `word/media/image13.png` | [#figure-13](index.html#figure-13), `media/image13.png` |
-| 14 | B066 | `rId21` | `word/media/image14.png` | [#figure-14](index.html#figure-14), `media/image14.png` |
-| 15 | B079 | `rId22` | `word/media/image15.png` | [#figure-15](index.html#figure-15), `media/image15.png` |
-| 16 | B086 | `rId23` | `word/media/image16.png` | [#figure-16](index.html#figure-16), `media/image16.png` |
-| 17 | B088 | `rId24` | `word/media/image17.png` | [#figure-17](index.html#figure-17), `media/image17.png` |
-| 18 | B090 | `rId25` | `word/media/image18.png` | [#figure-18](index.html#figure-18), `media/image18.png` |
-| 19 | B091 | `rId26` | `word/media/image19.png` | [#figure-19](index.html#figure-19), `media/image19.png` |
-| 20 | B097 | `rId27` | `word/media/image20.png` | [#figure-20](index.html#figure-20), `media/image20.png` |
-| 21 | B104 | `rId28` | `word/media/image21.png` | [#figure-21](index.html#figure-21), `media/image21.png` |
-| 22 | B114 | `rId29` | `word/media/image22.png` | [#figure-22](index.html#figure-22), `media/image22.png` |
-| 23 | B120 | `rId30` | `word/media/image23.png` | [#figure-23](index.html#figure-23), `media/image23.png` |
-| 24 | B125 | `rId31` | `word/media/image24.png` | [#figure-24](index.html#figure-24), `media/image24.png` |
-| 25 | B135 | `rId32` | `word/media/image25.png` | [#figure-25](index.html#figure-25), `media/image25.png` |
-| 26 | B146 | `rId33` | `word/media/image26.png` | [#figure-26](index.html#figure-26), `media/image26.png` |
-| 27 | B164 | `rId34` | `word/media/image27.png` | [#figure-27](index.html#figure-27), `media/image27.png` |
-| 28 | B166 | `rId35` | `word/media/image28.png` | [#figure-28](index.html#figure-28), `media/image28.png` |
-| 29 | B176 | `rId36` | `word/media/image29.png` | [#figure-29](index.html#figure-29), `media/image29.png` |
-| 30 | B183 | `rId37` | `word/media/image30.png` | [#figure-30](index.html#figure-30), `media/image30.png` |
-| 31 | B208 | `rId38` | `word/media/image31.png` | [#figure-31](index.html#figure-31), `media/image31.png` |
-| 32 | B210 | `rId39` | `word/media/image32.png` | [#figure-32](index.html#figure-32), `media/image32.png` |
-| 33 | B212 | `rId40` | `word/media/image33.png` | [#figure-33](index.html#figure-33), `media/image33.png` |
-| 34 | B214 | `rId41` | `word/media/image34.png` | [#figure-34](index.html#figure-34), `media/image34.png` |
-| 35 | B216 | `rId42` | `word/media/image35.png` | [#figure-35](index.html#figure-35), `media/image35.png` |
-| 36 | B229 | `rId43` | `word/media/image36.png` | [#figure-36](index.html#figure-36), `media/image36.png` |
-| 37 | B237 | `rId44` | `word/media/image37.png` | [#figure-37](index.html#figure-37), `media/image37.png` |
-| 38 | B246 | `rId45` | `word/media/image38.png` | [#figure-38](index.html#figure-38), `media/image38.png` |
-| 39 | B250 | `rId46` | `word/media/image39.png` | [#figure-39](index.html#figure-39), `media/image39.png` |
-| 40 | B257 | `rId47` | `word/media/image40.png` | [#figure-40](index.html#figure-40), `media/image40.png` |
-| 41 | B265 | `rId48` | `word/media/image41.png` | [#figure-41](index.html#figure-41), `media/image41.png` |
-| 42 | B266 | `rId49` | `word/media/image42.png` | [#figure-42](index.html#figure-42), `media/image42.png` |
-| 43 | B267 | `rId50` | `word/media/image43.png` | [#figure-43](index.html#figure-43), `media/image43.png` |
-| 44 | B281 | `rId51` | `word/media/image44.png` | [#figure-44](index.html#figure-44), `media/image44.png` |
-| 45 | B286 | `rId52` | `word/media/image45.png` | [#figure-45](index.html#figure-45), `media/image45.png` |
-| 46 | B309 | `rId53` | `word/media/image46.png` | [#figure-46](index.html#figure-46), `media/image46.png` |
-| 47 | B311 | `rId54` | `word/media/image47.png` | [#figure-47](index.html#figure-47), `media/image47.png` |
-| 48 | B313 | `rId55` | `word/media/image48.png` | [#figure-48](index.html#figure-48), `media/image48.png` |
-| 49 | B314 | `rId56` | `word/media/image49.png` | [#figure-49](index.html#figure-49), `media/image49.png` |
-| 50 | B315 | `rId57` | `word/media/image50.png` | [#figure-50](index.html#figure-50), `media/image50.png` |
-| 51 | B316 | `rId58` | `word/media/image51.png` | [#figure-51](index.html#figure-51), `media/image51.png` |
-| 52 | B317 | `rId59` | `word/media/image52.png` | [#figure-52](index.html#figure-52), `media/image52.png` |
-| 53 | B322 | `rId60` | `word/media/image53.png` | [#figure-53](index.html#figure-53), `media/image53.png` |
-| 54 | B348 | `rId61` | `word/media/image54.png` | [#figure-54](index.html#figure-54), `media/image54.png` |
-| 55 | B377 | `rId62` | `word/media/image55.png` | [#figure-55](index.html#figure-55), `media/image55.png` |
-| 56 | B379 | `rId63` | `word/media/image56.png` | [#figure-56](index.html#figure-56), `media/image56.png` |
+| № | DOCX-блок | Relationship | Файл внутри DOCX | HTML-якорь и целевой локальный путь | Статус 4.9 |
+| ---: | --- | --- | --- | --- | --- |
+| 1 | B001 | `rId8` | `word/media/image1.png` | [#figure-1](index.html#figure-1), `media/image1.png` | V01 — оригинал PNG и позиция сверены; описано; источник не установлен |
+| 2 | B004 | `rId9` | `word/media/image2.png` | [#figure-2](index.html#figure-2), `media/image2.png` | V01 — оригинал PNG и позиция сверены; описано; источник не установлен |
+| 3 | B010 | `rId10` | `word/media/image3.png` | [#figure-3](index.html#figure-3), `media/image3.png` | V01 — оригинал PNG и позиция сверены; описано; источник не установлен |
+| 4 | B016 | `rId11` | `word/media/image4.png` | [#figure-4](index.html#figure-4), `media/image4.png` | V01 — оригинал PNG и позиция сверены; описано; источник не установлен |
+| 5 | B019 | `rId12` | `word/media/image5.png` | [#figure-5](index.html#figure-5), `media/image5.png` | V01 — оригинал PNG и позиция сверены; описано; источник не установлен |
+| 6 | B027 | `rId13` | `word/media/image6.png` | [#figure-6](index.html#figure-6), `media/image6.png` | V01 — оригинал PNG и позиция сверены; описано; источник не установлен |
+| 7 | B032 | `rId14` | `word/media/image7.png` | [#figure-7](index.html#figure-7), `media/image7.png` | V01 — оригинал PNG и позиция сверены; описано; источник не установлен |
+| 8 | B035 | `rId15` | `word/media/image8.png` | [#figure-8](index.html#figure-8), `media/image8.png` | V01 — оригинал PNG и позиция сверены; описано; источник не установлен |
+| 9 | B037 | `rId16` | `word/media/image9.png` | [#figure-9](index.html#figure-9), `media/image9.png` | Ожидает проверки |
+| 10 | B040 | `rId17` | `word/media/image10.png` | [#figure-10](index.html#figure-10), `media/image10.png` | Ожидает проверки |
+| 11 | B050 | `rId18` | `word/media/image11.png` | [#figure-11](index.html#figure-11), `media/image11.png` | Ожидает проверки |
+| 12 | B058 | `rId19` | `word/media/image12.png` | [#figure-12](index.html#figure-12), `media/image12.png` | Ожидает проверки |
+| 13 | B062 | `rId20` | `word/media/image13.png` | [#figure-13](index.html#figure-13), `media/image13.png` | Ожидает проверки |
+| 14 | B066 | `rId21` | `word/media/image14.png` | [#figure-14](index.html#figure-14), `media/image14.png` | Ожидает проверки |
+| 15 | B079 | `rId22` | `word/media/image15.png` | [#figure-15](index.html#figure-15), `media/image15.png` | Ожидает проверки |
+| 16 | B086 | `rId23` | `word/media/image16.png` | [#figure-16](index.html#figure-16), `media/image16.png` | Ожидает проверки |
+| 17 | B088 | `rId24` | `word/media/image17.png` | [#figure-17](index.html#figure-17), `media/image17.png` | Ожидает проверки |
+| 18 | B090 | `rId25` | `word/media/image18.png` | [#figure-18](index.html#figure-18), `media/image18.png` | Ожидает проверки |
+| 19 | B091 | `rId26` | `word/media/image19.png` | [#figure-19](index.html#figure-19), `media/image19.png` | Ожидает проверки |
+| 20 | B097 | `rId27` | `word/media/image20.png` | [#figure-20](index.html#figure-20), `media/image20.png` | Ожидает проверки |
+| 21 | B104 | `rId28` | `word/media/image21.png` | [#figure-21](index.html#figure-21), `media/image21.png` | Ожидает проверки |
+| 22 | B114 | `rId29` | `word/media/image22.png` | [#figure-22](index.html#figure-22), `media/image22.png` | Ожидает проверки |
+| 23 | B120 | `rId30` | `word/media/image23.png` | [#figure-23](index.html#figure-23), `media/image23.png` | Ожидает проверки |
+| 24 | B125 | `rId31` | `word/media/image24.png` | [#figure-24](index.html#figure-24), `media/image24.png` | Ожидает проверки |
+| 25 | B135 | `rId32` | `word/media/image25.png` | [#figure-25](index.html#figure-25), `media/image25.png` | Ожидает проверки |
+| 26 | B146 | `rId33` | `word/media/image26.png` | [#figure-26](index.html#figure-26), `media/image26.png` | Ожидает проверки |
+| 27 | B164 | `rId34` | `word/media/image27.png` | [#figure-27](index.html#figure-27), `media/image27.png` | Ожидает проверки |
+| 28 | B166 | `rId35` | `word/media/image28.png` | [#figure-28](index.html#figure-28), `media/image28.png` | Ожидает проверки |
+| 29 | B176 | `rId36` | `word/media/image29.png` | [#figure-29](index.html#figure-29), `media/image29.png` | Ожидает проверки |
+| 30 | B183 | `rId37` | `word/media/image30.png` | [#figure-30](index.html#figure-30), `media/image30.png` | Ожидает проверки |
+| 31 | B208 | `rId38` | `word/media/image31.png` | [#figure-31](index.html#figure-31), `media/image31.png` | Ожидает проверки |
+| 32 | B210 | `rId39` | `word/media/image32.png` | [#figure-32](index.html#figure-32), `media/image32.png` | Ожидает проверки |
+| 33 | B212 | `rId40` | `word/media/image33.png` | [#figure-33](index.html#figure-33), `media/image33.png` | Ожидает проверки |
+| 34 | B214 | `rId41` | `word/media/image34.png` | [#figure-34](index.html#figure-34), `media/image34.png` | Ожидает проверки |
+| 35 | B216 | `rId42` | `word/media/image35.png` | [#figure-35](index.html#figure-35), `media/image35.png` | Ожидает проверки |
+| 36 | B229 | `rId43` | `word/media/image36.png` | [#figure-36](index.html#figure-36), `media/image36.png` | Ожидает проверки |
+| 37 | B237 | `rId44` | `word/media/image37.png` | [#figure-37](index.html#figure-37), `media/image37.png` | Ожидает проверки |
+| 38 | B246 | `rId45` | `word/media/image38.png` | [#figure-38](index.html#figure-38), `media/image38.png` | Ожидает проверки |
+| 39 | B250 | `rId46` | `word/media/image39.png` | [#figure-39](index.html#figure-39), `media/image39.png` | Ожидает проверки |
+| 40 | B257 | `rId47` | `word/media/image40.png` | [#figure-40](index.html#figure-40), `media/image40.png` | Ожидает проверки |
+| 41 | B265 | `rId48` | `word/media/image41.png` | [#figure-41](index.html#figure-41), `media/image41.png` | Ожидает проверки |
+| 42 | B266 | `rId49` | `word/media/image42.png` | [#figure-42](index.html#figure-42), `media/image42.png` | Ожидает проверки |
+| 43 | B267 | `rId50` | `word/media/image43.png` | [#figure-43](index.html#figure-43), `media/image43.png` | Ожидает проверки |
+| 44 | B281 | `rId51` | `word/media/image44.png` | [#figure-44](index.html#figure-44), `media/image44.png` | Ожидает проверки |
+| 45 | B286 | `rId52` | `word/media/image45.png` | [#figure-45](index.html#figure-45), `media/image45.png` | Ожидает проверки |
+| 46 | B309 | `rId53` | `word/media/image46.png` | [#figure-46](index.html#figure-46), `media/image46.png` | Ожидает проверки |
+| 47 | B311 | `rId54` | `word/media/image47.png` | [#figure-47](index.html#figure-47), `media/image47.png` | Ожидает проверки |
+| 48 | B313 | `rId55` | `word/media/image48.png` | [#figure-48](index.html#figure-48), `media/image48.png` | Ожидает проверки |
+| 49 | B314 | `rId56` | `word/media/image49.png` | [#figure-49](index.html#figure-49), `media/image49.png` | Ожидает проверки |
+| 50 | B315 | `rId57` | `word/media/image50.png` | [#figure-50](index.html#figure-50), `media/image50.png` | Ожидает проверки |
+| 51 | B316 | `rId58` | `word/media/image51.png` | [#figure-51](index.html#figure-51), `media/image51.png` | Ожидает проверки |
+| 52 | B317 | `rId59` | `word/media/image52.png` | [#figure-52](index.html#figure-52), `media/image52.png` | Ожидает проверки |
+| 53 | B322 | `rId60` | `word/media/image53.png` | [#figure-53](index.html#figure-53), `media/image53.png` | Ожидает проверки |
+| 54 | B348 | `rId61` | `word/media/image54.png` | [#figure-54](index.html#figure-54), `media/image54.png` | Ожидает проверки |
+| 55 | B377 | `rId62` | `word/media/image55.png` | [#figure-55](index.html#figure-55), `media/image55.png` | Ожидает проверки |
+| 56 | B379 | `rId63` | `word/media/image56.png` | [#figure-56](index.html#figure-56), `media/image56.png` | Ожидает проверки |
 
 ## Таблицы (3)
 
