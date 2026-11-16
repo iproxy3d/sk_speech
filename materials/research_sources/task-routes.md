@@ -32,7 +32,7 @@
 
 **Что есть:** `sk_detection.silence_percentage(y, sr, threshold_db=-30)` вычисляет **долю тихих кадров**, а не полноценные временные границы вдохов; `Respiratory` — **модель** дыхательных состояний, а не обученный детектор физиологических вдохов в WAV. Исторический анализ коротких/длинных пауз документирован в заметке; его нельзя выдавать за полностью воспроизводимый `sk_speech.detect_breath_pauses()`, которого здесь нет.
 
-**Релевантные работы:** [психосоциальный стресс и речь, src-0076](catalog/prosody.md#src-0076), [медленное дыхание, src-0283](catalog/breath.md#src-0283), [связь мозга и дыхания, src-1171](catalog/breath.md#src-1171), [прогноз длины фразы и просодия, src-3683](catalog/prosody.md#src-3683). Связанный [авторский DOCX «Два типа речи»](author-documents/two-types-of-speech/index.html).
+**Релевантные работы:** [психосоциальный стресс и речь, src-0076](catalog/prosody.md#src-0076), [медленное дыхание, src-0283](catalog/breath.md#src-0283), [связь мозга и дыхания, src-1171](catalog/breath.md#src-1171), [прогноз длины фразы и просодия, src-3683](catalog/prosody.md#src-3683). Связанный [авторский DOCX «Два типа речи»](author-documents/two-types-of-speech/README.md).
 
 **Степень проверки:** исходные авторские измерения описаны; **тождество «тишина = вдох» не установлено**. Для нового опыта нужны совместные метки вдоха, пауз, выдохов, громкости, F0 и слов.
 
@@ -64,9 +64,9 @@
 | --- | --- |
 | **Эмоциональная интонация, шёпот и крик** | [Просодия](catalog/prosody.md), [голосовые заметки](author-notes/voice.md#affective-pitch-contour), [sk_detection](../../docs/api/sk_detection.md); эвристики требуют настройки порогов |
 | **Дыхание и физиология** | [История пауз](author-notes/breathing.md), [Respiratory](../../docs/api/regulators.md), [каталог дыхания](catalog/breath.md); физиологическая модель не медицинская диагностика |
-| **Фонетика и происхождение языка** | [Форма1: HTML](author-documents/forma1/index.html), [обсуждение F01–F20](author-documents/forma1/review.md), [фонетические публикации](catalog/phonetics.md); гипотезы не доказаны их перечислением |
+| **Фонетика и происхождение языка** | [Форма1: HTML](author-documents/forma1/README.md), [обсуждение F01–F20](author-documents/forma1/review.md), [фонетические публикации](catalog/phonetics.md); гипотезы не доказаны их перечислением |
 | **Сравнительная биоакустика** | [внешние вокализации и корпуса](catalog/bio.md), [графики межвидового сравнения](author-documents/six-layer-model/gradient-records-4.13.md), [заметка о дельфине](author-notes/gradients.md#dolphin-pitch-tracking); исторические WAV не идентифицированы до записи |
-| **Нейрокортикальная шестислойная модель** | [авторская HTML-статья](author-documents/six-layer-model/index.html), [инженерный аудит](author-documents/six-layer-model/review.md#engineering-411), [математический аудит](author-documents/six-layer-model/review.md#math-412), [нейроисточники](catalog/neuro.md); **нейросеть на FFN/Mamba/HysteresisResidual не реализована как runtime пакета** |
+| **Нейрокортикальная шестислойная модель** | [авторская HTML-статья](author-documents/six-layer-model/README.md), [инженерный аудит](author-documents/six-layer-model/review.md#engineering-411), [математический аудит](author-documents/six-layer-model/review.md#math-412), [нейроисточники](catalog/neuro.md); **нейросеть на FFN/Mamba/HysteresisResidual не реализована как runtime пакета** |
 | **Синтез и голосовые агенты** | [каталог синтеза](catalog/synthesis.md), [практические преобразования](../../docs/audio-transformation.md); пакет не заменяет TTS |
 | **История исследовательских тестов** | [исходная хронология](<raw/История - весь список ссылок и описаний.txt>), [карточки ссылок](catalog/history.md), [научные утверждения](author-notes/claims.tsv); только часть гипотез верифицирована независимыми данными |
 

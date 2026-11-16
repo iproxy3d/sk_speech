@@ -2,7 +2,7 @@
 
 **Все пакеты 4.2 выполнены. Следующий пакет — 4.3.1 по [общему журналу](progress.md).**
 
-Входы: [оригинал DOCX](<../raw/два типа речи.docx>), [поисковый снимок](<../snapshots/два типа речи.extracted.md>) и, если доступен, `sk_speech_research_preview.zip` (SHA-256 `f3470797f685d73f7db5e573c92b116eae54946dcbf161dd051abc565626d055`). Страница пилота находится в `author-documents/two-speech-modes/index.html`. Целевой путь — `author-documents/two-types-of-speech/index.html`. Номера `B001–B215` определены в [реестре DOCX](inventory.md#как-найти-блок-в-оригинале).
+Входы: [оригинал DOCX](<../raw/два типа речи.docx>), [поисковый снимок](<../snapshots/два типа речи.extracted.md>) и, если доступен, `sk_speech_research_preview.zip` (SHA-256 `f3470797f685d73f7db5e573c92b116eae54946dcbf161dd051abc565626d055`). Страница пилота находится в `author-documents/two-speech-modes/index.html`. Целевой путь — `author-documents/two-types-of-speech/README.md`. Номера `B001–B215` определены в [реестре DOCX](inventory.md#как-найти-блок-в-оригинале).
 
 ## Как выполнить один пакет
 
