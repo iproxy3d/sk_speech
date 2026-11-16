@@ -132,6 +132,92 @@ def table_search_text(table):
         rows.append(" | ".join(cells))
     return "\n".join(rows)
 
+
+def improve_docx_presentation(markup, blocks, numbering):
+    # Reconstruct real Word list semantics and stand-alone bold headings.
+    abstract = {x.get(W+"abstractNumId"): x for x in numbering.findall(W+"abstractNum")}
+    num_map = {x.get(W+"numId"): x.find(W+"abstractNumId").get(W+"val") for x in numbering.findall(W+"num")}
+    marks, headings = {}, {}
+    for index, paragraph in enumerate(blocks, 1):
+        if paragraph.tag != W+"p":
+            continue
+        bid = "B" + str(index).zfill(3)
+        num_pr = paragraph.find("./"+W+"pPr/"+W+"numPr")
+        if num_pr is not None:
+            n = num_pr.find(W+"numId")
+            lev = num_pr.find(W+"ilvl")
+            if n is not None and lev is not None:
+                num_id, depth = n.get(W+"val"), int(lev.get(W+"val"))
+                level = abstract[num_map[num_id]].find("./"+W+'lvl[@'+W+'ilvl="'+str(depth)+'"]')
+                fmt = level.find(W+"numFmt").get(W+"val")
+                marks[bid] = (num_id, depth, "decimal" if fmt == "decimal" else "bullet")
+        if bid not in marks:
+            runs = [r for r in paragraph.findall(W+"r")
+                    if "".join(t.text or "" for t in r.iter(W+"t")).strip()]
+            caption = "".join(t.text or "" for t in paragraph.iter(W+"t")).strip()
+            if caption and len(caption) < 150 and runs and all(
+                    r.find("./"+W+"rPr/"+W+"b") is not None for r in runs):
+                style = paragraph.find("./"+W+"pPr/"+W+"pStyle")
+                headings[bid] = "h4" if style is not None and style.get(W+"val") == "4" else "h3"
+
+    counts = {}
+    def group_html(items):
+        pos = 0
+        def render(level):
+            nonlocal pos
+            tag = "ol" if items[pos]["kind"] == "decimal" else "ul"
+            start = items[pos]["ordinal"]
+            opening = '<'+tag+' class="docx-list"'
+            if tag == "ol" and start != 1:
+                opening += ' start="'+str(start)+'"'
+            result = [opening+'>']
+            while pos < len(items) and items[pos]["level"] == level:
+                item = items[pos]
+                pos += 1
+                result.append('<li id="'+item["bid"]+'">'+item["body"])
+                if pos < len(items) and items[pos]["level"] > level:
+                    result.append(render(items[pos]["level"]))
+                result.append("</li>")
+            result.append("</"+tag+">")
+            return "\n".join(result)
+        result = []
+        while pos < len(items):
+            result.append(render(items[pos]["level"]))
+        return "\n".join(result)
+    result, run, cursor = [], [], 0
+    pattern = re.compile(r'<p id="(B\d{3})">([\s\S]*?)</p>')
+    for found in pattern.finditer(markup):
+        bid, body = found.group(1), found.group(2)
+        gap = markup[cursor:found.start()]
+        item = marks.get(bid)
+        if run and (gap.strip() or item is None or item[0] != run[-1]["num"]):
+            result.append(group_html(run))
+            run = []
+        if not run:
+            result.append(gap)
+        if item is not None:
+            num, level, kind = item
+            layer = counts.setdefault(num, {})
+            ordinal = layer.get(level, 0)+1
+            layer[level] = ordinal
+            for key in list(layer):
+                if key > level:
+                    del layer[key]
+            run.append({"bid": bid, "body": body, "num": num, "level": level,
+                        "kind": kind, "ordinal": ordinal})
+        elif bid in headings:
+            tag = headings[bid]
+            result.append('<'+tag+' id="'+bid+'">'+body+'</'+tag+'>')
+        else:
+            result.append(found.group())
+        cursor = found.end()
+    if run:
+        result.append(group_html(run))
+    result.append(markup[cursor:])
+    if len(marks) != 85 or len(headings) != 36:
+        raise ValueError("Unexpected DOCX list/heading count: "+str((len(marks), len(headings))))
+    return "".join(result)
+
 def main():
     digest = hashlib.sha256(SOURCE.read_bytes()).hexdigest()
     if digest != SHA256:
@@ -139,6 +225,7 @@ def main():
     OUT.mkdir(parents=True, exist_ok=True)
     with ZipFile(SOURCE) as archive:
         document = ET.fromstring(archive.read("word/document.xml"))
+        numbering = ET.fromstring(archive.read("word/numbering.xml"))
         rels = ET.fromstring(archive.read("word/_rels/document.xml.rels"))
         relations = {x.get("Id"): x.get("Target") for x in rels.findall(REL+"Relationship")}
         body = document.find(W+"body")
@@ -176,7 +263,8 @@ def main():
 <nav aria-label="\u041e\u0433\u043b\u0430\u0432\u043b\u0435\u043d\u0438\u0435"><ol>"""
     top += "".join('<li><a href="#'+sid+'">'+quoted(sid+": "+title)+'</a></li>' for sid, start, end, title in SECTIONS)
     top += "</ol></nav><main>"
-    (OUT/"index.html").write_text(top+"\n".join(fragments)+"</main></body></html>\n", encoding="utf-8")
+    markup = improve_docx_presentation(top+"\n".join(fragments)+"</main></body></html>\n", blocks, numbering)
+    (OUT/"index.html").write_text(markup, encoding="utf-8")
     snapshot = ["# \u0428\u0435\u0441\u0442\u0438\u0441\u043b\u043e\u0439\u043d\u0430\u044f \u043c\u043e\u0434\u0435\u043b\u044c \u2014 \u043c\u0430\u0448\u0438\u043d\u043d\u044b\u0439 \u043f\u043e\u0438\u0441\u043a\u043e\u0432\u044b\u0439 \u0441\u043d\u0438\u043c\u043e\u043a",
                 "\u0418\u0441\u0442\u043e\u0447\u043d\u0438\u043a: raw/\u0428\u0435\u0441\u0442\u0438\u0441\u043b\u043e\u0439\u043d\u0430\u044f \u043c\u043e\u0434\u0435\u043b\u044c.docx, SHA-256: "+SHA256,
                 "\u0410\u0432\u0442\u043e\u043c\u0430\u0442\u0438\u0447\u0435\u0441\u043a\u043e\u0435 \u0438\u0437\u0432\u043b\u0435\u0447\u0435\u043d\u0438\u0435: \u0441\u0432\u0435\u0440\u043a\u0430 \u0432 \u0440\u0430\u043c\u043a\u0430\u0445 4.8 \u0441 HTML; \u0432\u0438\u0437\u0443\u0430\u043b\u044c\u043d\u0430\u044f \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u2014 4.9.", ""]

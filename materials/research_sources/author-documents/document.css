@@ -1,5 +1,5 @@
 body{font-family:system-ui,sans-serif;line-height:1.62;color:#1c2835;max-width:74ch;margin:2.5rem auto;padding:0 1.15rem;overflow-wrap:break-word}
-h1,h2,h3{line-height:1.22;color:#132338} h1{font-size:clamp(1.8rem,5vw,2.65rem)}
+h1,h2,h3,h4{line-height:1.22;color:#132338} h1{font-size:clamp(1.8rem,5vw,2.65rem)}
 h2{margin-top:2.5rem} a{color:#154d87;text-underline-offset:.18em}
 nav,aside{padding:1rem 1.25rem;background:#f0f4f8;margin:1.25rem 0}
 nav ul{padding-left:1.25rem;margin-bottom:0} figure{margin:1.3rem 0}
@@ -7,3 +7,8 @@ img{max-width:100%;height:auto!important;vertical-align:middle}
 figcaption{font-size:.88rem;color:#4a5865;margin-top:.35rem}
 table{border-collapse:collapse;width:100%} td,th{padding:.45rem;border:1px solid #a8b6c2}
 pre,.table-wrapper{overflow-x:auto} p:empty{margin:0}
+
+/* DOCX list levels and native numeration, restored at stage 4.8. */
+.docx-list{padding-left:1.6rem;margin:.55rem 0 1.1rem}
+.docx-list li{margin:.28rem 0}
+.docx-list .docx-list{margin:.3rem 0 .6rem}
