@@ -12,13 +12,13 @@
 
 | Задача | API и код | Источники и авторские заметки |
 | --- | --- | --- |
-| [R01. F0 и F1–F5](task-routes.md#r01--извлечь-f0-интенсивность-и-форманты-f1f5) | [PitchExtractor](../../docs/api/pitch_extractor.md), [sk_formants](../../docs/api/sk_formants.md) | [Акустика](catalog/acoustics.md), [F1/F2](author-notes/voice.md#phoneme-formant-transitions) |
-| [R02. Нейтральный профиль](task-routes.md#r02--построить-нейтральный-профиль-и-оценить-отклонения) | [calibrate_pitch / normalize_pitch](../../docs/api/pitch_calibration.md) | [Нейтральный голос](author-notes/voice.md#neutral-f0-amplitude), [просодия](catalog/prosody.md) |
-| [R03. Дыхательные паузы](task-routes.md#r03--найти-паузы-и-исследовать-дыхательный-ритм) | [silence_percentage](../../docs/api/sk_detection.md), [Respiratory](../../docs/api/regulators.md) | [Измеренные паузы](author-notes/breathing.md#pause-clustering), [дыхание](catalog/breath.md) |
-| [R04. Длительность и WSOLA](task-routes.md#r04--изменить-длительность-гласных-темп-речи-и-сравнить-wsola) | [sk_vowels.wsola](../../docs/api/sk_vowels.md), [sk_pitch](../../docs/api/sk_pitch.md) | [Акустический каталог](catalog/acoustics.md), [градиенты](author-notes/gradients.md) |
-| [R05. Гамматон/ERB](task-routes.md#r05--провести-гамматонную--erb-фильтрацию) | [sk_gammatone](../../docs/api/sk_gammatone.md) | [Слух](catalog/hearing.md), [авторские тесты](author-notes/gradients.md#gammatone-cluster-comparison) |
+| [R01. F0 и F1–F5](task-routes.md#route-r01) | [PitchExtractor](../../docs/api/pitch_extractor.md), [sk_formants](../../docs/api/sk_formants.md) | [Акустика](catalog/acoustics.md), [F1/F2](author-notes/voice.md#phoneme-formant-transitions) |
+| [R02. Нейтральный профиль](task-routes.md#route-r02) | [calibrate_pitch / normalize_pitch](../../docs/api/pitch_calibration.md) | [Нейтральный голос](author-notes/voice.md#neutral-f0-amplitude), [просодия](catalog/prosody.md) |
+| [R03. Дыхательные паузы](task-routes.md#route-r03) | [silence_percentage](../../docs/api/sk_detection.md), [Respiratory](../../docs/api/regulators.md) | [Измеренные паузы](author-notes/breathing.md#pause-clustering), [дыхание](catalog/breath.md) |
+| [R04. Длительность и WSOLA](task-routes.md#route-r04) | [sk_vowels.wsola](../../docs/api/sk_vowels.md), [sk_pitch](../../docs/api/sk_pitch.md) | [Акустический каталог](catalog/acoustics.md), [градиенты](author-notes/gradients.md) |
+| [R05. Гамматон/ERB](task-routes.md#route-r05) | [sk_gammatone](../../docs/api/sk_gammatone.md) | [Слух](catalog/hearing.md), [авторские тесты](author-notes/gradients.md#gammatone-cluster-comparison) |
 
-**Проверка навигации:** [калибровка F0](task-routes.md#проверка-навигации-на-четырёх-контрольных-вопросах), [исследования пауз](task-routes.md#проверка-навигации-на-четырёх-контрольных-вопросах), [статус «Шестислойной модели»](task-routes.md#проверка-навигации-на-четырёх-контрольных-вопросах), [аудиозаписи животных](task-routes.md#проверка-навигации-на-четырёх-контрольных-вопросах). В рабочем `src/sk_speech` нет подтверждённой реализации всей шестислойной сети; шум и исследовательские аналогии не следует выдавать за нейробиологическое доказательство.
+**Проверка навигации:** [калибровка F0](task-routes.md#route-questions), [исследования пауз](task-routes.md#route-questions), [статус «Шестислойной модели»](task-routes.md#route-questions), [аудиозаписи животных](task-routes.md#route-questions). В рабочем `src/sk_speech` нет подтверждённой реализации всей шестислойной сети; шум и исследовательские аналогии не следует выдавать за нейробиологическое доказательство.
 
 ## Каталог документов
 

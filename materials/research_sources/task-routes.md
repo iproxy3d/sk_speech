@@ -3,6 +3,7 @@
 
 Постоянная точка входа из [каталога архива](README.md), [документации](../../docs/README.md) и [галереи материалов](../README.md). Все пути здесь относительны каталогу `materials/research_sources/`. Связь с источником означает **исследовательский контекст или технический аналог**, а **не доказательство**, что конкретная внешняя работа была использована при написании кода. В исходной хронологии есть отдельно отмеченные реальные тесты и гипотезы; повторная репликация не подразумевается.
 
+<a id="route-r01"></a>
 ## R01 — Извлечь F0, интенсивность и форманты F1–F5
 
 **Куда идти:** [анализ аудио](../../docs/audio-analysis.md) → [PitchExtractor](../../docs/api/pitch_extractor.md), [PitchTrack](../../docs/api/pitch_models.md) → [sk_pitch](../../docs/api/sk_pitch.md), [sk_formants](../../docs/api/sk_formants.md) → [каталог измерений](catalog/acoustics.md) и [заметка о F1/F2](author-notes/voice.md#phoneme-formant-transitions).
@@ -13,6 +14,7 @@
 
 **Степень проверки:** функция и документация есть в ветке; научные результаты разных методов требуют сопоставления на одинаковых записях. [Связанный анализ голосовых режимов](author-documents/two-types-of-speech/review.md).
 
+<a id="route-r02"></a>
 ## R02 — Построить нейтральный профиль и оценить отклонения
 
 **Куда идти:** [практическая калибровка](../../docs/calibration-and-timeseries.md) → [PitchProfile / calibrate_pitch / normalize_pitch](../../docs/api/pitch_calibration.md) → [код калибровки](../../src/sk_speech/pitch/calibration.py) и [структуры модели](../../src/sk_speech/pitch/models.py) → [заметка о нейтральном профиле](author-notes/voice.md#neutral-f0-amplitude).
@@ -23,6 +25,7 @@
 
 **Степень проверки:** код нейтрального профиля реализован и описан; **автоматического определения семантической эмоции** по этим нормировкам нет. Воспринимаемая эмоция — отдельная задача, см. [просодию](catalog/prosody.md).
 
+<a id="route-r03"></a>
 ## R03 — Найти паузы и исследовать дыхательный ритм
 
 **Куда идти:** [дыхательная модель](../../docs/physiological-modeling.md) → [эвристики и доля тишины](../../docs/api/sk_detection.md), [Respiratory](../../docs/api/regulators.md) → [код детекции](../../src/sk_speech/sk_detection.py), [регулятор](../../src/sk_speech/regulators.py) → [авторские исследования пауз](author-notes/breathing.md#breath-pause-estimate), [выполненная кластеризация пауз](author-notes/breathing.md#pause-clustering), [дерево пауз](author-notes/breathing.md#pause-hierarchy-graph).
@@ -33,16 +36,18 @@
 
 **Степень проверки:** исходные авторские измерения описаны; **тождество «тишина = вдох» не установлено**. Для нового опыта нужны совместные метки вдоха, пауз, выдохов, громкости, F0 и слов.
 
+<a id="route-r04"></a>
 ## R04 — Изменить длительность гласных, темп речи и сравнить WSOLA
 
 **Куда идти:** [преобразование аудио](../../docs/audio-transformation.md), [sk_vowels API](../../docs/api/sk_vowels.md), [практическое видео и схемы](../README.md) → [sk_vowels.wsola и stretch_vowels_preserve_pitch*](../../src/sk_speech/sk_vowels.py), [sk_pitch.change_audio_speed](../../src/sk_speech/sk_pitch.py) → [авторский анализ градиентов](author-notes/gradients.md#dbscan-frequency-gradients), [наблюдения о переходах F1/F2](author-notes/voice.md#phoneme-formant-transitions).
 
 **Подтверждённые символы:** `sk_vowels.detect_vowel_boundaries()`, `sk_vowels.wsola()`, `sk_vowels.stretch_vowels_preserve_pitch()` (и варианты `*2…*7`), `sk_pitch.change_audio_speed()`. Изменение времени **меняет число сэмплов** и требует контроля переходных областей и артефактов.
 
-**Внешние технические аналоги:** [ProMo — высота и длительность, src-0337](catalog/acoustics.md#src-0337), [PyTSMod / WSOLA, src-3664](catalog/acoustics.md#src-3664), [примеры PyTSMod, src-3665](catalog/acoustics.md#src-3665). Присутствие похожих алгоритмов в каталоге **не является доказательством общего кода**; качество надо сравнивать на одинаковых записях.
+**Внешние технические аналоги:** [ProMo — высота и длительность, src-0337](catalog/acoustics.md#src-0337), [PyTSMod / WSOLA, src-3659](catalog/acoustics.md#src-3659), [примеры PyTSMod, src-3665](catalog/acoustics.md#src-3665). Присутствие похожих алгоритмов в каталоге **не является доказательством общего кода**; качество надо сравнивать на одинаковых записях.
 
 **Степень проверки:** функции описаны в коде, но их качество не доказано универсальным бенчмарком. Концепция «растягивать устойчивые участки сильнее переходов» — исследовательская гипотеза.
 
+<a id="route-r05"></a>
 ## R05 — Провести гамматонную / ERB-фильтрацию
 
 **Куда идти:** [API фильтрации](../../docs/api/sk_gammatone.md), [практический видеоразбор](../README.md), [слуховой каталог](catalog/hearing.md) → [sk_gammatone.py](../../src/sk_speech/sk_gammatone.py) → [реальные авторские тесты по сравнению кластеров](author-notes/gradients.md#gammatone-cluster-comparison).
@@ -65,6 +70,7 @@
 | **Синтез и голосовые агенты** | [каталог синтеза](catalog/synthesis.md), [практические преобразования](../../docs/audio-transformation.md); пакет не заменяет TTS |
 | **История исследовательских тестов** | [исходная хронология](<raw/История - весь список ссылок и описаний.txt>), [карточки ссылок](catalog/history.md), [научные утверждения](author-notes/claims.tsv); только часть гипотез верифицирована независимыми данными |
 
+<a id="route-questions"></a>
 ## Проверка навигации на четырёх контрольных вопросах
 
 **Где реализована калибровка F0?** [pitch/calibration.py](../../src/sk_speech/pitch/calibration.py), функции `calibrate_pitch`/`normalize_pitch`; [API](../../docs/api/pitch_calibration.md), [нейтральный профиль в документации](../../docs/calibration-and-timeseries.md), [авторская заметка](author-notes/voice.md#neutral-f0-amplitude). **Код подтверждён**.
