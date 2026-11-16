@@ -1,4 +1,6 @@
-# Реестр DOCX для этапа 4
+# Исторический реестр исходных блоков этапа 4
+
+> В этом файле сохранены результаты первичной инвентаризации DOCX; для чтения текста использовать [три Markdown-издания](../README.md#каталог-документов). Оригинальные DOCX удалены из текущей ветки.
 
 [Журнал и границы пакетов](progress.md) · [Манифест оригиналов](../manifest.json)
 
@@ -6,26 +8,7 @@
 
 `Bnnn` — порядковый номер дочернего элемента `w:body` в `word/document.xml`, начиная с 1. Пустые абзацы и таблицы учитываются. Завершающий `w:sectPr` пропускается. Текст и таблицы открывайте по номеру блока. Изображения перечислены в порядке появления, включая вложенные в таблицу. Имя файла берётся из связи `word/_rels/document.xml.rels`. Блоки с изображением и без текста остаются в диапазонах пакетов.
 
-Из корня репозитория можно вывести текст выбранного диапазона без полного DOCX в контексте. Для таблицы этот вывод показывает текст блока. При сверке ячеек используйте структуру `w:tr` и `w:tc` или откройте оригинал.
-
-```bash
-python3 - 'materials/research_sources/raw/Форма1.docx' 1 19 <<'PY'
-from sys import argv
-from xml.etree import ElementTree as ET
-from zipfile import ZipFile
-
-with ZipFile(argv[1]) as archive:
-    root = ET.fromstring(archive.read("word/document.xml"))
-body = root.find("{*}body")
-blocks = [node for node in body if node.tag.rsplit("}", 1)[-1] != "sectPr"]
-first, last = map(int, argv[2:4])
-for index, block in enumerate(blocks[first - 1:last], first):
-    paragraphs = [block] if block.tag.endswith("}p") else list(block.iterfind(".//{*}p"))
-    text = " | ".join("".join(t.text or "" for t in p.iterfind(".//{*}t"))
-                      for p in paragraphs)
-    print(f"B{index:03d}\t{text}")
-PY
-```
+После удаления DOCX исследуемые блоки доступны прямо в Markdown по якорям `Bnnn`. Например, [B001 «Форма1»](forma1/README.md#B001), [B019](forma1/README.md#B019). Историческая нумерация Word сохранена для совместимости протоколов, но повторно извлечь OOXML из текущего дерева нельзя. Архивная исходная ревизия: `c2980b7bb116e1a3bd048bac64b8e39c33417b8d`.
 
 ## Два типа речи
 

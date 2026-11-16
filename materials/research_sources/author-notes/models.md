@@ -31,7 +31,7 @@
 **Связанные материалы**
 
 - Смежный источник по организации слуховой коры. [Параллельные потоки обработки речи](../catalog/hearing.md#src-2822).
-- Связанный авторский документ. [«Шестислойная модель»](../../../materials/research_sources/raw/%D0%A8%D0%B5%D1%81%D1%82%D0%B8%D1%81%D0%BB%D0%BE%D0%B9%D0%BD%D0%B0%D1%8F%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C.docx).
+- Связанный авторский документ. [«Шестислойная модель»](../author-documents/six-layer-model/README.md).
 
 <a name="prosody-normalization-fractal"></a>
 
