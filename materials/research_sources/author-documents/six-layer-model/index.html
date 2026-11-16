@@ -60,11 +60,11 @@
 <figure id="figure-8"><a href="media/image8.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image8.png" alt="Схема первого шага формирования кластеров: FFN, X_in, X_out и слои 2 и 3" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Первый шаг формирования кластеров: X_in проходит через FFN, образует карту X_out, затем показаны структуры слоёв 2 и 3. <a href="media/image8.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B036">Чтобы инициировать формирование таких кластеров в модели, используется <strong>FFN (</strong><strong>Feed-Forward</strong><strong> </strong><strong>Network</strong><strong>)</strong>, в которую подаётся входной сигнал <strong>X_in</strong>. Выход <strong>X_out</strong><strong> = FFN(</strong><strong>X_in</strong><strong>)</strong> отражает предварительную обработку, которая позволяет системе определить потенциальные области кластеризации — участки с плотными связями между нейронами. Таким образом, FFN играет роль <em>детектора кластерных уплотнений</em>, которые впоследствии могут быть интегрированы в архитектуру слоёв 2/3.</p>
 <p id="B037"></p>
-<figure id="figure-9"><img src="media/image9.png" alt="Изображение 9 из документа" loading="lazy"><figcaption>Изображение 9, исходный блок B037. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-9"><a href="media/image9.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image9.png" alt="Схема последовательных и пространственных признаков" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Слои II и III, последовательные и пространственные признаки, примеры частоты и градиента тона <a href="media/image9.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B038"></p>
 <p id="B039"></p>
 <p id="B040"></p>
-<figure id="figure-10"><img src="media/image10.png" alt="Изображение 10 из документа" loading="lazy"><figcaption>Изображение 10, исходный блок B040. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-10"><a href="media/image10.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image10.png" alt="Слой II: цепочки нейронных связей" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Три варианта цепочек красных узлов для последовательной обработки в слое II <a href="media/image10.png">Полный размер PNG</a>.</figcaption></figure>
 </section>
 <section id="S03"><h2>S03. Реализация слоёв 2 и 3: последовательные и пространственные признаки</h2>
 <h3 id="B041"><strong>Реализация слоя 2: Выделение последовательных признаков</strong></h3>
@@ -80,7 +80,7 @@
 <p id="B048">W(X)/FFN(X) допустим, но его способность к захвату последовательности ограничена без дополнительных механизмов, таких как позиционные кодировки.</p>
 <p id="B049"></p>
 <p id="B050"></p>
-<figure id="figure-11"><img src="media/image11.png" alt="Изображение 11 из документа" loading="lazy"><figcaption>Изображение 11, исходный блок B050. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-11"><a href="media/image11.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image11.png" alt="Слой III: пространственные связи" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Три группы синих нейронов и поперечных соединений в слое III <a href="media/image11.png">Полный размер PNG</a>.</figcaption></figure>
 <h3 id="B051"><strong>Реализация слоя 3: Выделение пространственных признаков</strong></h3>
 <p id="B052">Слой 3 в шестиуровневой модели неокортекса отвечает за <strong>выделение пространственных признаков</strong>. В отличие от слоя 2, он характеризуется <strong>связями между колонками</strong>, что позволяет ему интегрировать информацию не только во времени, но и в пространстве — выявляя устойчивые конфигурации между соседними участками сигнала.</p>
 <p id="B053">Как и в случае слоя 2, возможны различные архитектурные реализации:</p>
@@ -92,19 +92,19 @@
 
 <p id="B057">Таким образом, слой 3 функционирует как пространственный агрегатор признаков, формируя обобщённые представления, основанные на межколоночной интеграции и специализированных фильтрах.</p>
 <p id="B058"></p>
-<figure id="figure-12"><img src="media/image12.png" alt="Изображение 12 из документа" loading="lazy"><figcaption>Изображение 12, исходный блок B058. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-12"><a href="media/image12.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image12.png" alt="Пазл как аналогия пространственного распознавания" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Цветная аналогия распознавания полного образа из фрагментов слоями 2 и 3 <a href="media/image12.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B059">Представьте, что слой 2 — это люди, которые находят и подают отдельные кусочки пазла: &quot;вот край&quot;, &quot;вот зелёный участок&quot;, &quot;вот часть глаза&quot;.<br>Слой 3 — это тот, кто смотрит на все эти кусочки и говорит: «Похоже, это лицо!» или «Это дерево!» Он объединяет всё, что получил, и пытается понять, что это за общий образ.</p>
 <p id="B060">Слой 3 собирает и обобщает сигналы от слоя 2. Если слой 2 распознаёт отдельные детали, вроде линий или точек, то слой 3 соединяет эти детали в более крупные и осмысленные формы — например, в силуэты объектов или направления движения. Он делает это, сравнивая сигналы из разных участков и находя повторяющиеся структуры. Так формируются обобщённые признаки, которые потом используются на следующих уровнях.</p>
 <p id="B061"></p>
 <p id="B062"></p>
-<figure id="figure-13"><img src="media/image13.png" alt="Изображение 13 из документа" loading="lazy"><figcaption>Изображение 13, исходный блок B062. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-13"><a href="media/image13.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image13.png" alt="FFN и четыре параллельных кластера" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Вход X через FFN разделяется на четыре кластера, результаты передаются в Layer 5 <a href="media/image13.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B063"></p>
 </section>
 <section id="S04"><h2>S04. Инженерная реализация кластеров в слоях 2 и 3</h2>
 <h3 id="B064"><strong>Реализация кластеров в слоях 2/3</strong></h3>
 <p id="B065">После построения функциональности слоёв 2 и 3 наступает этап <strong>выделения кластеров</strong> — обобщённых единиц, отражающих устойчивые связи между признаками. В модели это реализуется через <strong>разбиение данных на несколько групп</strong>, например, четыре — что соответствует четырём кластерам.</p>
 <p id="B066"></p>
-<figure id="figure-14"><img src="media/image14.png" alt="Изображение 14 из документа" loading="lazy"><figcaption>Изображение 14, исходный блок B066. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-14"><a href="media/image14.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image14.png" alt="Multi-Head Attention и кластеры" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Аналогия голов внимания Transformer с кластерами слоёв II/III между слоями IV и V <a href="media/image14.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B067">Этот подход аналогичен <strong>механизму </strong><strong>мультиголов</strong><strong> в </strong><strong>трансформерах</strong>:</p>
 <ul class="docx-list">
 <li id="B068">Каждая &quot;голова&quot; или группа занимается выявлением связей в пределах одного кластера.</li>
@@ -127,7 +127,7 @@
 <p id="B077">&quot;Разбиение на кластеры&quot; — это не обязательно фиксированное разделение данных, а скорее разбиение пространства признаков или каналов (через GroupedConv или Multi-Head attention механизмы).</p>
 <p id="B078"></p>
 <p id="B079"></p>
-<figure id="figure-15"><img src="media/image15.png" alt="Изображение 15 из документа" loading="lazy"><figcaption>Изображение 15, исходный блок B079. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-15"><a href="media/image15.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image15.png" alt="Контекстная модуляция слоёв 2 и 3" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Input и Layer 1 формируют M2/M3 и Softmax для слоёв 2/3 с выходом в Layer 5 <a href="media/image15.png">Полный размер PNG</a>.</figcaption></figure>
 </section>
 <section id="S05"><h2>S05. Модуляция слоёв 2 и 3 сигналами других зон</h2>
 <h3 id="B080"><strong>Модуляция слоёв 2/3 через сигналы других зон мозга</strong></h3>
@@ -140,15 +140,15 @@
 </ul>
 
 <p id="B086"></p>
-<figure id="figure-16"><img src="media/image16.png" alt="Изображение 16 из документа" loading="lazy"><figcaption>Изображение 16, исходный блок B086. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-16"><a href="media/image16.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image16.png" alt="Top-down модуляция через слой I" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Слои I 1a/1b, апикальные дендриты и top-down влияние на слои II и III <a href="media/image16.png">Полный размер PNG</a>.</figcaption></figure>
 <h3 id="B087"><strong>Механизм модуляции:</strong></h3>
 <p id="B088"></p>
-<figure id="figure-17"><img src="media/image17.png" alt="Изображение 17 из документа" loading="lazy"><figcaption>Изображение 17, исходный блок B088. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-17"><a href="media/image17.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image17.png" alt="Driver и Modulation входы" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Сопоставление конвергенции суммируемых Driver-входов с мультипликативной модуляцией <a href="media/image17.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B089"></p>
 <p id="B090"></p>
-<figure id="figure-18"><img src="media/image18.png" alt="Изображение 18 из документа" loading="lazy"><figcaption>Изображение 18, исходный блок B090. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-18"><a href="media/image18.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image18.png" alt="Схемы top-down и bottom-up" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Два направления связи между сенсорными и высшими областями мозга <a href="media/image18.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B091"></p>
-<figure id="figure-19"><img src="media/image19.png" alt="Изображение 19 из документа" loading="lazy"><figcaption>Изображение 19, исходный блок B091. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-19"><a href="media/image19.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image19.png" alt="Поток слоёв и обратное GABA-торможение" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Bottom-up и top-down пути через слои IV, II, III, V, VI с обратным торможением <a href="media/image19.png">Полный размер PNG</a>.</figcaption></figure>
 <ul class="docx-list">
 <li id="B092"><strong>Слой 1</strong> (описанный позже) получает <strong>результат слоя 3</strong> и сигналы из других мозговых зон.</li>
 <li id="B093">Из слоя 1 формируются <strong>два модулирующих сигнала</strong>:
@@ -161,7 +161,7 @@
 </ul>
 
 <p id="B097"></p>
-<figure id="figure-20"><img src="media/image20.png" alt="Изображение 20 из документа" loading="lazy"><figcaption>Изображение 20, исходный блок B097. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-20"><a href="media/image20.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image20.png" alt="Формулы Softmax для слоёв 2 и 3" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Две формулы модуляции: Слой 2 @ Softmax(M2) и Слой 3 @ Softmax(M3) <a href="media/image20.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B098">Это позволяет повысить вероятность определённых признаков, усиливая вклад нейронов, наиболее релевантных текущему контексту.</p>
 <h3 id="B099"><strong>Результирующий поток сигналов:</strong></h3>
 <ol class="docx-list">
@@ -172,7 +172,7 @@
 
 <p id="B103"></p>
 <p id="B104"></p>
-<figure id="figure-21"><img src="media/image21.png" alt="Изображение 21 из документа" loading="lazy"><figcaption>Изображение 21, исходный блок B104. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-21"><a href="media/image21.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image21.png" alt="Обобщение кластеров в слое V" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Кластеры II/III, внешняя top-down модуляция, слой V и передача к слою VI <a href="media/image21.png">Полный размер PNG</a>.</figcaption></figure>
 </section>
 <section id="S06"><h2>S06. Слой 5: обобщение, выбор сигнала и модуляция</h2>
 <h3 id="B105"><strong>Слой 5 — обобщение признаков и выбор главного сигнала</strong></h3>
@@ -188,14 +188,14 @@
 
 <p id="B113"><strong>Оптимально использовать FFN или </strong><strong>Mamba</strong>, при этом в FFN рекомендуется встроить сверточный компонент для усиления детектирования локальных связей между признаками кластеров.</p>
 <p id="B114"></p>
-<figure id="figure-22"><img src="media/image22.png" alt="Изображение 22 из документа" loading="lazy"><figcaption>Изображение 22, исходный блок B114. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-22"><a href="media/image22.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image22.png" alt="Сигнал M5 и Layer 5" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Путь Modulatory signal M5 → Softmax(M5), FFN/Mamba → Layer 5 → Output <a href="media/image22.png">Полный размер PNG</a>.</figcaption></figure>
 <h3 id="B115"><strong>Модуляция слоя 5:</strong></h3>
 <p id="B116">Ключевой компонент слоя 5 — это <strong>механизм выбора главного признака</strong> на основе контекста. Для этого слой 5 получает модулирующий сигнал M5 из <strong>слоя 1</strong>, который агрегирует влияние от других зон мозга.</p>
 <p id="B117">Пример:<br>Во фразе <em>«Маша увидела (слона, Ваню, яблоко)»</em> — кластеры предложили три разных признака.<br>Слой 5, под влиянием зрительной системы (например, через модуль M5), выбирает <strong>наиболее релевантный</strong> вариант, например, <em>яблоко</em>, если это подтверждается контекстом. Пример с фразой является лишь иллюстрацией, поэтому стоит уточнить, что &quot;выбор&quot; — это не обязательно жёсткое решение, а скорее усиление релевантного признака.</p>
 <h4 id="B118"><strong>Реализация модуляции:</strong></h4>
 <p id="B119">Аналогично слоям 2 и 3, модуляция происходит через Softmax-маскирование:</p>
 <p id="B120"></p>
-<figure id="figure-23"><img src="media/image23.png" alt="Изображение 23 из документа" loading="lazy"><figcaption>Изображение 23, исходный блок B120. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-23"><a href="media/image23.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image23.png" alt="Формула Softmax для слоя 5" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Слой 5 = Слой 5 @ Softmax(M5) в синем прямоугольнике <a href="media/image23.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B121">Где:</p>
 <ul class="docx-list">
 <li id="B122">@ — матричное умножение,</li>
@@ -206,7 +206,7 @@
 </section>
 <section id="S07"><h2>S07. Входы слоя 4 и локальная ошибка слоя 6</h2>
 <p id="B125"></p>
-<figure id="figure-24"><img src="media/image24.png" alt="Изображение 24 из документа" loading="lazy"><figcaption>Изображение 24, исходный блок B125. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-24"><a href="media/image24.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image24.png" alt="Агрегация входов в Layer 4" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Thalamus и brain area входят в Layer 4, модуляция Softmax(M4) от Layer 6 <a href="media/image24.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B126">Слой 4 выполняет начальную обработку и обобщение входных сигналов, поступающих преимущественно от подкорковых структур (например, таламуса), а также от других кортикальных областей. Он играет роль сенсорного регистра, объединяя различные признаки в целостное представление. В архитектуре модели слой 4 может использоваться для агрегации входных сигналов из разных источников — например, из таламуса и среднего мозга.</p>
 <p id="B127">С архитектурной точки зрения, он функционально напоминает слой 5 (обобщение признаков), но отличается по источникам сигнала и типу модуляции. Важной особенностью слоя 4 является наличие модуляции со стороны слоя 6. Слой 6 анализирует активность и передаёт в слой 4 сигнал ошибки, отражающий несоответствие или шум, который необходимо подавить.</p>
 <p id="B128">Модуляция осуществляется индивидуально для каждого нейрона и оформляется в виде:</p>
@@ -220,7 +220,7 @@
 
 <p id="B134"></p>
 <p id="B135"></p>
-<figure id="figure-25"><img src="media/image25.png" alt="Изображение 25 из документа" loading="lazy"><figcaption>Изображение 25, исходный блок B135. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-25"><a href="media/image25.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image25.png" alt="Layer 6 и вычисление ошибки Predict" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Layer 4, Cluster, Layer 5 и Layer 6 разделяют более и менее вероятные сигналы <a href="media/image25.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B136">Слой 6 выполняет вычисление локальной ошибки или конфликта между входным сигналом (например, от слоя 4) и предсказанным состоянием слоя 5. Основные положения:</p>
 <ul class="docx-list">
 <li id="B137"><strong>Функция слоя 6</strong> — обнаружение ошибки в сигнале:
@@ -243,7 +243,7 @@
 </section>
 <section id="S08"><h2>S08. Слой 1 и модулирующие обратные связи</h2>
 <p id="B146"></p>
-<figure id="figure-26"><img src="media/image26.png" alt="Изображение 26 из документа" loading="lazy"><figcaption>Изображение 26, исходный блок B146. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-26"><a href="media/image26.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image26.png" alt="Модуляция Layer 1a и Layer 1b" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Brain → Mamba(Brain) → Mglobal и пути B23/B5/Layer 3 к M2, M3, M5 <a href="media/image26.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B147">Слой 1 отвечает за интеграцию внешних (из других зон мозга) и внутренних (из соседних слоев и областей модели) модулирующих сигналов, воздействующих на слои 2, 3 и 5. Он делится на две части:</p>
 <ul class="docx-list">
 <li id="B148"><strong>Слой 1a</strong> (верхний): принимает сигналы <em>Brain</em> от других зон мозга. Преобразуется, например, с помощью Mamba(Brain), формируя глобальный модулирующий сигнал M_global.</li>
@@ -276,10 +276,10 @@
 </section>
 <section id="S09"><h2>S09. Сопоставление с Transformer, FFN и Mamba</h2>
 <p id="B164"></p>
-<figure id="figure-27"><img src="media/image27.png" alt="Изображение 27 из документа" loading="lazy"><figcaption>Изображение 27, исходный блок B164. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-27"><a href="media/image27.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image27.png" alt="Transformer и Mamba на фоне шести слоёв" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Transformer с Clusters/Vx/FFN/Temperature и Mamba с Conv/SSM Block <a href="media/image27.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B165">Проведем сопоставление трансформеров и Mamba с шестислойной моделью, описывающей работу кортикальных слоев мозга.</p>
 <p id="B166"></p>
-<figure id="figure-28"><img src="media/image28.png" alt="Изображение 28 из документа" loading="lazy"><figcaption>Изображение 28, исходный блок B166. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-28"><a href="media/image28.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image28.png" alt="Transformer головы и слои неокортекса" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Блоки attention Transformer сопоставлены со слоями II, III, IV, V и внешней модуляцией <a href="media/image28.png">Полный размер PNG</a>.</figcaption></figure>
 <h3 id="B167"><strong>Трансформеры</strong><strong>:</strong></h3>
 <ul class="docx-list">
 <li id="B168"><em>Кластеры и признаки:</em> головами внимания моделируются кластеры признаков, а смешивание реализуется через матрицу значений V<sub>X</sub> @ X ​.</li>
@@ -296,7 +296,7 @@
 </ul>
 
 <p id="B176"></p>
-<figure id="figure-29"><img src="media/image29.png" alt="Изображение 29 из документа" loading="lazy"><figcaption>Изображение 29, исходный блок B176. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-29"><a href="media/image29.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image29.png" alt="Температура выборки и отсутствие модуляции" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Примеры вероятных слов и температурное распределение со стохастическим выбором <a href="media/image29.png">Полный размер PNG</a>.</figcaption></figure>
 <h3 id="B177"><strong>Аналогия с температурой и модуляцией слоя 5:</strong></h3>
 <ul class="docx-list">
 <li id="B178">В трансформерах температура и стохастический выбор частично заменяют top-down модуляцию слоя 5, но не эквивалентны ей.</li>
@@ -309,7 +309,7 @@
 <section id="S10"><h2>S10. Иерархический гистерезис, асимметрия и таблицы механизмов</h2>
 <p id="B182"></p>
 <p id="B183"></p>
-<figure id="figure-30"><img src="media/image30.png" alt="Изображение 30 из документа" loading="lazy"><figcaption>Изображение 30, исходный блок B183. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-30"><a href="media/image30.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image30.png" alt="Локальная и глобальная коррекция признаков" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Таламус, модальности, пространственные и последовательные признаки, обобщение и ошибка <a href="media/image30.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B184"><strong>Шестислойная модель как иерархический автомат гистерезиса</strong>, выделяющий устойчивые асимметрии в сигнале.</p>
 <p id="B185">Шестислойная модель — это просто автомат гистерезис, который выделяет асимметрию в сигнале (волне) и разделяет его на более вероятный и менее вероятный сигнал согласно найденной асимметрии. В данном случае асимметрия включает в себя свойства волны: амплитуду, частоту и фазу. Поэтому слои 2/3 находят асимметрию, а слой 5/6 разделяют сигнал согласно выделенной асимметрии. Все остальные интерпретации как Predictive Coding, предсказания, обратные проекции — это лишь следствие и механизмы работы с данными типами сигналов.</p>
 <p id="B186">Это формализация:</p>
@@ -351,19 +351,19 @@
 <p id="B206">Выход – обобщение найденных признаков для выделения наиболее сильных.</p>
 <p id="B207"></p>
 <p id="B208"></p>
-<figure id="figure-31"><img src="media/image31.png" alt="Изображение 31 из документа" loading="lazy"><figcaption>Изображение 31, исходный блок B208. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-31"><a href="media/image31.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image31.png" alt="Условная модель IV II III V VI I" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Схема прохождения N входных сигналов и 2N выходных сигналов <a href="media/image31.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B209">Если мы не будем учитывать влияние на модель сигнала из других областей, то она сводиться к следующей схеме.</p>
 <p id="B210"></p>
-<figure id="figure-32"><img src="media/image32.png" alt="Изображение 32 из документа" loading="lazy"><figcaption>Изображение 32, исходный блок B210. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-32"><a href="media/image32.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image32.png" alt="Архитектура F4 Fclusters F2 F3 F5 F6" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Схема функций F4, Fclusters, F2/3, F5, F6 с проекциями и красной модуляцией <a href="media/image32.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B211">Сделаем абстрактное описание модели.</p>
 <p id="B212"></p>
-<figure id="figure-33"><img src="media/image33.png" alt="Изображение 33 из документа" loading="lazy"><figcaption>Изображение 33, исходный блок B212. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-33"><a href="media/image33.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image33.png" alt="F4 F2 F3 F5 и Predict" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Упрощённая цепочка функций и остаточный сигнал F4(X)−Predict(Xout) <a href="media/image33.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B213">Точно такой же подход </p>
 <p id="B214"></p>
-<figure id="figure-34"><img src="media/image34.png" alt="Изображение 34 из документа" loading="lazy"><figcaption>Изображение 34, исходный блок B214. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-34"><a href="media/image34.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image34.png" alt="Архитектура MB Conv1D Conv2D" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Подробная схема MB, SSM, Conv1D/Conv2D и Softmax(M2/M3/M5) <a href="media/image34.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B215">Мы можем описать архитектуру модели следующим образом.</p>
 <p id="B216"></p>
-<figure id="figure-35"><img src="media/image35.png" alt="Изображение 35 из документа" loading="lazy"><figcaption>Изображение 35, исходный блок B216. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-35"><a href="media/image35.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image35.png" alt="Упрощение до Transformer" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): На многоблочной схеме красными крестами отмечены исключённые узлы <a href="media/image35.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B217">Если мы уберем часть архитектуры и упростим ее, то получим трансформер.</p>
 </section>
 <section id="S12"><h2>S12. Флуктуации, закон Вебера и биологические параллели</h2>
@@ -379,7 +379,7 @@
 <p id="B227">   - Это способствует лучшей обобщающей способности модели, не позволяя ей зафиксироваться на частных примерах.</p>
 <p id="B228"></p>
 <p id="B229"></p>
-<figure id="figure-36"><img src="media/image36.png" alt="Изображение 36 из документа" loading="lazy"><figcaption>Изображение 36, исходный блок B229. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-36"><a href="media/image36.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image36.png" alt="Две формы хаотических аттракторов" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Две трёхмерные траектории как иллюстрация хаотической динамики <a href="media/image36.png">Полный размер PNG</a>.</figcaption></figure>
 <h3 id="B230"><strong>Теория хаоса и неопределенность в системах</strong></h3>
 <p id="B231">Теория хаоса демонстрирует, что даже детерминированные системы могут быть чувствительны к начальным условиям, делая их долгосрочное прогнозирование невозможным. В контексте нейронных сетей это означает, что точное «сходимость» к одному решению может привести к переобучению, так как модель застревает в локальных минимумах.</p>
 <p id="B232"><strong>Эргодическая теория</strong> показывает, что шум позволяет системе исследовать фазовое пространство, избегая локальных экстремумов.</p>
@@ -388,7 +388,7 @@
 <p id="B235"></p>
 <h3 id="B236"><strong>Закон Вебера и относительная чувствительность</strong></h3>
 <p id="B237"></p>
-<figure id="figure-37"><img src="media/image37.png" alt="Изображение 37 из документа" loading="lazy"><figcaption>Изображение 37, исходный блок B237. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-37"><a href="media/image37.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image37.png" alt="Закон Вебера–Фехнера" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Заголовок, формула E = k lg(I/I0) и поясняющий текст <a href="media/image37.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B238">Закон Вебера утверждает, что минимально заметное различие между стимулами пропорционально исходной величине. </p>
 <p id="B239">Для времени пауз в речи этот порог составляет ~10% (длительность паузы воспринимается одинаково в диапазоне ±10%).</p>
 <p id="B240"></p>
@@ -398,12 +398,12 @@
 <p id="B244">Исследования нейронных кодов (Zemel et al., 1998) показывают, что мозг использует относительные сигналы для обработки информации, что согласуется с нормализацией входных данных перед добавлением шума.</p>
 <p id="B245"></p>
 <p id="B246"></p>
-<figure id="figure-38"><img src="media/image38.png" alt="Изображение 38 из документа" loading="lazy"><figcaption>Изображение 38, исходный блок B246. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-38"><a href="media/image38.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image38.png" alt="Adversarial пример с изображением панды" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Изображение панды, малое возмущение и ошибочная классификация gibbon <a href="media/image38.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B247">Например, в компьютерном зрении методы аугментации с изменением яркости/контраста на 10% повышают обобщение (Shorten &amp; Khoshgoftaar, 2019).</p>
 <p id="B248"></p>
 <h3 id="B249"><strong>Ошибки систем на разных уровнях: мета-исследования </strong><strong>Сапольского</strong></h3>
 <p id="B250"></p>
-<figure id="figure-39"><img src="media/image39.png" alt="Изображение 39 из документа" loading="lazy"><figcaption>Изображение 39, исходный блок B250. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-39"><a href="media/image39.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image39.png" alt="График коэффициента вариации" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Столбцы коэффициента вариации по нескольким биологическим уровням <a href="media/image39.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B251">Роберт Сапольский в своих работах («Reductionism and Variability in Data: A Meta-Analysis» Robert Sapolsky &amp; Steven Balt) подчеркивает, что биологические системы имеют встроенные ошибки (около 18%) на всех уровнях — от генетических мутаций до поведенческих реакций. Эти ошибки не являются дефектами, а обеспечивают гибкость и устойчивость к внешним факторам.</p>
 <p id="B252">В аналогия с нейросетями, Шум в функциях активации моделирует «биологическую избыточность», позволяя сети адаптироваться к вариациям входных данных.</p>
 <p id="B253">Исследования робастности нейросетей (Zhang et al., 2019) демонстрируют, что добавление шума в активации повышает устойчивость к атакам с переносом и шумовым искажениям.</p>
@@ -413,7 +413,7 @@
 <section id="S13"><h2>S13. Фазовое пространство градиентов и иерархия пауз</h2>
 <h3 id="B256"><strong>Фазовое пространство градиентов частоты речи</strong></h3>
 <p id="B257"></p>
-<figure id="figure-40"><img src="media/image40.png" alt="Изображение 40 из документа" loading="lazy"><figcaption>Изображение 40, исходный блок B257. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-40"><a href="media/image40.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image40.png" alt="Проверка нормальности градиента частоты" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): График, мини-гистограмма и результаты Шапиро–Уилка и Колмогорова–Смирнова <a href="media/image40.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B258">Наше исследование показало, что фазовое пространство градиентов частоты речи для разных организмов сходится к универсальному аттрактору, напоминающему нормальное распределение, но с хаотичными границами.</p>
 <p id="B259">Вычитание нормального распределения из фазового пространства оставляет «остаточный шум», который представляет хаотичные колебания.</p>
 <p id="B260">Эти флуктуации аналогичны дрейфующим градиентам в нейросетях, где шум предотвращает стабилизацию весов в одном направлении.</p>
@@ -422,11 +422,11 @@
 <p id="B263"></p>
 <h3 id="B264"><strong>Иерархия пауз в речи и закон Вебера</strong></h3>
 <p id="B265"></p>
-<figure id="figure-41"><img src="media/image41.png" alt="Изображение 41 из документа" loading="lazy"><figcaption>Изображение 41, исходный блок B265. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-41"><a href="media/image41.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image41.png" alt="Дерево длительностей пауз" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Иерархия пауз речи с примерами 250, 126, 96 и 23 мс <a href="media/image41.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B266"></p>
-<figure id="figure-42"><img src="media/image42.png" alt="Изображение 42 из документа" loading="lazy"><figcaption>Изображение 42, исходный блок B266. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-42"><a href="media/image42.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image42.png" alt="Иерархия звуков и внимания" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Дерево уровней от дыхания и эмоций к словам, слогам и звукам <a href="media/image42.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B267"></p>
-<figure id="figure-43"><img src="media/image43.png" alt="Изображение 43 из документа" loading="lazy"><figcaption>Изображение 43, исходный блок B267. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-43"><a href="media/image43.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image43.png" alt="Интервал Вебера в дереве пауз" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Деревья пауз и полоса интервала Вебера с фокусом внимания <a href="media/image43.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B268">Паузы в речи образуют иерархическую структуру (звуки → слоги → слова → синтагмы), где длительность паузы варьируется в пределах 10% для восприятия на одном уровне.</p>
 <p id="B269">Работы по когнитивной лингвистике (Levelt, 1983) подтверждают, что планирование речи включает стохастические процессы на разных уровнях.</p>
 <p id="B270">В NLP методы временных аугментаций (например, случайное удлинение токенов) улучшают обобщение (Ko et al., 2015).</p>
@@ -443,13 +443,13 @@
 <p id="B279">Контекстная чувствительность , имитирующая нелинейные реакции нейронов на стимулы. Ниже представлены основные функции и их биологическое обоснование.</p>
 <h3 id="B280"><strong>Сигмоида</strong><strong> с флуктуациями (</strong><strong>SigmoidFluct</strong><strong>)</strong></h3>
 <p id="B281"></p>
-<figure id="figure-44"><img src="media/image44.png" alt="Изображение 44 из документа" loading="lazy"><figcaption>Изображение 44, исходный блок B281. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-44"><a href="media/image44.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image44.png" alt="Скриншот функции sigmoid_fluct" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Python-код sigmoid_fluct и мультипликативного шума при обучении <a href="media/image44.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B282">Мембранный потенциал нейрона подвержен случайным колебаниям из-за стохастического открытия ионных каналов и синаптической передачи.</p>
 <p id="B283">Мультипликативный шум (σ = 0.01) моделирует вариации чувствительности нейрона к входным сигналам, усиливая обобщающую способность сети.</p>
 <p id="B284">Это изменение, создает устойчивость к малым возмущениям входных данных.</p>
 <p id="B285">Предотвращение насыщения сигмоиды за счет случайных отклонений в области порога активации.</p>
 <p id="B286"></p>
-<figure id="figure-45"><img src="media/image45.png" alt="Изображение 45 из документа" loading="lazy"><figcaption>Изображение 45, исходный блок B286. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-45"><a href="media/image45.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image45.png" alt="Скриншот функции gelu_fluct" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Python-код gelu_fluct с множителем шума и erf <a href="media/image45.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B287">Аналогичное действие мы проводим со всеми функциями активации. Все эти доработки ведут к:</p>
 <ul class="docx-list">
 <li id="B288">Сохранение нелинейности функции при улучшении градиентного потока.</li>
@@ -485,29 +485,29 @@
 <p id="B307"><em>Bayesian</em><em> </em><em>Neural</em><em> </em><em>Networks</em><em>:</em> Моделируют неопределенность через распределения весов. Флуктуации в активациях — более легковесная альтернатива.</p>
 <p id="B308"></p>
 <p id="B309"></p>
-<figure id="figure-46"><img src="media/image46.png" alt="Изображение 46 из документа" loading="lazy"><figcaption>Изображение 46, исходный блок B309. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-46"><a href="media/image46.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image46.png" alt="Латеральное торможение и селективность" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Коллаж учёного, активностей нейронов и пояснений о lateral inhibition <a href="media/image46.png">Полный размер PNG</a>.</figcaption></figure>
 </section>
 <section id="S15"><h2>S15. Контрастность и селективное усиление</h2>
 <h3 id="B310"><strong>Контрастность (селективность нейронов):</strong></h3>
 <p id="B311"></p>
-<figure id="figure-47"><img src="media/image47.png" alt="Изображение 47 из документа" loading="lazy"><figcaption>Изображение 47, исходный блок B311. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-47"><a href="media/image47.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image47.png" alt="Энергетическая селективность львов" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Фото львов с текстом об экономии ресурсов и Howard et al. (2012) <a href="media/image47.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B312"></p>
 <p id="B313"></p>
-<figure id="figure-48"><img src="media/image48.png" alt="Изображение 48 из документа" loading="lazy"><figcaption>Изображение 48, исходный блок B313. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-48"><a href="media/image48.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image48.png" alt="Контрастность яблок" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Фото яблок с одним ярко-красным и текст о контрастном отборе <a href="media/image48.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B314"></p>
-<figure id="figure-49"><img src="media/image49.png" alt="Изображение 49 из документа" loading="lazy"><figcaption>Изображение 49, исходный блок B314. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-49"><a href="media/image49.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image49.png" alt="Ошибка предсказания на примере яблок" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Глаза, реальные и предсказанные признаки яблок, волны и ошибка <a href="media/image49.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B315"></p>
-<figure id="figure-50"><img src="media/image50.png" alt="Изображение 50 из документа" loading="lazy"><figcaption>Изображение 50, исходный блок B315. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-50"><a href="media/image50.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image50.png" alt="Контрастный сигнал на примере яблок" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Глаза, фон и выделенный контрастный сигнал, отсылки к исследованиям <a href="media/image50.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B316"></p>
-<figure id="figure-51"><img src="media/image51.png" alt="Изображение 51 из документа" loading="lazy"><figcaption>Изображение 51, исходный блок B316. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-51"><a href="media/image51.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image51.png" alt="Смена контрастного фокуса" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Три кадра с волнами и яблоками, величины Cnt, Err и смена важного сигнала <a href="media/image51.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B317"></p>
-<figure id="figure-52"><img src="media/image52.png" alt="Изображение 52 из документа" loading="lazy"><figcaption>Изображение 52, исходный блок B317. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-52"><a href="media/image52.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image52.png" alt="Зрительное внимание к деталям" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Фотография лица и сеть взглядов с нумерованными шагами внимания <a href="media/image52.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B318">Softmax реализует контрастную селективность — усиление &quot;победителя&quot; среди конкурирующих сигналов.</p>
 <p id="B319">   - Softmax используется как аналог латерального торможения в коре: он усиливает контраст между активностями нейронов, подавляя менее активные.</p>
 <p id="B320">   - Это приближает модель к механизмам избирательного внимания и нейронной конкуренции.</p>
 <p id="B321"></p>
 <p id="B322"></p>
-<figure id="figure-53"><img src="media/image53.png" alt="Изображение 53 из документа" loading="lazy"><figcaption>Изображение 53, исходный блок B322. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-53"><a href="media/image53.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image53.png" alt="Петля гистерезиса" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): График петли гистерезиса и текст о зависимости отклика от предыстории <a href="media/image53.png">Полный размер PNG</a>.</figcaption></figure>
 </section>
 <section id="S16"><h2>S16. Мембранная инерция и HysteresisResidual</h2>
 <h3 id="B323"><strong>Гистерезис (мембранная инерция):</strong></h3>
@@ -536,7 +536,7 @@
 <p id="B346"><em>Α</em>total ​= <em>w</em>amp ​ ⋅<em>α</em>amp ​+ <em>w</em>freq​ ⋅ <em>α</em>freq ​+ <em>w</em>phase ​ ⋅<em>α</em>phase​,</p>
 <p id="B347">где:</p>
 <p id="B348"></p>
-<figure id="figure-54"><img src="media/image54.png" alt="Изображение 54 из документа" loading="lazy"><figcaption>Изображение 54, исходный блок B348. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-54"><a href="media/image54.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image54.png" alt="Коэффициенты гистерезиса по частоте фазе амплитуде" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Кусочные формулы αamp, αfreq, αphase с условиями rise и fall <a href="media/image54.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B349">Финальный выход:</p>
 <p id="B350"><em> </em><em>x</em><em>t</em><em> </em>​= ( 1 + <em>α</em>total ​) ⋅ <em>x</em>prev ​+ ( 1 – <em>α</em>total ​) ⋅ <em>x</em><em>t</em><em> </em>​</p>
 <p id="B351">Эта формула создает «память» о предыдущих состояниях, что усиливает устойчивость к шуму и улучшает обобщение.</p>
@@ -571,10 +571,10 @@
 <p id="B375">   - Гистерезис реализуется через разные коэффициенты &quot;роста&quot; и &quot;спада&quot; (alpha_rise, alpha_fall).</p>
 <p id="B376">   - Это позволяет выделять устойчивые сигналы на фоне шумовых колебаний, приближаясь к механизму детектирования значимых признаков.</p>
 <p id="B377"></p>
-<figure id="figure-55"><img src="media/image55.png" alt="Изображение 55 из документа" loading="lazy"><figcaption>Изображение 55, исходный блок B377. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-55"><a href="media/image55.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image55.png" alt="Гистерезисная GELU и динамика αt" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Формулы GELU_hyst, αrise, αfall, yprev и новые состояния <a href="media/image55.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B378">Это механизм работы нейронов, который за счет разной скорости спада и роста сигнала позволяет выделить важный сигнал из шума. Шумный сигнал будет гасит рост, а стабильный рост сигнала позволяет выделить важный сигнал в нем. Это приводит к выделению признаков.</p>
 <p id="B379"></p>
-<figure id="figure-56"><img src="media/image56.png" alt="Изображение 56 из документа" loading="lazy"><figcaption>Изображение 56, исходный блок B379. Оригинальная подпись проверяется в 4.9.</figcaption></figure>
+<figure id="figure-56"><a href="media/image56.png" title="Открыть оригинальный PNG для увеличения"><img src="media/image56.png" alt="Разделение F4(X) на F5 и F6" loading="lazy"></a><figcaption>Редакторское описание (не подпись из DOCX): Формула F6(X)=F4(X)−Predict(F5(X)) и схемы более и менее вероятного сигналов <a href="media/image56.png">Полный размер PNG</a>.</figcaption></figure>
 <p id="B380">Мы рассматриваем шестислойную\ модель как функцию гистерезис.</p>
 <p id="B381"></p>
 </section></main></body></html>
