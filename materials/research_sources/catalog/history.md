@@ -14,7 +14,7 @@
 |---|---:|---|
 | [Markdown-документ](../author-documents/two-types-of-speech/README.md) | 8911805 | `ccac7e1fe6b1bfd55bab2277a6ce688ece57b16d81308fa3d896cea19d5233c0` |
 | [История - весь список ссылок и описаний.txt](https://github.com/iproxy3d/sk_speech/blob/6347655391f1ab904dfd6f10f7b5a2a41c517c30/materials/research_sources/raw/%D0%98%D1%81%D1%82%D0%BE%D1%80%D0%B8%D1%8F%20-%20%D0%B2%D0%B5%D1%81%D1%8C%20%D1%81%D0%BF%D0%B8%D1%81%D0%BE%D0%BA%20%D1%81%D1%81%D1%8B%D0%BB%D0%BE%D0%BA%20%D0%B8%20%D0%BE%D0%BF%D0%B8%D1%81%D0%B0%D0%BD%D0%B8%D0%B9.txt) | 684631 | `0871e84b9c72f9148665756fe5298a6280d61a1d1d69911762bb332bedc16dba` |
-| [Markdown-документ](../author-documents/forma1/README.md) | 79409 | `5f2efbce23c76cb4a2670586f6b6d51168e4fbab0eb0ef9d44c803da3af612aa` |
+| [Markdown-документ](../author-documents/speech-language-origins/README.md) | 79409 | `5f2efbce23c76cb4a2670586f6b6d51168e4fbab0eb0ef9d44c803da3af612aa` |
 | [Markdown-документ](../author-documents/six-layer-model/README.md) | 13090066 | `dc53a11c90c1f6a2d7855c010f3a4f6126d39c5e75c5ccc733cb2a3430cf23fb` |
 
 ## Поля реестра URL

@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "author-documents"
 SPECS = (
     ("два типа речи.docx", "two-types-of-speech", 18, 0, 12, 0, 0),
-    ("Форма1.docx", "forma1", 0, 694, 0, 0, 0),
+    ("Форма1.docx", "speech-language-origins", 0, 694, 0, 0, 0),
     ("Шестислойная модель.docx", "six-layer-model", 0, 381, 56, 3, 17),
 )
 ANCHOR = re.compile(r'<a\s+id="([^"]+)"\s*></a>')

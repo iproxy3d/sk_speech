@@ -5,7 +5,7 @@
 Три DOCX удалены из текущей ветки после переноса в Markdown. Рабочие авторские документы:
 
 - [Два типа речи](../author-documents/two-types-of-speech/README.md)
-- [Форма1](../author-documents/forma1/README.md)
+- [Происхождение речи и языка](../author-documents/speech-language-origins/README.md)
 - [Шестислойная модель](../author-documents/six-layer-model/README.md)
 
 Оригиналы DOCX доступны для восстановления через Git-историю до миграции (коммит `c2980b7bb116e1a3bd048bac64b8e39c33417b8d`). Размеры и контрольные суммы, подтверждённые ранее, сохранены в [манифесте](../manifest.json). Изображения перенесены без перекодирования; проверить их можно [локальным валидатором](../author-documents/verify_markdown.py).

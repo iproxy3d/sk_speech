@@ -53,16 +53,18 @@
       "size": 79409,
       "sha256": "5f2efbce23c76cb4a2670586f6b6d51168e4fbab0eb0ef9d44c803da3af612aa",
       "kind": "author-hypotheses",
-      "snapshot": "snapshots/Форма1.extracted.md",
+      "snapshot": "snapshots/speech-language-origins.extracted.md",
       "notes": "38 страниц. Авторские гипотезы о возникновении речи и языка: артикуляционные энергозатраты, роль акустической среды, подражание, смешение групп и развитие обозначений. Требует дальнейшей научной проверки.",
       "git_blob_sha1": "c9462e77b278039898659df1444a574bf8f154e4",
-      "review": "author-documents/forma1/review.md",
-      "markdown": "author-documents/forma1/README.md",
+      "review": "author-documents/speech-language-origins/review.md",
+      "markdown": "author-documents/speech-language-origins/README.md",
       "primary_format": "markdown",
       "historical_original_path": "raw/Форма1.docx",
       "historically_verified_original": true,
       "stored_in_git_history_only": true,
-      "media_git_blobs": {}
+      "media_git_blobs": {},
+      "title": "Происхождение речи и языка: артикуляция, акустика и эволюция",
+      "previous_working_title": "Форма1"
     },
     {
       "name": "Шестислойная модель.docx",
